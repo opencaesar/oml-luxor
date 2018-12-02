@@ -1,4 +1,4 @@
-# OML2 VSCode
+# OML2 - VSCode
 
 [![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/open-caesar/oml2-vscode)
 [![Build Status](https://travis-ci.org/open-caesar/oml2-vscode.svg?branch=master)](https://travis-ci.org/open-caesar/oml2-vscode)
