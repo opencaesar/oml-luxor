@@ -1,0 +1,75 @@
+{
+    "name": "oml2-vscode",
+    "displayName": "Oml2 VS Code Extension",
+    "description": "Oml2 editor support for VS Code, based on OML2-LSP.",
+    "version": "0.1.0",
+    "publisher": "JPL",
+    "license": "Apache-2.0",
+    "repository": {
+        "url": "https://github.com/open-caesar/oml2-vscode.git"
+    },
+    "icon": "images/oml2.png",
+    "engines": {
+        "vscode": "^1.17.0"
+    },
+    "config": {
+        "oml2_version": "0.1.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:oml2"
+    ],
+    "main": "./out/client/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "oml2",
+                "aliases": [
+                    "Oml2",
+                    "oml2"
+                ],
+                "extensions": [
+                    ".oml2"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "oml2",
+                "scopeName": "source.oml2",
+                "path": "./syntaxes/oml2.tmLanguage.json"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Oml2 client configuration",
+            "properties": {
+                "oml2LanguageServer.maxNumberOfProblems": {
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "preinstall": "npm run install:languageserver",
+        "install:languageserver": "rm -rf ./build && mkdir build && npm run download:languageserver",
+        "download:languageserver": "download https://github.com/open-caesar/oml2-language-server/releases/download/v$npm_package_config_oml2_version/oml2-language-server-$npm_package_config_oml2_version.jar --out build",
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "@types/node": "^6.0.40",
+        "typescript": "^2.6.2",
+        "vscode": "^1.1.18",
+        "download-cli": "latest"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^3.1.0"
+    }
+}
