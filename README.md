@@ -19,10 +19,6 @@ Install npm and node.
     nvm install 8
     nvm use 8
 
-Install yarn.
-
-    npm install -g yarn
-
 Clone the code
   
     git clone https://github.com/open-caesar/oml2-vscode.git
