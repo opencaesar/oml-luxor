@@ -18,9 +18,11 @@ cd oml2-theia/open.caesar.oml2.vscode.parent/ && \
 npm install &&
 npm run vscode:prepublish
 ```
-###Run
+### Run
 
 To install the VSCode extension, copy the folder 'open.caesar.oml2.vscode.parent' to your local VSCode extensions folder:
 
+```bash
 Windows: %USERPROFILE%\.vscode\extensions
 Mac/Linux: ~/.vscode/extensions
+```
