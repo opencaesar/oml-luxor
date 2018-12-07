@@ -6,7 +6,7 @@ node_js:
   - "node"
 
 before_install:
-  - cd open.caesar.oml2.theia.parent
+  - cd open.caesar.oml2.vscode.parent
 
 install: 
   - npm install
