@@ -26,3 +26,4 @@ To install the VSCode extension, copy the folder 'open.caesar.oml2.vscode.parent
 Windows: %USERPROFILE%\.vscode\extensions
 Mac/Linux: ~/.vscode/extensions
 ```
+Then, relaunch VSCode and open an OML2 file (*.oml2)
