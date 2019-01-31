@@ -1,28 +1,28 @@
 {
-	"name": "Oml2",
-	"scopeName": "source.oml2",
-	"fileTypes": ["oml2"],
+	"name": "Oml",
+	"scopeName": "source.oml",
+	"fileTypes": ["oml"],
 	"patterns": [
 		{
-			"name": "keyword.other.oml2",
+			"name": "keyword.other.oml",
 			"match": "(?<=[^\\w-]|^)(terminology|concept|aspect|relation|source|target)(?=[^\\w-]|$)"
 		},
 		{
-			"name": "string.quoted.double.oml2",
+			"name": "string.quoted.double.oml",
 			"begin": "\"",
 			"end": "\""
 		},
 		{
-			"name": "string.quoted.single.oml2",
+			"name": "string.quoted.single.oml",
 			"begin": "'",
 			"end": "'"
 		},
 		{
-			"name": "comment.line.oml2",
+			"name": "comment.line.oml",
 			"match": "//.+"
 		},
 		{
-			"name": "comment.block.oml2",
+			"name": "comment.block.oml",
 			"begin": "/\\*",
 			"end": "\\*/"
 		}

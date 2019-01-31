@@ -23,7 +23,7 @@ import {
 export function activate(context: ExtensionContext) {
 
     const folder = context.asAbsolutePath(path.join('build'));
-    const files = fs.readdirSync(folder).filter(el => el.startsWith("oml2-language-server"));
+    const files = fs.readdirSync(folder).filter(el => el.startsWith("oml-language-server"));
     const jar = path.resolve(folder + '/' + files[0])
 
     // If the extension is launched in debug mode then the debug server options are used
@@ -42,27 +42,27 @@ export function activate(context: ExtensionContext) {
     // Options to control the language client
     let clientOptions: LanguageClientOptions = {
         // Register the server for plain text documents
-        documentSelector: ['oml2'],
+        documentSelector: ['oml'],
         synchronize: {
-            // Synchronize the setting section 'oml2LanguageServer' to the server
-            configurationSection: 'oml2LanguageServer',
-            // Notify the server about file changes to '.oml2 files contain in the workspace
-            fileEvents: workspace.createFileSystemWatcher('**/*.oml2')
+            // Synchronize the setting section 'omlLanguageServer' to the server
+            configurationSection: 'omlLanguageServer',
+            // Notify the server about file changes to '.oml files contain in the workspace
+            fileEvents: workspace.createFileSystemWatcher('**/*.oml')
         }
     }
 
     // Create the language client and start the client.
-    let languageClient = new LanguageClient('oml2LanguageServer', 'Oml2 Language Server', serverOptions, clientOptions);
+    let languageClient = new LanguageClient('omlLanguageServer', 'Oml Language Server', serverOptions, clientOptions);
     let disposable = languageClient.start()
 
-    commands.registerCommand('oml2.show.references', (uri: string, position: LSPosition, locations: LSLocation[]) => {
+    commands.registerCommand('oml.show.references', (uri: string, position: LSPosition, locations: LSLocation[]) => {
         commands.executeCommand('editor.action.showReferences',
                     Uri.parse(uri),
                     languageClient.protocol2CodeConverter.asPosition(position),
                     locations.map(languageClient.protocol2CodeConverter.asLocation));
     })
 
-    commands.registerCommand('oml2.apply.workspaceEdit', (obj) => {
+    commands.registerCommand('oml.apply.workspaceEdit', (obj) => {
         let edit = languageClient.protocol2CodeConverter.asWorkspaceEdit(obj);
         if (edit) {
             workspace.applyEdit(edit);

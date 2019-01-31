@@ -1,53 +1,53 @@
 {
-    "name": "oml2-vscode",
-    "displayName": "Oml2 VS Code Extension",
-    "description": "Oml2 editor support for VS Code, based on OML2-LSP.",
+    "name": "oml-vscode",
+    "displayName": "Oml VS Code Extension",
+    "description": "Oml editor support for VS Code, based on OML-LSP.",
     "version": "0.1.0",
     "publisher": "JPL",
     "license": "Apache-2.0",
     "repository": {
-        "url": "https://github.com/open-caesar/oml2-vscode.git"
+        "url": "https://github.com/open-caesar/oml-vscode.git"
     },
-    "icon": "images/oml2.png",
+    "icon": "images/oml.png",
     "engines": {
         "vscode": "^1.17.0"
     },
     "config": {
-        "oml2_version": "0.1.0"
+        "oml_version": "0.1.0"
     },
     "categories": [
         "Programming Languages"
     ],
     "activationEvents": [
-        "onLanguage:oml2"
+        "onLanguage:oml"
     ],
     "main": "./out/client/extension",
     "contributes": {
         "languages": [
             {
-                "id": "oml2",
+                "id": "oml",
                 "aliases": [
-                    "Oml2",
-                    "oml2"
+                    "Oml",
+                    "oml"
                 ],
                 "extensions": [
-                    ".oml2"
+                    ".oml"
                 ],
                 "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
-                "language": "oml2",
-                "scopeName": "source.oml2",
-                "path": "./syntaxes/oml2.tmLanguage.json"
+                "language": "oml",
+                "scopeName": "source.oml",
+                "path": "./syntaxes/oml.tmLanguage.json"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "Oml2 client configuration",
+            "title": "Oml client configuration",
             "properties": {
-                "oml2LanguageServer.maxNumberOfProblems": {
+                "omlLanguageServer.maxNumberOfProblems": {
                     "type": "number",
                     "default": 100,
                     "description": "Controls the maximum number of problems produced by the server."
@@ -58,7 +58,7 @@
     "scripts": {
         "preinstall": "npm run install:languageserver",
         "install:languageserver": "rm -rf ./build && mkdir build && npm run download:languageserver",
-        "download:languageserver": "curl -L -o build/oml2-language-server-$npm_package_config_oml2_version.jar https://github.com/open-caesar/oml2-language-server/releases/download/v$npm_package_config_oml2_version/oml2-language-server-$npm_package_config_oml2_version.jar",
+        "download:languageserver": "curl -L -o build/oml-language-server-$npm_package_config_oml_version.jar https://github.com/open-caesar/oml-language-server/releases/download/v$npm_package_config_oml_version/oml-language-server-$npm_package_config_oml_version.jar",
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install"
