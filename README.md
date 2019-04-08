@@ -1,12 +1,9 @@
 # OML VSCode Extension
 
-[![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/open-caesar/oml-vscode)
-[![Build Status](https://travis-ci.org/open-caesar/oml-vscode.svg?branch=master)](https://travis-ci.org/open-caesar/oml-vscode)
-[![Open questions](https://img.shields.io/badge/Open-questions-lightgrey.svg?style=flat-curved)](https://github.com/open-caesar/oml-vscode/labels/question)
-[![Open bugs](https://img.shields.io/badge/Open-bugs-red.svg?style=flat-curved)](https://github.com/open-caesar/oml-vscode/labels/bug)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-yellowgreen.svg?style=flat-curved)](https://github.com/open-caesar/oml-vscode/labels/help%20wanted)
+[![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/opencaesar/oml-vscode)
+[![Build Status](https://travis-ci.org/opencaesar/oml-vscode.svg?branch=master)](https://travis-ci.org/opencaesar/oml-vscode)
 
-An extension for the VSCode IDE to support the [OML language server](https://github.com/open-caesar/oml-language-server)
+An extension for the VSCode IDE to support the [OML language server](https://github.com/opencaesar/oml-language-server)
 
 ## Getting started
 
@@ -19,26 +16,32 @@ Install npm and node.
     nvm install 8
     nvm use 8
 
-Clone the code
-  
-    git clone https://github.com/open-caesar/oml-vscode.git
-
-Change directory
-    
-    cd oml-theia/open.caesar.oml.vscode.parent/
-
+## Clone
+```
+    git clone https://github.com/opencaesar/oml-vscode.git
+```
+      
 ## Build
-
 Requirements: java 8, node 8.x, 
-
+```
+    cd oml-vscode
+    cd io.opencaesar.oml.vscode.parent/
     npm install
     npm run vscode:prepublish
+```
 
 ## Run
+Copy the code to the VSCode extension folder
 
-Copy the folder 'open.caesar.oml.vscode.parent' to your local VSCode extensions folder:
+MacOS/Linux:
+```
+    cd oml-vscode
+    cp -a ./io.opencaesar.oml.vscode.parent ~/.vscode/extensions
+```
+Windows:
+```
+    cd oml-vscode
+    xcopy ./io.opencaesar.oml.vscode.parent %USERPROFILE%\.vscode\extensions /e /i /h
+```
 
-    Windows: %USERPROFILE%\.vscode\extensions
-    Mac/Linux: ~/.vscode/extensions
-
-Then, relaunch VSCode and open an OML file (*.oml)
+Then (re)start VSCode

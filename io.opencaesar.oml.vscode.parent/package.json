@@ -6,7 +6,7 @@
     "publisher": "JPL",
     "license": "Apache-2.0",
     "repository": {
-        "url": "https://github.com/open-caesar/oml-vscode.git"
+        "url": "https://github.com/opencaesar/oml-vscode.git"
     },
     "icon": "images/oml.png",
     "engines": {
@@ -58,7 +58,7 @@
     "scripts": {
         "preinstall": "npm run install:languageserver",
         "install:languageserver": "rm -rf ./build && mkdir build && npm run download:languageserver",
-        "download:languageserver": "curl -L -o build/oml-language-server-$npm_package_config_oml_version.jar https://github.com/open-caesar/oml-language-server/releases/download/v$npm_package_config_oml_version/oml-language-server-$npm_package_config_oml_version.jar",
+        "download:languageserver": "curl -L -o build/oml-language-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml-language-server/releases/download/v$npm_package_config_oml_version/oml-language-server-$npm_package_config_oml_version.jar",
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install"

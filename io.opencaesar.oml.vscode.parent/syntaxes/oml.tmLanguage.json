@@ -1,0 +1,35 @@
+{
+	"scopeName": "source.oml",
+	"name": "Oml",
+	"fileTypes": ["oml"],
+	"patterns": [
+		{
+			"name": "keyword.other.oml",
+			"match": "(?<=[^\\b^]|^)(inverseEssential|irreflexive|instance|minInclusive|minLength|refines|inverseSource|language|source|maxInclusive|restricts|ref|minExclusive|property|transitive|unreified|inverseFunctional|&|maxExclusive|enum|inverseTarget|as|reflexive|scalar|extends|domain|binary|final|:|asymmetric|=|partial|maxLength|some|functional|string|concept|pattern|description|range|forward|numeric|rule|symmetric|literal|specializes|terminology|aspect|structured|relationship|every|annotation|inverse|iri|toType|length|structure|reified|target|closed|uses|to|time|open|essential)\\b"
+		},
+		{
+			"name": "markup.inline.raw.oml",
+			"begin": "<",
+			"end": ">"
+		},
+		{
+			"name": "string.quoted.double.oml",
+			"begin": "\"",
+			"end": "\""
+		},
+		{
+			"name": "string.quoted.single.oml",
+			"begin": "'",
+			"end": "'"
+		},
+		{
+			"name": "comment.line.oml",
+			"match": "//.+$"
+		},
+		{
+			"name": "comment.block.oml",
+			"begin": "/\\*",
+			"end": "\\*/"
+		}
+	]
+}
