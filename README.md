@@ -3,7 +3,7 @@
 [![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/opencaesar/oml-vscode)
 [![Build Status](https://travis-ci.org/opencaesar/oml-vscode.svg?branch=master)](https://travis-ci.org/opencaesar/oml-vscode)
 
-An extension for the VSCode IDE to support the [OML language server](https://github.com/opencaesar/oml-language-server)
+An extension for the VSCode IDE to support the [OML language server](https://github.com/opencaesar/oml)
 
 ## Getting started
 
@@ -25,7 +25,7 @@ Install npm and node.
 Requirements: java 8, node 8.x, 
 ```
     cd oml-vscode
-    cd io.opencaesar.oml.vscode.parent/
+    cd io.opencaesar.oml.vscode
     npm install
     npm run vscode:prepublish
 ```
@@ -36,12 +36,12 @@ Copy the code to the VSCode extension folder
 MacOS/Linux:
 ```
     cd oml-vscode
-    cp -a ./io.opencaesar.oml.vscode.parent ~/.vscode/extensions
+    cp -a ./io.opencaesar.oml.vscode ~/.vscode/extensions
 ```
 Windows:
 ```
     cd oml-vscode
-    xcopy ./io.opencaesar.oml.vscode.parent %USERPROFILE%\.vscode\extensions /e /i /h
+    xcopy ./io.opencaesar.oml.vscode %USERPROFILE%\.vscode\extensions /e /i /h
 ```
 
 Then (re)start VSCode

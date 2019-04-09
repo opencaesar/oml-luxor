@@ -11,7 +11,7 @@ branches:
   only:
   - master
 before_install:
-  - cd io.opencaesar.oml.vscode.parent
+  - cd io.opencaesar.oml.vscode
 
 install: 
   - npm install
