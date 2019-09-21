@@ -15,8 +15,10 @@ Install [nvm](https://github.com/creationix/nvm#install-script).
 
 Install npm and node.
 
-    nvm install 10
-    nvm use 10
+```shell
+  nvm install 10
+  nvm use 10
+```
 
 ## Clone
 ```shell
