@@ -3,7 +3,7 @@
 [![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/opencaesar/oml-vscode)
 [![Build Status](https://travis-ci.org/opencaesar/oml-vscode.svg?branch=master)](https://travis-ci.org/opencaesar/oml-vscode)
 
-A VSCode IDE extension to support the [OML](https://opencaesar.github.io/oml-spec)
+A VSCode IDE extension to support [OML](https://opencaesar.github.io/oml-spec)
 
 ## Getting started
 
