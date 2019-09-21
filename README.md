@@ -9,7 +9,9 @@ A VSCode IDE extension to support [OML](https://opencaesar.github.io/oml-spec)
 
 Install [nvm](https://github.com/creationix/nvm#install-script).
 
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+```shell
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+```
 
 Install npm and node.
 
@@ -39,7 +41,7 @@ MacOS/Linux:
 ```
 Windows:
 ```shell
-    xcopy ../oml-vscode %USERPROFILE%\.vscode\extensions /e /i /h
+  xcopy ../oml-vscode %USERPROFILE%\.vscode\extensions /e /i /h
 ```
 
 Then (re)start VSCode
