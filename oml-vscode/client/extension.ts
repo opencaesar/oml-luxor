@@ -23,7 +23,7 @@ import {
 export function activate(context: ExtensionContext) {
 
     const folder = context.asAbsolutePath(path.join('build'));
-    const files = fs.readdirSync(folder).filter(el => el.startsWith("oml-language-server"));
+    const files = fs.readdirSync(folder).filter(el => el.startsWith("oml-server"));
     const jar = path.resolve(folder + '/' + files[0])
 
     // If the extension is launched in debug mode then the debug server options are used

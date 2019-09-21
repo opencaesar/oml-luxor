@@ -1,6 +1,6 @@
 sudo: required
 language: node_js
-node_js: '8'
+node_js: '10'
 git:
   depth: 1
 cache:
@@ -11,7 +11,7 @@ branches:
   only:
   - master
 before_install:
-  - cd io.opencaesar.oml.vscode
+  - cd oml-vscode
 
 install: 
   - npm install

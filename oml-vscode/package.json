@@ -13,7 +13,7 @@
         "vscode": "^1.17.0"
     },
     "config": {
-        "oml_version": "0.1.0"
+        "oml_version": "0.3.0"
     },
     "categories": [
         "Programming Languages"
@@ -58,7 +58,7 @@
     "scripts": {
         "preinstall": "npm run install:languageserver",
         "install:languageserver": "rm -rf ./build && mkdir build && npm run download:languageserver",
-        "download:languageserver": "curl -L -o build/oml-language-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/v$npm_package_config_oml_version/oml-language-server-$npm_package_config_oml_version.jar",
+        "download:languageserver": "curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml-server/releases/download/v$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar",
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install"
