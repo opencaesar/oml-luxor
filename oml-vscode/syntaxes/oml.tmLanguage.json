@@ -5,7 +5,7 @@
 	"patterns": [
 		{
 			"name": "keyword.other.oml",
-			"match": "(?<=[^\\b^]|^)(inverseEssential|irreflexive|instance|minInclusive|minLength|refines|inverseSource|language|source|maxInclusive|restricts|ref|minExclusive|property|transitive|unreified|inverseFunctional|&|maxExclusive|enum|inverseTarget|as|reflexive|scalar|extends|domain|binary|final|:|asymmetric|=|partial|maxLength|some|functional|string|concept|pattern|description|range|forward|numeric|rule|symmetric|literal|specializes|terminology|aspect|structured|relationship|every|annotation|inverse|iri|toType|length|structure|reified|target|closed|uses|to|time|open|essential)\\b"
+			"match": "(?<=[^\\b^]|^)(all|annotation|as|aspect|asymmetric|bundle|ci|concept|description|domain|entity|enumerated|exactly|extends|forward|from|functional|includes|inverse|irreflexive|key|language|length|max|maxExclusive|maxInclusive|maxLength|min|minExclusive|minInclusive|minLength|pattern|property|range|ref|reflexive|relation|restricts|ri|rule|scalar|some|structure|structured|symmetric|to|transitive|uses|vocabulary|with)\\b"
 		},
 		{
 			"name": "markup.inline.raw.oml",
