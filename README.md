@@ -20,6 +20,12 @@ Install npm and node.
   nvm use 10
 ```
 
+Install vsce if you plan to package the extesnion
+```shell
+  npm install -g vsce
+  
+```
+
 ## Clone
 ```shell
   git clone https://github.com/opencaesar/oml-vscode.git
@@ -47,3 +53,10 @@ Windows:
 ```
 
 Then (re)start VSCode
+
+## Package
+You can package the OML extension into an installable VSIX file with:
+```
+   vsce package
+```
+This will create oml-vscode-<version>.vsix file that you can then install in VSCode as an extension.
