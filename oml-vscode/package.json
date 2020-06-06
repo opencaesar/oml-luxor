@@ -2,7 +2,7 @@
     "name": "oml-vscode",
     "displayName": "Oml VS Code Extension",
     "description": "Oml editor support for VS Code, based on OML-LSP.",
-    "version": "0.6.2",
+    "version": "0.7.0",
     "publisher": "JPL",
     "license": "Apache-2.0",
     "repository": {
@@ -13,7 +13,7 @@
         "vscode": "^1.17.0"
     },
     "config": {
-        "oml_version": "0.6.2"
+        "oml_version": "0.7.0"
     },
     "categories": [
         "Programming Languages"
