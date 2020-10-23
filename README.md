@@ -15,8 +15,8 @@ Install [nvm](https://github.com/creationix/nvm#install-script).
 Install npm and node.
 
 ```shell
-  nvm install 10
-  nvm use 10
+  nvm install 12
+  nvm use 12
 ```
 
 Install vsce if you plan to package the extesnion
@@ -34,7 +34,6 @@ Install vsce if you plan to package the extesnion
 ## Build
 Requirements: java 8, node 8.x, 
 ```shell
-  cd oml-vscode && \
   npm install && \
   npm run vscode:prepublish
 ```

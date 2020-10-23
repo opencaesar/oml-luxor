@@ -1,6 +1,9 @@
 .DS_Store
 .gradle
 out
+pack
 node_modules
 build
 *.vsix
+.idea
+*.iml

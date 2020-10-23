@@ -2,7 +2,7 @@
     "name": "oml-vscode",
     "displayName": "Oml VS Code Extension",
     "description": "Oml editor support for VS Code, based on OML-LSP.",
-    "version": "0.7.3",
+    "version": "0.7.5",
     "publisher": "JPL",
     "license": "Apache-2.0",
     "repository": {
@@ -10,16 +10,17 @@
     },
     "icon": "images/oml.png",
     "engines": {
-        "vscode": "^1.17.0"
+        "vscode": "^1.46.0"
     },
     "config": {
-        "oml_version": "0.7.3"
+        "oml_version": "0.7.5"
     },
     "categories": [
         "Programming Languages"
     ],
     "activationEvents": [
-        "onLanguage:oml"
+        "onLanguage:oml",
+        "onCommand:oml.diagram.open"
     ],
     "main": "./out/client/extension",
     "contributes": {
@@ -53,22 +54,63 @@
                     "description": "Controls the maximum number of problems produced by the server."
                 }
             }
-        }
+        },
+        "commands": [
+            {
+                "command": "oml.diagram.open",
+                "title": "Open in Diagram",
+                "icon": "$(symbol-structure)",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.fit",
+                "title": "Fit to Screen",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.center",
+                "title": "Center selection",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.delete",
+                "title": "Delete selected element",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.export",
+                "title": "Export diagram to SVG",
+                "category": "Oml Diagram"
+            }
+        ]
     },
     "scripts": {
         "preinstall": "npm run install:languageserver",
-        "install:languageserver": "rm -rf ./build && mkdir build && npm run download:languageserver",
+        "install:languageserver": "rm -rf build && mkdir build && npm run download:languageserver",
         "download:languageserver": "curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar",
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
+        "vscode:prepublish": "./node_modules/.bin/tsc -p ./",
+        "compile": "./node_modules/.bin/tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "devDependencies": {
-        "@types/node": "^6.0.40",
-        "typescript": "^2.6.2",
-        "vscode": "^1.1.18"
+        "@types/node": "^8.0.0",
+        "@types/vscode": "1.46.0",
+        "rimraf": "^2.6.3",
+        "source-map-loader": "^1.0.2",
+        "ts-loader": "^8.0.3",
+        "tslint": "^5.11.0",
+        "typescript": "3.8.3",
+        "vscode-languageclient": "^5.2.1",
+        "vscode-languageserver": "^5.2.1",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
     },
+    "files": [
+        "lib",
+        "syntaxes"
+    ],
+    "main": "./pack/oml-vscore",
     "dependencies": {
-        "vscode-languageclient": "^3.1.0"
+        "sprotty-vscode": "^0.1.0"
     }
 }
