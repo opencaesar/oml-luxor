@@ -86,7 +86,7 @@
     },
     "scripts": {
         "prepare": "yarn run clean && yarn run install:languageserver && yarn run build",
-        "clean": "rimraf build lib pack *.vsix && mkdir build lib pack",
+        "clean": "rimraf build lib *.vsix && mkdir build lib",
         "install:languageserver": "yarn run download:languageserver",
         "download:languageserver": "curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar",
         "vscode:prepublish": "yarn tsc -p ./",

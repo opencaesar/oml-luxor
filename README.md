@@ -36,6 +36,7 @@ Requirements: java 11, node 12.x,
 ```shell
 yarn --cwd webview
 yarn --cwd extension  
+yarn --cwd extension package
 ```
 
 ## Run

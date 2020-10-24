@@ -50,7 +50,7 @@
   },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
-    "clean": "rimraf lib pack",
+    "clean": "rimraf lib",
     "build": "tsc && webpack --mode=development",
     "watch:": "tsc -w",
     "watch:webpack": "webpack --mode=development --watch"
