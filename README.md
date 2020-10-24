@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/opencaesar/oml-vscode.svg?branch=master)](https://travis-ci.org/opencaesar/oml-vscode)
 
-A VSCode IDE extension to support [OML](https://opencaesar.github.io/oml-spec)
+A VSCode IDE omlExtension to support [OML](https://opencaesar.github.io/oml-spec)
 
 ## Getting started
 
@@ -32,29 +32,30 @@ Install vsce if you plan to package the extesnion
 ```
       
 ## Build
-Requirements: java 8, node 8.x, 
+Requirements: java 11, node 12.x, 
 ```shell
-  npm install && \
-  npm run vscode:prepublish
+yarn --cwd webview
+yarn --cwd extension  
 ```
 
 ## Run
-Copy the code to the VSCode extension folder
+Copy the code to the VSCode omlExtension folder
 
 MacOS/Linux:
 ```shell
-  cp -a ../oml-vscode ~/.vscode/extensions
+cp -a ../oml-vscode ~/.vscode/extensions
 ```
 Windows:
 ```shell
-  xcopy ../oml-vscode %USERPROFILE%\.vscode\extensions /e /i /h
+xcopy ../oml-vscode %USERPROFILE%\.vscode\extensions /e /i /h
 ```
 
 Then (re)start VSCode
 
 ## Package
-You can package the OML extension into an installable VSIX file with:
+You can package the OML omlExtension into an installable VSIX file with:
 ```
-   vsce package
+cd extension && vsce package
 ```
-This will create oml-vscode-<version>.vsix file that you can then install in VSCode as an extension.
+
+This will create a file, `extension/oml-vscode-<version>.vsix`, that you can then install in VSCode as an omlExtension.

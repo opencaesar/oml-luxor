@@ -1,0 +1,10 @@
+tsconfig.json
+tslint.json
+node_modules
+.github
+.gitignore
+.idea
+.vscode
+*.iml
+*.log
+*.sh

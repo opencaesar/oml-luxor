@@ -1,15 +1,15 @@
 import {ExtensionContext} from 'vscode'
-import {OmlLspVscodeExtension} from "./lsp-extension"
+import {OmlLspVscodeExtension} from "./oml-lsp-extension"
 import { SprottyLspVscodeExtension } from 'sprotty-vscode/lib/lsp'
 
-let extension: SprottyLspVscodeExtension
+let omlExtension: SprottyLspVscodeExtension
 
 export function activate(context: ExtensionContext) {
-    extension = new OmlLspVscodeExtension(context)
+    omlExtension = new OmlLspVscodeExtension(context)
 }
 
 export function deactivate(): Thenable<void> {
-    if (!extension)
+    if (!omlExtension)
         return Promise.resolve(undefined);
-    return extension.deactivateLanguageClient();
+    return omlExtension.deactivateLanguageClient();
 }

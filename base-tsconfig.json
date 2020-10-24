@@ -1,8 +1,5 @@
 {
     "compilerOptions": {
-        "rootDir": "src",
-        "outDir": "lib",
-
         "declaration": true,
         "declarationMap": true,
         "downlevelIteration": true,
@@ -19,9 +16,7 @@
         "skipLibCheck": true,
         "strict": true,
         "sourceMap": true,
-        "strictPropertyInitialization": false
-    },
-    "include": [
-        "./src"
-    ]
+        "strictPropertyInitialization": false,
+        "target": "es5"
+    }
 }
