@@ -22,7 +22,6 @@
         "onLanguage:oml",
         "onCommand:oml.diagram.open"
     ],
-    "main": "./out/client/extension",
     "contributes": {
         "languages": [
             {
@@ -110,7 +109,7 @@
         "lib",
         "syntaxes"
     ],
-    "main": "./pack/oml-vscore",
+    "main": "./pack/oml-extension",
     "dependencies": {
         "sprotty-vscode": "^0.1.0"
     }
