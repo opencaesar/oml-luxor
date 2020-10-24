@@ -1,6 +1,6 @@
 .DS_Store
 .gradle
-out
+lib
 pack
 node_modules
 build
