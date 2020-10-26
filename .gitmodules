@@ -1,0 +1,3 @@
+[submodule "oml-sprotty"]
+	path = oml-sprotty
+	url = git@github.com:opencaesar/oml-sprotty.git
