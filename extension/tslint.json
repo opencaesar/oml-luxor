@@ -5,10 +5,7 @@
       "severity": "error"
     },
     "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
+    "comment-format": [true, "check-space"],
     "curly": false,
     "eofline": true,
     "file-header": {
@@ -19,22 +16,11 @@
     },
     "forin": true,
     "import-blacklist": {
-      "options": [
-        "..",
-        "../index",
-        "../..",
-        "../../index"
-      ],
+      "options": ["..", "../index", "../..", "../../index"],
       "severity": "error"
     },
-    "indent": [
-      true,
-      "spaces"
-    ],
-    "max-line-length": [
-      true,
-      180
-    ],
+    "indent": [true, "spaces"],
+    "max-line-length": [true, 180],
     "no-any": false,
     "no-arg": {
       "severity": "error"
@@ -56,7 +42,7 @@
     "no-misused-new": {
       "severity": "error"
     },
-    "no-null-keyword": false,
+    "no-null-keyword": true,
     "no-return-await": true,
     "no-shadowed-variable": true,
     "no-string-throw": {
@@ -67,7 +53,7 @@
     "no-unsafe-finally": {
       "severity": "error"
     },
-    "no-unused-expression": false,
+    "no-unused-expression": true,
     "no-var-keyword": {
       "severity": "error"
     },
@@ -87,17 +73,11 @@
     "prefer-object-spread": true,
     "radix": true,
     "semicolon": {
-      "options": [
-        "always",
-        "ignore-interfaces"
-      ],
+      "options": ["always", "ignore-interfaces"],
       "severity": "error"
     },
     "trailing-comma": true,
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
+    "triple-equals": [true, "allow-null-check"],
     "typedef-whitespace": [
       true,
       {

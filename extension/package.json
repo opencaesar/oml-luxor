@@ -158,10 +158,11 @@
         "prepare": "yarn run clean && yarn run install:languageserver && yarn run build",
         "clean": "rimraf build lib *.vsix && mkdir build lib",
         "install:languageserver": "yarn run download:languageserver",
-        "download:languageserver": "curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar",
+        "download:languageserver": "if [ ! -f build/oml-server-$npm_package_config_oml_version.jar ]; then curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar; else echo 'Skip downloading oml-server.jar'; fi",
         "vscode:prepublish": "yarn tsc -p ./",
-        "build": "tsc && webpack --mode=development",
-        "package": "vsce package"
+        "lint": "tslint -c ./tslint.json --project ./tsconfig.json",
+        "build": "yarn lint && tsc && webpack --mode=development",
+        "package": "cp ../oml-sprotty/pack/webview.js ./pack && vsce package"
     },
     "devDependencies": {
         "@types/node": "^8.0.0",
@@ -169,7 +170,7 @@
         "rimraf": "^2.6.3",
         "source-map-loader": "^1.0.2",
         "ts-loader": "^8.0.3",
-        "tslint": "^5.11.0",
+        "tslint": "^5.20.1",
         "typescript": "3.8.3",
         "vscode-languageclient": "^5.2.1",
         "vscode-languageserver": "^5.2.1",

@@ -1,6 +1,7 @@
 tsconfig.json
 tslint.json
 node_modules
+webpack.config.js
 .github
 .gitignore
 .idea
