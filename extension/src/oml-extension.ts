@@ -8,6 +8,7 @@ import { SprottyLspVscodeExtension } from 'sprotty-vscode/lib/lsp';
 let omlExtension: SprottyLspVscodeExtension;
 
 export function activate(context: ExtensionContext) {
+    console.log('Oml extension...');
     omlExtension = new OmlLspVscodeExtension(context);
 }
 

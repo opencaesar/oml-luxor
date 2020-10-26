@@ -61,7 +61,7 @@ export class OmlLspVscodeExtension extends SprottyLspEditVscodeExtension {
             },
             debug: {
                 command: java,
-                args: ['-jar', jar, '-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n,quiet=y', '-Xmx256m']
+                args: ['-jar', jar, '-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n,quiet=y', '-Xmx1024m']
             }
         };
 

@@ -27,7 +27,6 @@ import {
     SShapeElement
 } from 'sprotty';
 
-
 @injectable()
 export class OmlModelFactory extends SGraphFactory {
 

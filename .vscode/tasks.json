@@ -1,3 +1,4 @@
+// https://code.visualstudio.com/docs/editor/variables-reference
 // Available variables which can be used inside of strings.
 // ${workspaceRoot}: the root folder of the team
 // ${file}: the current opened file
@@ -7,8 +8,9 @@
 // ${cwd}: the current working directory of the spawned process
 
 // A task runner that calls a custom npm script that compiles the extension.
+// See https://go.microsoft.com/fwlink/?LinkId=733558
 {
-    "version": "0.1.0",
+    "version": "2.0.0",
 
     // we want to run npm
     "command": "npm",

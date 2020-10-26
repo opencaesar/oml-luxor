@@ -1,12 +1,24 @@
 .sprotty-node {
-    fill: var(--vscode-button-background)
+    fill: var(--vscode-button-background);
+    stroke: #243f9a;
 }
-
+.sprotty-node.module {
+    fill: hsla(0, 4%, 32%, 0.5); 
+    stroke: #243f9a;
+}
+.sprotty-node.class {
+    fill: black;
+    stroke:#bd5d1c;
+}
 .sprotty-node.selected {
     stroke-width: 2;
     stroke: var(--vscode-button-hover-background);
 }
 
+.tag.sprotty-label {
+    fill: var(--vscode-charts-yellow);
+    stroke-width: 0;
+}
 .sprotty-label {
     fill: var(--vscode-button-foreground);
     stroke-width: 0;
