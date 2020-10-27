@@ -34,7 +34,7 @@ Install vsce if you plan to package the extesnion
 ## Build
 Requirements: java 11, node 12.x, 
 ```shell
-yarn --cwd webview
+yarn --cwd oml-sprotty
 yarn --cwd extension  
 yarn --cwd extension package
 ```
@@ -44,11 +44,11 @@ Copy the code to the VSCode omlExtension folder
 
 MacOS/Linux:
 ```shell
-cp -a ../oml-vscode ~/.vscode/extensions
+cp -a ../extension ~/.vscode/extensions
 ```
 Windows:
 ```shell
-xcopy ../oml-vscode %USERPROFILE%\.vscode\extensions /e /i /h
+xcopy ../extension %USERPROFILE%\.vscode\extensions /e /i /h
 ```
 
 Then (re)start VSCode
