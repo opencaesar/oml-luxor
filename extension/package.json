@@ -51,7 +51,18 @@
                     "type": "number",
                     "default": 100,
                     "description": "Controls the maximum number of problems produced by the server."
-                }
+                },
+				"omlLanguageServer.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "messages",
+					"description": "Traces the communication between VS Code and the Oml language server."
+				}
             }
         },
         "commands": [
@@ -154,6 +165,7 @@
             }
         ]
     },
+
     "scripts": {
         "prepare": "yarn run clean && yarn run install:languageserver && yarn run build",
         "clean": "rimraf build lib *.vsix && mkdir build lib",
