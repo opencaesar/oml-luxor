@@ -52,17 +52,17 @@
                     "default": 100,
                     "description": "Controls the maximum number of problems produced by the server."
                 },
-				"omlLanguageServer.trace.server": {
-					"scope": "window",
-					"type": "string",
-					"enum": [
-						"off",
-						"messages",
-						"verbose"
-					],
-					"default": "messages",
-					"description": "Traces the communication between VS Code and the Oml language server."
-				}
+                "omlLanguageServer.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "messages",
+                    "description": "Traces the communication between VS Code and the Oml language server."
+                }
             }
         },
         "commands": [
@@ -165,7 +165,6 @@
             }
         ]
     },
-
     "scripts": {
         "prepare": "yarn run clean && yarn run install:languageserver && yarn run build",
         "clean": "rimraf build lib *.vsix && mkdir build lib",
@@ -174,7 +173,7 @@
         "vscode:prepublish": "yarn tsc -p ./",
         "lint": "tslint -c ./tslint.json --project ./tsconfig.json",
         "build": "yarn lint && tsc && webpack --mode=development",
-        "package": "cp ../oml-sprotty/pack/webview.js ./pack && vsce package"
+        "package": "cp ../oml-sprotty/pack/webview.js ./pack && yarn vsce package"
     },
     "devDependencies": {
         "@types/node": "^8.0.0",
@@ -195,6 +194,7 @@
     ],
     "main": "./pack/oml-extension",
     "dependencies": {
-        "sprotty-vscode": "^0.1.0"
+        "sprotty-vscode": "^0.1.0",
+        "vsce": "^1.81.1"
     }
 }
