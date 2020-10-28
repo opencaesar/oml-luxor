@@ -1,10 +1,10 @@
 /*
  * Copyright (c) 2020 Jet Propulsion Laboratory, California Institute of Technology
  */
-// import * as path from "path";
+import * as path from "path";
 import * as vscode from "vscode";
-// import * as fs from "fs";
-import * as net from 'net';
+import * as fs from "fs";
+// import * as net from 'net';
 
 import {
   LanguageClient,
@@ -12,7 +12,7 @@ import {
   Location as LSLocation,
   Position as LSPosition,
   ServerOptions,
-  StreamInfo
+  // StreamInfo
 } from "vscode-languageclient";
 import {
   LspLabelEditActionHandler,
