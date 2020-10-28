@@ -1,15 +1,18 @@
 /*
  * Copyright (c) 2020 Jet Propulsion Laboratory, California Institute of Technology
  */
-import * as path from "path";
+// import * as path from "path";
 import * as vscode from "vscode";
-import * as fs from "fs";
+// import * as fs from "fs";
+import * as net from 'net';
+
 import {
   LanguageClient,
   LanguageClientOptions,
   Location as LSLocation,
   Position as LSPosition,
   ServerOptions,
+  StreamInfo
 } from "vscode-languageclient";
 import {
   LspLabelEditActionHandler,
@@ -77,6 +80,20 @@ export class OmlLspVscodeExtension extends SprottyLspEditVscodeExtension {
         ],
       },
     };
+
+    // const connectionInfo = {
+    //   // org.eclipse.sprotty.xtext.launch.DiagramServerSocketLauncher.DEFAULT_PORT
+    //   port: 5008
+    // };
+
+    // const serverOptions: ServerOptions = () => {
+    //   const socket = net.connect(connectionInfo);
+    //   const result: StreamInfo = {
+    //     writer: socket,
+    //     reader: socket
+    //   };
+    //   return Promise.resolve(result);
+    // };
 
     const clientOptions: LanguageClientOptions = {
       documentSelector: [{ scheme: "file", language: "oml" }],
