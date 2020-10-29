@@ -53,6 +53,48 @@ xcopy ../extension %USERPROFILE%\.vscode\extensions /e /i /h
 
 Then (re)start VSCode
 
+## Debugging
+
+See [extension/src/oml-lsp-extension.ts](extension/src/oml-lsp-extension.ts) for:
+
+```typescript
+    // For localhost debugging, uncomment the following:
+
+    //   return this.activateLanguageClientViaSocket(
+    //     context,
+    //     clientOptions,
+    //     OmlLspVscodeExtension.doRegistrations
+    //   );
+
+    // For localhost debugging, comment the following:
+    
+    return this.activateLanguageClientViaExecutable(
+        context,
+        clientOptions,
+        OmlLspVscodeExtension.doRegistrations
+      );
+```
+
+For debugging where the oml-server is started separately via `io.opencaesar.oml.dsl.ide.launch.OmlRunSocketServer`:
+
+```typescript
+    // For localhost debugging, uncomment the following:
+
+      return this.activateLanguageClientViaSocket(
+        context,
+        clientOptions,
+        OmlLspVscodeExtension.doRegistrations
+      );
+
+    // For localhost debugging, comment the following:
+    
+    // return this.activateLanguageClientViaExecutable(
+    //     context,
+    //     clientOptions,
+    //     OmlLspVscodeExtension.doRegistrations
+    //   );
+```
+
 ## Package
 You can package the OML omlExtension into an installable VSIX file with:
 ```
