@@ -32,28 +32,25 @@ Install vsce if you plan to package the extesnion
 ```
       
 ## Build
-Requirements: java 11, node 12.x, 
+Requirements: java 11, node 12.x 
 ```shell
-yarn --cwd oml-sprotty
-yarn --cwd extension  
-yarn --cwd extension package
+./build.sh
 ```
+This will create a file, `extension/oml-vscode-<version>.vsix`.
 
-## Run
-Copy the code to the VSCode omlExtension folder
+## Install in VSCode
 
-MacOS/Linux:
-```shell
-cp -a ../extension ~/.vscode/extensions
-```
-Windows:
-```shell
-xcopy ../extension %USERPROFILE%\.vscode\extensions /e /i /h
-```
+Open the Extensions area of the VSCode desktop IDE and drag and drop the vsix file to install it.
 
-Then (re)start VSCode
+Note: if a previous version of the extension was installed, uninstall it first.
 
-## Debugging
+## Install in Gitpod.io
+
+Launch your repo with [gitoid.io](https://www.gitpod.io/), then open the Extensions area of the web IDE and drag and drop the vsix file to install it.
+
+Note: if a previous version of the extension was installed, uninstall it first.
+
+## Debug
 
 See [extension/src/oml-lsp-extension.ts](extension/src/oml-lsp-extension.ts) for:
 
@@ -94,11 +91,3 @@ For debugging where the oml-server is started separately via `io.opencaesar.oml.
     //     OmlLspVscodeExtension.doRegistrations
     //   );
 ```
-
-## Package
-You can package the OML omlExtension into an installable VSIX file with:
-```
-cd extension && vsce package
-```
-
-This will create a file, `extension/oml-vscode-<version>.vsix`, that you can then install in VSCode as an omlExtension.

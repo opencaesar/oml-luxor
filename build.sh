@@ -1,3 +1,4 @@
 #!/bin/bash
-npm install
-npm run vscode:prepublish
+yarn --cwd oml-sprotty
+yarn --cwd extension  
+yarn --cwd extension package

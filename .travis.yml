@@ -1,21 +1,12 @@
 sudo: required
 language: node_js
-node_js: '10'
-git:
-  depth: 1
+node_js: '12'
+
 cache:
   yarn: true
   directories:
   - node_modules
-branches:
-  only:
-  - master
-before_install:
-  - cd oml-vscode
-
-install: 
-  - npm install
 
 script:
-  - npm run vscode:prepublish
+  - ./build.sh
 
