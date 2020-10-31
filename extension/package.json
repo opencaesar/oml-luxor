@@ -1,0 +1,200 @@
+{
+    "name": "oml-vscode",
+    "displayName": "Oml VS Code Extension",
+    "description": "Oml editor support for VS Code, based on OML-LSP.",
+    "version": "0.7.5",
+    "publisher": "JPL",
+    "license": "Apache-2.0",
+    "repository": {
+        "url": "https://github.com/opencaesar/oml-vscode.git"
+    },
+    "icon": "images/oml.png",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "config": {
+        "oml_version": "0.7.5"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:oml",
+        "onCommand:oml.diagram.open"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "oml",
+                "aliases": [
+                    "Oml",
+                    "oml"
+                ],
+                "extensions": [
+                    ".oml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "oml",
+                "scopeName": "source.oml",
+                "path": "./syntaxes/oml.tmLanguage.json"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Oml client configuration",
+            "properties": {
+                "omlLanguageServer.maxNumberOfProblems": {
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                },
+                "omlLanguageServer.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "messages",
+                    "description": "Traces the communication between VS Code and the Oml language server."
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "oml.diagram.open",
+                "title": "Open in Diagram",
+                "icon": "$(symbol-structure)",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.fit",
+                "title": "Fit to Screen",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.center",
+                "title": "Center selection",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.delete",
+                "title": "Delete selected element",
+                "category": "Oml Diagram"
+            },
+            {
+                "command": "oml.diagram.export",
+                "title": "Export diagram to SVG",
+                "category": "Oml Diagram"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "oml.diagram.open",
+                    "when": "editorLangId == 'oml'"
+                },
+                {
+                    "command": "oml.diagram.fit",
+                    "when": "oml-diagram-focused"
+                },
+                {
+                    "command": "oml.diagram.center",
+                    "when": "oml-diagram-focused"
+                },
+                {
+                    "command": "oml.diagram.delete",
+                    "when": "oml-diagram-focused"
+                },
+                {
+                    "command": "oml.diagram.export",
+                    "when": "oml-diagram-focused"
+                }
+            ],
+            "editor/context": [
+                {
+                    "command": "oml.diagram.open",
+                    "when": "editorLangId == 'oml'",
+                    "group": "navigation"
+                }
+            ],
+            "editor/title": [
+                {
+                    "command": "oml.diagram.open",
+                    "when": "editorLangId == 'oml'",
+                    "group": "navigation"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "oml.diagram.open",
+                    "when": "resourceExtname == '.oml'",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "key": "alt+f",
+                "mac": "alt+f",
+                "command": "oml.diagram.fit",
+                "when": "oml-diagram-focused"
+            },
+            {
+                "key": "alt+c",
+                "mac": "alt+c",
+                "command": "oml.diagram.center",
+                "when": "oml-diagram-focused"
+            },
+            {
+                "key": "alt+e",
+                "mac": "alt+e",
+                "command": "oml.diagram.export",
+                "when": "oml-diagram-focused"
+            },
+            {
+                "key": "delete",
+                "mac": "delete",
+                "command": "oml.diagram.delete",
+                "when": "oml-diagram-focused"
+            }
+        ]
+    },
+    "scripts": {
+        "prepare": "yarn run clean && yarn run install:languageserver && yarn run build",
+        "clean": "rimraf build lib *.vsix && mkdir build lib",
+        "install:languageserver": "yarn run download:languageserver",
+        "download:languageserver": "if [ ! -f build/oml-server-$npm_package_config_oml_version.jar ]; then curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar; else echo 'Skip downloading oml-server.jar'; fi",
+        "vscode:prepublish": "yarn tsc -p ./",
+        "lint": "tslint -c ./tslint.json --project ./tsconfig.json",
+        "build": "yarn lint && tsc && webpack --mode=development",
+        "package": "cp ../oml-sprotty/pack/webview.js ./pack && yarn vsce package"
+    },
+    "devDependencies": {
+        "@types/node": "^8.0.0",
+        "@types/vscode": "1.46.0",
+        "rimraf": "^2.6.3",
+        "source-map-loader": "^1.0.2",
+        "ts-loader": "^8.0.3",
+        "tslint": "^5.20.1",
+        "typescript": "3.8.3",
+        "vscode-languageclient": "^5.2.1",
+        "vscode-languageserver": "^5.2.1",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    },
+    "files": [
+        "lib",
+        "syntaxes"
+    ],
+    "main": "./pack/oml-extension",
+    "dependencies": {
+        "sprotty-vscode": "^0.1.0",
+        "vsce": "^1.81.1"
+    }
+}

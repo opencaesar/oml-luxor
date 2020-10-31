@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/opencaesar/oml-vscode.svg?branch=master)](https://travis-ci.org/opencaesar/oml-vscode)
 
-A VSCode IDE extension to support [OML](https://opencaesar.github.io/oml-spec)
+A VSCode IDE omlExtension to support [OML](https://opencaesar.github.io/oml-spec)
 
 ## Getting started
 
@@ -15,8 +15,8 @@ Install [nvm](https://github.com/creationix/nvm#install-script).
 Install npm and node.
 
 ```shell
-  nvm install 10
-  nvm use 10
+  nvm install 12
+  nvm use 12
 ```
 
 Install vsce if you plan to package the extesnion
@@ -32,30 +32,62 @@ Install vsce if you plan to package the extesnion
 ```
       
 ## Build
-Requirements: java 8, node 8.x, 
+Requirements: java 11, node 12.x 
 ```shell
-  cd oml-vscode && \
-  npm install && \
-  npm run vscode:prepublish
+./build.sh
+```
+This will create a file, `extension/oml-vscode-<version>.vsix`.
+
+## Install in VSCode
+
+Open the Extensions area of the VSCode desktop IDE and drag and drop the vsix file to install it.
+
+Note: if a previous version of the extension was installed, uninstall it first.
+
+## Install in Gitpod.io
+
+Launch your repo with [gitoid.io](https://www.gitpod.io/), then open the Extensions area of the web IDE and drag and drop the vsix file to install it.
+
+Note: if a previous version of the extension was installed, uninstall it first.
+
+## Debug
+
+See [extension/src/oml-lsp-extension.ts](extension/src/oml-lsp-extension.ts) for:
+
+```typescript
+    // For localhost debugging, uncomment the following:
+
+    //   return this.activateLanguageClientViaSocket(
+    //     context,
+    //     clientOptions,
+    //     OmlLspVscodeExtension.doRegistrations
+    //   );
+
+    // For localhost debugging, comment the following:
+    
+    return this.activateLanguageClientViaExecutable(
+        context,
+        clientOptions,
+        OmlLspVscodeExtension.doRegistrations
+      );
 ```
 
-## Run
-Copy the code to the VSCode extension folder
+For debugging where the oml-server is started separately via `io.opencaesar.oml.dsl.ide.launch.OmlRunSocketServer`:
 
-MacOS/Linux:
-```shell
-  cp -a ../oml-vscode ~/.vscode/extensions
-```
-Windows:
-```shell
-  xcopy ../oml-vscode %USERPROFILE%\.vscode\extensions /e /i /h
-```
+```typescript
+    // For localhost debugging, uncomment the following:
 
-Then (re)start VSCode
+      return this.activateLanguageClientViaSocket(
+        context,
+        clientOptions,
+        OmlLspVscodeExtension.doRegistrations
+      );
 
-## Package
-You can package the OML extension into an installable VSIX file with:
+    // For localhost debugging, comment the following:
+    
+    // return this.activateLanguageClientViaExecutable(
+    //     context,
+    //     clientOptions,
+    //     OmlLspVscodeExtension.doRegistrations
+    //   );
 ```
-   vsce package
-```
-This will create oml-vscode-<version>.vsix file that you can then install in VSCode as an extension.
