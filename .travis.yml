@@ -9,8 +9,15 @@ cache:
   directories:
     - node_modules
 
+git:
+    submodules: false
+
+before_install:
+    - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+    - git submodule update --init --recursive
+    
 script:
-  - "./build.sh"
+  - ./build.sh
 
 before_deploy:
   - export VSIX_FILE=$(ls extension/oml-luxor\-*.vsix)
