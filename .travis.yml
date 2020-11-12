@@ -27,7 +27,7 @@ deploy:
     api_key:
       secure: mZ0fwxzcYym4BQlrzmzoeBTcVI6wkz/cbTMCm7rqcJeLkFZjYlOlFhKJhN6nIibHgmo+sMWcr+gaZEF8/KuTtgUeto2xZyn4ZRcPKTIJVQkVaIijoo274jIG7dDidKS/hTTlnvgZBksUGgm1ANolR2yrf8Ugu96ZIUYg2sVyGOeZJ/mh1gKM8VIGi13fi4M6xfPHt30tLlKU6l9S8S/OrvGMymePTKr0s3NOfXHOkcWmVOtUQ/VvUxjrFsAQjg3S+SVrXNwLy0HnMgWfIXF9urAEMdvJh4uvLNI+o451Gl7dECtDkcYDZfy0fbc7OG04/08YJA9ma9+F1Qb1koVzApLxX1f5VQfcaE1iGYYt2FdxYxcOXoEKr7PmZqWnWIKysT0H6TOY0YdKO7PXBS7epzMHWOB72yKZCybcKuxV4CVO9UAq5KJVZDrtLXxHaVax7HvStlGnxsR3logWHH8d3vvh2ZNgO/x0/8P5PPZfn2wvIvmwrBzO7GJoAY+5JUAwssnP04yolBYdyCwCJ7J6vReTeGn5AUbdgV44FLlIRx1Qc9WaLiaIxLkixpT+hu8N5Ocv0fEslzsk2zqE7M1egaR+RQT0Pk2rV8cVvtvnOFc4kZWdGyz0D+B5f5GjIdxtrdwqdzhYleou4x97S2/TcEHBIenylUC1fxL4qL90oMc=
     file_glob: true
-    file: "${JAR_FILE}"
+    file: "${VSIX_FILE}"
     skip_cleanup: true
     on:
       tags: true
