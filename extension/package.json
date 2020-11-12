@@ -1,19 +1,19 @@
 {
-    "name": "oml-vscode",
-    "displayName": "Oml VS Code Extension",
-    "description": "Oml editor support for VS Code, based on OML-LSP.",
-    "version": "0.7.5",
+    "name": "oml-luxor",
+    "displayName": "OML Luxor Extension",
+    "description": "OML extension for VSCode-based IDEs",
+    "version": "0.8.1",
     "publisher": "JPL",
     "license": "Apache-2.0",
     "repository": {
-        "url": "https://github.com/opencaesar/oml-vscode.git"
+        "url": "https://github.com/opencaesar/oml-luxor.git"
     },
     "icon": "images/oml.png",
     "engines": {
         "vscode": "^1.46.0"
     },
     "config": {
-        "oml_version": "0.7.5"
+        "oml_version": "0.8.1"
     },
     "categories": [
         "Programming Languages"

@@ -9,3 +9,4 @@ webpack.config.js
 *.iml
 *.log
 *.sh
+extension/pack/*

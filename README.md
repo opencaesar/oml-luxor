@@ -1,8 +1,8 @@
-# OML VSCode Extension
+# OML Luxor Extension
 
-[![Build Status](https://travis-ci.org/opencaesar/oml-vscode.svg?branch=master)](https://travis-ci.org/opencaesar/oml-vscode)
+[![Build Status](https://travis-ci.org/opencaesar/oml-luxor.svg?branch=master)](https://travis-ci.org/opencaesar/oml-luxor)
 
-A VSCode IDE omlExtension to support [OML](https://opencaesar.github.io/oml-spec)
+An extension to support [OML](https://opencaesar.github.io/oml) in VSCode-based IDEs.
 
 ## Getting started
 
@@ -27,16 +27,20 @@ Install vsce if you plan to package the extesnion
 
 ## Clone
 ```shell
-  git clone https://github.com/opencaesar/oml-vscode.git
-  cd oml-vscode
+  git clone https://github.com/opencaesar/oml-luxor.git
+  cd oml-luxor
 ```
       
 ## Build
-Requirements: java 11, node 12.x 
 ```shell
 ./build.sh
 ```
-This will create a file, `extension/oml-vscode-<version>.vsix`.
+This will create a file, `extension/oml-luxor-<version>.vsix`.
+
+## Clean
+```shell
+./clean.sh
+```
 
 ## Install in VSCode
 
