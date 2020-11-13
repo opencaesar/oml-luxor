@@ -1,9 +1,9 @@
 {
     "name": "oml-luxor",
-    "displayName": "OML Luxor Extension",
-    "description": "OML extension for VSCode-based IDEs",
+    "displayName": "OML Luxor",
+    "description": "VSCode extension for OML",
     "version": "0.8.2",
-    "publisher": "JPL",
+    "publisher": "openCAESAR",
     "license": "Apache-2.0",
     "repository": {
         "url": "https://github.com/opencaesar/oml-luxor.git"
