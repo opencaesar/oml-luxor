@@ -1,6 +1,5 @@
 #!/bin/bash
 find . -name '.DS_Store' -type f -delete
-rm -R -f extension/build
 rm -R -f extension/lib
 rm -R -f extension/node_modules
 rm -R -f extension/pack
