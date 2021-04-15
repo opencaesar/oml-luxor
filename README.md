@@ -96,3 +96,11 @@ For debugging where the oml-server is started separately via `io.opencaesar.oml.
     //     OmlLspVscodeExtension.doRegistrations
     //   );
 ```
+## OML Version
+
+For a list of available Luxor versions, click [here](https://github.com/opencaesar/oml-luxor/releases)
+| Luxor   | OML   |
+|---------|-------|
+| 0.8.3   | 0.8.8 |
+| 0.8.2   | 0.8.1 |
+| 0.8.1   | 0.8.1 |
