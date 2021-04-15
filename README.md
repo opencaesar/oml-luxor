@@ -13,11 +13,12 @@ Install [nvm](https://github.com/creationix/nvm#install-script).
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
 ```
 
-Install npm and node.
+Install npm, node, and yarn.
 
 ```shell
   nvm install 12
   nvm use 12
+  npm install -g yarn
 ```
 
 Install vsce if you plan to package the extesnion
