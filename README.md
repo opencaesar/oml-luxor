@@ -53,7 +53,7 @@ Note: if a previous version of the extension was installed, uninstall it first.
 
 Launch your repo with [gitoid.io](https://www.gitpod.io/), then open the Extension area to drag and drop the vsix file to install it.
 
-Alternatively, to install the latest extension from the [VSX registry](https://open-vsx.org/extension/openCAESAR/oml-luxor), open the Extension area, and search for "OML Luxor", and install it.
+Alternatively, to install the latest OML Luxor extension in the [VSX registry](https://open-vsx.org/extension/openCAESAR/oml-luxor), open the Extension area in gitpod, search for "OML Luxor", then click on it to install it.
 
 Note: if a previous version of the extension was installed, uninstall it first.
 
