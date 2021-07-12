@@ -32,3 +32,9 @@ deploy:
     on:
       tags: true
       branch: master
+  - provider: script
+    script: "npx ovsx publish ${VSIX_FILE} -p ${OVSX_API_TOKEN}"
+    skip_cleanup: true
+    on:
+      tags: true
+      branch: master
