@@ -28,7 +28,7 @@ Install vsce if you plan to package the extesnion
 
 ## Clone
 ```shell
-  git clone --recursive https://github.com/opencaesar/oml-luxor.git
+  git clone --recurse-submodules https://github.com/opencaesar/oml-luxor.git
   cd oml-luxor
 ```
       
