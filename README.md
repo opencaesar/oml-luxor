@@ -1,6 +1,6 @@
 # OML Luxor Extension
 
-[![Build Status](https://travis-ci.com/opencaesar/oml-luxor.svg?branch=master)](https://travis-ci.com/opencaesar/oml-luxor)
+[![Build Status](https://app.travis-ci.com/opencaesar/oml-luxor.svg?branch=master)](https://app.travis-ci.com/github/opencaesar/oml-luxor)
 [![Release](https://img.shields.io/github/v/release/opencaesar/oml-luxor?label=Download)](https://github.com/opencaesar/oml-luxor/releases/latest)
 
 An extension to support [OML](https://opencaesar.github.io/oml) in VSCode-based IDEs.
@@ -13,14 +13,20 @@ Install [nvm](https://github.com/creationix/nvm#install-script).
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
 ```
 
-Install npm and node.
+Install `npm` and `node`.
 
 ```shell
   nvm install 12
   nvm use 12
 ```
 
-Install vsce if you plan to package the extesnion
+Install `yarn`
+```shell
+  npm install -g yarn
+  
+```
+
+Install `vsce` if you plan to package the extesnion
 ```shell
   npm install -g vsce
   
