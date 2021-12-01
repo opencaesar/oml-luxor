@@ -109,6 +109,11 @@ For debugging where the oml-server is started separately via `io.opencaesar.oml.
 ## OML Version
 | Luxor   | OML   |
 |---------|-------|
+| 1.0.6   | 1.0.6 |
+| 1.0.4   | 1.0.4 |
+| 1.0.3   | 1.0.3 |
+| 1.0.2   | 1.0.2 |
+| 1.0.1   | 1.0.1 |
 | 1.0.0   | 1.0.0 |
 | 0.9.2   | 0.9.2 |
 | 0.9.1   | 0.9.1 |
