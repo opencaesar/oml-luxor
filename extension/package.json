@@ -2,7 +2,7 @@
     "name": "oml-luxor",
     "displayName": "OML Luxor",
     "description": "VSCode extension for OML",
-    "version": "1.0.6",
+    "version": "1.3.4",
     "publisher": "openCAESAR",
     "license": "Apache-2.0",
     "repository": {
@@ -13,7 +13,7 @@
         "vscode": "^1.46.0"
     },
     "config": {
-        "oml_version": "1.0.6"
+        "oml_version": "1.3.4"
     },
     "categories": [
         "Programming Languages"
