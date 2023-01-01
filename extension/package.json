@@ -180,13 +180,13 @@
         "@types/vscode": "1.46.0",
         "rimraf": "^2.6.3",
         "source-map-loader": "^1.0.2",
-        "ts-loader": "^8.0.3",
+        "ts-loader": "^8.4.0",
         "tslint": "^5.20.1",
         "typescript": "3.8.3",
         "vscode-languageclient": "^5.2.1",
         "vscode-languageserver": "^5.2.1",
-        "webpack": "^4.44.1",
-        "webpack-cli": "^3.3.12"
+        "webpack": "^5.75.0",
+        "webpack-cli": "^5.0.1"
     },
     "files": [
         "lib",
