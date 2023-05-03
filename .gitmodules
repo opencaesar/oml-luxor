@@ -1,4 +1,0 @@
-[submodule "oml-sprotty"]
-	path = oml-sprotty
-	url = ../oml-sprotty.git
-	branch = master
