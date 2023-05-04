@@ -2,7 +2,7 @@
     "name": "oml-luxor",
     "displayName": "OML Luxor",
     "description": "VSCode extension for OML",
-    "version": "1.4.0",
+    "version": "2.0.0",
     "publisher": "openCAESAR",
     "license": "Apache-2.0",
     "repository": {
@@ -12,11 +12,8 @@
     "engines": {
         "vscode": "^1.46.0"
     },
-    "config": {
-        "oml_version": "1.4.0"
-    },
     "categories": [
-        "Programming Languages"
+        "Modeling Languages"
     ],
     "activationEvents": [
         "onLanguage:oml",
@@ -166,14 +163,14 @@
         ]
     },
     "scripts": {
-        "prepare": "yarn run clean && yarn run install:languageserver && yarn run build",
-        "clean": "rimraf build lib *.vsix && mkdir build lib",
-        "install:languageserver": "yarn run download:languageserver",
-        "download:languageserver": "if [ ! -f build/oml-server-$npm_package_config_oml_version.jar ]; then curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar; else echo 'Skip downloading oml-server.jar'; fi",
+        "prepare": "yarn run clean && yarn run languageserver && yarn run webview && yarn run build",
+        "clean": "rm -R -f  server lib *.vsix && mkdir server lib",
+        "languageserver": "../server/gradlew -p ../server shadowJar && cp ../server/build/libs/oml-server-$npm_package_version.jar server",
         "vscode:prepublish": "yarn tsc -p ./",
         "lint": "tslint -c ./tslint.json --project ./tsconfig.json",
         "build": "yarn lint && tsc && webpack --mode=development",
-        "package": "cp ../oml-sprotty/pack/webview.js ./pack && yarn vsce package"
+        "webview": "yarn --cwd ../webview",
+        "package": "cp ../webview/pack/webview.js ./pack && yarn vsce package"
     },
     "devDependencies": {
         "@types/node": "^8.0.0",

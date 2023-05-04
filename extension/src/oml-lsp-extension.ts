@@ -169,7 +169,7 @@ export class OmlLspVscodeExtension extends SprottyLspEditVscodeExtension {
   ): LanguageClient {
     const java = process.platform === "win32" ? "java.exe" : "java";
 
-    const folder = context.asAbsolutePath(path.join("build"));
+    const folder = context.asAbsolutePath(path.join("server"));
     const files = fs
       .readdirSync(folder)
       .filter((el) => el.startsWith("oml-server"));
