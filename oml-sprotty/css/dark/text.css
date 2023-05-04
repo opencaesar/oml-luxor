@@ -1,0 +1,20 @@
+
+text.subtext {
+    fill: #729A9A;
+    stroke: #729A9A;
+}
+
+text.restriction {
+    fill: rgb(192, 115, 64);
+    stroke: rgb(192, 115, 64);
+}
+
+text.relationship {
+    fill: rgb(192, 190, 64);
+    stroke: rgb(192, 190, 64);
+}
+
+text.editable {
+    fill: rgb(192, 190, 64);
+    stroke: rgb(192, 190, 64);
+}

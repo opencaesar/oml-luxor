@@ -1,0 +1,97 @@
+.sprotty-node {
+    fill: var(--vscode-button-background);
+    stroke: #2f3b52;
+}
+.sprotty-node.module {
+    fill: #1f293d;
+    stroke: #2f3b52;
+}
+.classHeader {
+    fill: #2f3b52;
+}
+.sprotty-node.class {
+    fill: #3e4e6c;
+    stroke: #19202e;
+}
+.sprotty-node.selected {
+    stroke-width: 2;
+    /* stroke: var(--vscode-button-hover-background); */
+    stroke: #1f8efa;
+}
+
+.tag {
+    fill: #19202e;
+}
+
+.tag.sprotty-label {
+    /* fill: var(--vscode-charts-yellow); */
+    fill: #1f8efa;
+    stroke-width: 0;
+}
+.sprotty-label {
+    /* fill: var(--vscode-button-foreground); */
+    fill: #adb2bc;
+    stroke-width: 0;
+}
+
+.sprotty-edge .sprotty-label {
+    fill: var(--vscode-editorActiveLineNumber-foreground);
+}
+
+.sprotty-edge {
+    fill: none;
+    /* stroke: var(--vscode-editorActiveLineNumber-foreground); */
+    stroke: #05c784;
+    stroke-width: 2px;
+}
+
+.sprotty-edge-arrow {
+    fill: var(--vscode-editorActiveLineNumber-foreground);
+}
+
+.sprotty-edge > .sprotty-routing-handle {
+    fill: var(--vscode-editor-selectionBackground);
+    stroke: none;
+    z-index: 1000;
+}
+
+.sprotty-edge > .sprotty-routing-handle[data-kind='line'] {
+    opacity: 0.35;
+}
+
+.sprotty-edge > .sprotty-routing-handle.selected {
+    fill: var(--vscode-editor-selectionHighlightBackground);
+}
+
+.sprotty-edge > .sprotty-routing-handle.mouseover {
+    stroke: var(--vscode-editor-symbolHighlightBackground);
+    stroke-width: 1;
+}
+
+.sprotty-edge.mouseover:not(.selected) {
+    stroke-width: 3px;
+}
+
+.sprotty-hidden {
+    width: 0px;
+    height: 0px;
+}
+
+body {
+    background-color: #19202e;
+}
+
+.module > .comp > .sprotty-label {
+    font-weight: normal;
+    fill: #d0d4da;
+    white-space: nowrap;
+    font-size: medium;
+}
+
+.sprotty-popup {
+    background: #19202e !important;
+    color: #adb2bc !important;
+    position: absolute !important;
+    max-width: initial !important;
+    min-width: initial !important;
+}

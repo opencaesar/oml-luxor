@@ -1,0 +1,41 @@
+{
+  "name": "oml-sprotty",
+  "displayName": "OML Sprotty",
+  "version": "1.0.0",
+  "description": "Sprotty diagram support for OML",
+  "author": "openCAESAR",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sprotty",
+    "oml",
+    "diagram"
+  ],
+  "dependencies": {
+    "sprotty": "0.9.0",
+    "sprotty-vscode-webview": "^0.1.2"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn build",
+    "clean": "rimraf lib",
+    "lint": "tslint -c ./tslint.json --project ./tsconfig.json",
+    "build": "yarn lint && tsc && webpack --mode=development",
+    "watch": "tsc -w -p ./tsconfig.json"
+  },
+  "devDependencies": {
+    "css-loader": "^4.2.1",
+    "rimraf": "latest",
+    "source-map-loader": "^1.0.2",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.3",
+    "tslint": "^5.20.1",
+    "typescript": "3.8.3",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "files": [
+    "lib",
+    "src",
+    "build",
+    "css"
+  ]
+}
