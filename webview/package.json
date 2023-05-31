@@ -1,7 +1,7 @@
 {
-  "name": "oml-sprotty",
-  "displayName": "OML Sprotty",
-  "version": "1.0.0",
+  "name": "webview",
+  "displayName": "OML Webview",
+  "version": "2.0.0",
   "description": "Sprotty diagram support for OML",
   "author": "openCAESAR",
   "license": "Apache-2.0",
@@ -16,9 +16,9 @@
   },
   "scripts": {
     "prepare": "yarn run clean && yarn build",
-    "clean": "rimraf lib",
-    "lint": "tslint -c ./tslint.json --project ./tsconfig.json",
+    "clean": "rm -R -f lib",
     "build": "yarn lint && tsc && webpack --mode=development",
+    "lint": "tslint -c ./tslint.json --project ./tsconfig.json",
     "watch": "tsc -w -p ./tsconfig.json"
   },
   "devDependencies": {

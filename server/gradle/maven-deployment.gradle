@@ -1,0 +1,84 @@
+apply plugin: 'maven-publish'
+apply plugin: 'signing'	
+
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "melaasar"
+            name "Maged Elaasar"
+            email "melaasar@gmail.com"
+        }
+    }
+
+    scm {
+        url 'https://github.com/opencaesar/'+rootProject.name
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId project.group
+            artifactId project.name
+            version project.version
+
+            from components.java
+            afterEvaluate {
+                plugins.withType(ApplicationPlugin) {
+                    artifact distZip
+                    artifact distTar
+                }
+            }
+
+            pom {
+                packaging = 'jar'
+                withXml {
+                    def root = asNode()
+                    root.appendNode('name', project.ext.title)
+                    root.appendNode('description', project.description)
+                    root.appendNode('url', 'https://github.com/opencaesar/'+rootProject.name)
+                    root.children().last() + pomConfig
+                }
+            }
+            
+            versionMapping {
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "sonatype"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.findProperty('ossrhUsername')
+                password = project.findProperty('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    def pgpSigningKey = project.findProperty('pgpSigningKey')
+    if (pgpSigningKey != null) { pgpSigningKey = new String(pgpSigningKey.decodeBase64()) }
+    def pgpSigningPassword = project.findProperty('pgpSigningPassword')
+    useInMemoryPgpKeys(pgpSigningKey, pgpSigningPassword)
+    sign publishing.publications.maven
+}
+
+gradle.taskGraph.whenReady { taskGraph -> 
+    signMavenPublication.onlyIf { taskGraph.hasTask("${project.path}:publishMavenPublicationToSonatypeRepository") }
+}
+
+tasks.withType(GenerateModuleMetadata) {
+    enabled = false
+}

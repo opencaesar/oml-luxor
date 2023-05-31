@@ -1,0 +1,71 @@
+if (name.endsWith(".tests")) {
+	sourceSets {
+		main {
+			java.srcDirs = []
+			resources.srcDirs = []
+		}
+		test {
+			java.srcDirs = ['src', 'src-gen']
+			resources.srcDirs = ['src', 'src-gen']
+		}
+	}
+} else {
+	sourceSets {
+		main {
+			java.srcDirs = ['src', 'src-gen']
+			resources.srcDirs = ['src', 'src-gen']
+		}
+		test {
+			java.srcDirs = []
+			resources.srcDirs = []
+		}
+	}
+}
+
+sourceSets.all {
+	resources.exclude '**/*.g', '**/*.mwe2'
+}
+
+jar {
+	manifest {
+		attributes 'Bundle-SymbolicName': project.name
+	}
+}
+
+plugins.withId('war') {
+	webAppDirName = "WebRoot"
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+    duplicatesStrategy = 'exclude'
+}
+
+javadoc.failOnError = false
+javadoc.options.tags = [ "generated", "ordered", "model" ]
+javadoc.options.addStringOption('Xdoclint:none', '-quiet')
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+java {
+	withJavadocJar()
+	withSourcesJar()
+}
+
+// Needed to fix Javadoc search
+// See comments below
+final JAVADOC_FIX_SEARCH_STR = '\n\n' +
+'getURLPrefix = function(ui) {\n' +
+'    return \'\';\n' +
+'};\n'
+
+tasks.withType(Javadoc) {
+    doLast {
+        // Append the fix to the file
+        def searchScript = new File(destinationDir.getAbsolutePath() + '/search.js')
+        searchScript.append JAVADOC_FIX_SEARCH_STR
+    }
+}
