@@ -2427,9 +2427,9 @@ rule__Annotation__Alternatives_3
 	)
 	|
 	(
-		{ before(grammarAccess.getAnnotationAccess().getReferenceValueAssignment_3_1()); }
-		(rule__Annotation__ReferenceValueAssignment_3_1)
-		{ after(grammarAccess.getAnnotationAccess().getReferenceValueAssignment_3_1()); }
+		{ before(grammarAccess.getAnnotationAccess().getReferencedValueAssignment_3_1()); }
+		(rule__Annotation__ReferencedValueAssignment_3_1)
+		{ after(grammarAccess.getAnnotationAccess().getReferencedValueAssignment_3_1()); }
 	)
 ;
 finally {
@@ -15491,9 +15491,9 @@ rule__StructuredPropertyValueRestrictionAxiom__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getStructureInstanceValueAssignment_5()); }
-	(rule__StructuredPropertyValueRestrictionAxiom__StructureInstanceValueAssignment_5)
-	{ after(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getStructureInstanceValueAssignment_5()); }
+	{ before(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getContainedValueAssignment_5()); }
+	(rule__StructuredPropertyValueRestrictionAxiom__ContainedValueAssignment_5)
+	{ after(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getContainedValueAssignment_5()); }
 )
 ;
 finally {
@@ -15626,9 +15626,9 @@ rule__RelationValueRestrictionAxiom__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRelationValueRestrictionAxiomAccess().getNamedInstanceValueAssignment_4()); }
-	(rule__RelationValueRestrictionAxiom__NamedInstanceValueAssignment_4)
-	{ after(grammarAccess.getRelationValueRestrictionAxiomAccess().getNamedInstanceValueAssignment_4()); }
+	{ before(grammarAccess.getRelationValueRestrictionAxiomAccess().getReferencedValueAssignment_4()); }
+	(rule__RelationValueRestrictionAxiom__ReferencedValueAssignment_4)
+	{ after(grammarAccess.getRelationValueRestrictionAxiomAccess().getReferencedValueAssignment_4()); }
 )
 ;
 finally {
@@ -16274,9 +16274,9 @@ rule__StructuredPropertyValueAssertion__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getStructuredPropertyValueAssertionAccess().getStructureInstanceValueAssignment_1()); }
-	(rule__StructuredPropertyValueAssertion__StructureInstanceValueAssignment_1)
-	{ after(grammarAccess.getStructuredPropertyValueAssertionAccess().getStructureInstanceValueAssignment_1()); }
+	{ before(grammarAccess.getStructuredPropertyValueAssertionAccess().getContainedValueAssignment_1()); }
+	(rule__StructuredPropertyValueAssertion__ContainedValueAssignment_1)
+	{ after(grammarAccess.getStructuredPropertyValueAssertionAccess().getContainedValueAssignment_1()); }
 )
 ;
 finally {
@@ -16328,9 +16328,9 @@ rule__LinkAssertion__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLinkAssertionAccess().getNamedInstanceValueAssignment_1()); }
-	(rule__LinkAssertion__NamedInstanceValueAssignment_1)
-	{ after(grammarAccess.getLinkAssertionAccess().getNamedInstanceValueAssignment_1()); }
+	{ before(grammarAccess.getLinkAssertionAccess().getReferencedValueAssignment_1()); }
+	(rule__LinkAssertion__ReferencedValueAssignment_1)
+	{ after(grammarAccess.getLinkAssertionAccess().getReferencedValueAssignment_1()); }
 )
 ;
 finally {
@@ -18295,19 +18295,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Annotation__ReferenceValueAssignment_3_1
+rule__Annotation__ReferencedValueAssignment_3_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAnnotationAccess().getReferenceValueMemberCrossReference_3_1_0()); }
+		{ before(grammarAccess.getAnnotationAccess().getReferencedValueMemberCrossReference_3_1_0()); }
 		(
-			{ before(grammarAccess.getAnnotationAccess().getReferenceValueMemberRefParserRuleCall_3_1_0_1()); }
+			{ before(grammarAccess.getAnnotationAccess().getReferencedValueMemberRefParserRuleCall_3_1_0_1()); }
 			ruleRef
-			{ after(grammarAccess.getAnnotationAccess().getReferenceValueMemberRefParserRuleCall_3_1_0_1()); }
+			{ after(grammarAccess.getAnnotationAccess().getReferencedValueMemberRefParserRuleCall_3_1_0_1()); }
 		)
-		{ after(grammarAccess.getAnnotationAccess().getReferenceValueMemberCrossReference_3_1_0()); }
+		{ after(grammarAccess.getAnnotationAccess().getReferencedValueMemberCrossReference_3_1_0()); }
 	)
 ;
 finally {
@@ -21328,15 +21328,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StructuredPropertyValueRestrictionAxiom__StructureInstanceValueAssignment_5
+rule__StructuredPropertyValueRestrictionAxiom__ContainedValueAssignment_5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getStructureInstanceValueStructureInstanceParserRuleCall_5_0()); }
+		{ before(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getContainedValueStructureInstanceParserRuleCall_5_0()); }
 		ruleStructureInstance
-		{ after(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getStructureInstanceValueStructureInstanceParserRuleCall_5_0()); }
+		{ after(grammarAccess.getStructuredPropertyValueRestrictionAxiomAccess().getContainedValueStructureInstanceParserRuleCall_5_0()); }
 	)
 ;
 finally {
@@ -21362,19 +21362,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__RelationValueRestrictionAxiom__NamedInstanceValueAssignment_4
+rule__RelationValueRestrictionAxiom__ReferencedValueAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getRelationValueRestrictionAxiomAccess().getNamedInstanceValueNamedInstanceCrossReference_4_0()); }
+		{ before(grammarAccess.getRelationValueRestrictionAxiomAccess().getReferencedValueNamedInstanceCrossReference_4_0()); }
 		(
-			{ before(grammarAccess.getRelationValueRestrictionAxiomAccess().getNamedInstanceValueNamedInstanceRefParserRuleCall_4_0_1()); }
+			{ before(grammarAccess.getRelationValueRestrictionAxiomAccess().getReferencedValueNamedInstanceRefParserRuleCall_4_0_1()); }
 			ruleRef
-			{ after(grammarAccess.getRelationValueRestrictionAxiomAccess().getNamedInstanceValueNamedInstanceRefParserRuleCall_4_0_1()); }
+			{ after(grammarAccess.getRelationValueRestrictionAxiomAccess().getReferencedValueNamedInstanceRefParserRuleCall_4_0_1()); }
 		)
-		{ after(grammarAccess.getRelationValueRestrictionAxiomAccess().getNamedInstanceValueNamedInstanceCrossReference_4_0()); }
+		{ after(grammarAccess.getRelationValueRestrictionAxiomAccess().getReferencedValueNamedInstanceCrossReference_4_0()); }
 	)
 ;
 finally {
@@ -21597,15 +21597,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StructuredPropertyValueAssertion__StructureInstanceValueAssignment_1
+rule__StructuredPropertyValueAssertion__ContainedValueAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getStructuredPropertyValueAssertionAccess().getStructureInstanceValueStructureInstanceParserRuleCall_1_0()); }
+		{ before(grammarAccess.getStructuredPropertyValueAssertionAccess().getContainedValueStructureInstanceParserRuleCall_1_0()); }
 		ruleStructureInstance
-		{ after(grammarAccess.getStructuredPropertyValueAssertionAccess().getStructureInstanceValueStructureInstanceParserRuleCall_1_0()); }
+		{ after(grammarAccess.getStructuredPropertyValueAssertionAccess().getContainedValueStructureInstanceParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -21631,19 +21631,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__LinkAssertion__NamedInstanceValueAssignment_1
+rule__LinkAssertion__ReferencedValueAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getLinkAssertionAccess().getNamedInstanceValueNamedInstanceCrossReference_1_0()); }
+		{ before(grammarAccess.getLinkAssertionAccess().getReferencedValueNamedInstanceCrossReference_1_0()); }
 		(
-			{ before(grammarAccess.getLinkAssertionAccess().getNamedInstanceValueNamedInstanceRefParserRuleCall_1_0_1()); }
+			{ before(grammarAccess.getLinkAssertionAccess().getReferencedValueNamedInstanceRefParserRuleCall_1_0_1()); }
 			ruleRef
-			{ after(grammarAccess.getLinkAssertionAccess().getNamedInstanceValueNamedInstanceRefParserRuleCall_1_0_1()); }
+			{ after(grammarAccess.getLinkAssertionAccess().getReferencedValueNamedInstanceRefParserRuleCall_1_0_1()); }
 		)
-		{ after(grammarAccess.getLinkAssertionAccess().getNamedInstanceValueNamedInstanceCrossReference_1_0()); }
+		{ after(grammarAccess.getLinkAssertionAccess().getReferencedValueNamedInstanceCrossReference_1_0()); }
 	)
 ;
 finally {

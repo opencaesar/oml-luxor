@@ -509,7 +509,7 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 			throw new IllegalArgumentException("no entity node for showAxiom(RelationTargetRestrictionAxiom): " + e.getAbbreviatedIri());
 		final SModelElement target = semantic2diagram.get(ax.getValue());
 		if (null == target)
-			throw new IllegalArgumentException("no entity node for showAxiom(RelationTargetRestrictionAxiom): " + ax.getNamedInstanceValue().getAbbreviatedIri());
+			throw new IllegalArgumentException("no entity node for showAxiom(RelationTargetRestrictionAxiom): " + ax.getReferencedValue().getAbbreviatedIri());
 		final OmlEdge edge = view.createEdge(ax, source, target);
 		frame.getChildren().add(edge);
 		traceAndMark(edge, ax, context);

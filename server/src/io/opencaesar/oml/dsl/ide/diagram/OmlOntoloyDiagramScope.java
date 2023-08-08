@@ -140,11 +140,7 @@ class OmlOntoloyDiagramScope {
 	}
 
 	public OmlOntoloyDiagramScope analyze() {
-		analyze1Ontology(ontology);
-		OmlRead.getAllImports(ontology).forEach(i -> {
-			Ontology o = OmlRead.getImportedOntology(i);
-			analyze1Ontology(o);
-		});
+		OmlRead.getImportedOntologyClosure(ontology, true).forEach(o -> analyze1Ontology(o));
 
 		for (Iterator<EObject> i = ontology.eAllContents(); i.hasNext();) {
 			EObject obj = i.next();

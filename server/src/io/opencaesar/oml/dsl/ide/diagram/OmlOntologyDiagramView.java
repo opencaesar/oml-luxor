@@ -318,7 +318,7 @@ class OmlOntologyDiagramView {
 	public OmlLabel createStructuredValueLabel(final Entity e, final PropertyValueRestrictionAxiom ax) {
 		final String id = idCache.uniqueId(ax, getLocalName(e) + ".valueRestriction." + getLocalName(ax.getProperty()));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
-		l.setText(getLocalName(ax.getProperty()) + " = " + getLabel((StructureInstance) ax.getStructureInstanceValue()));
+		l.setText(getLocalName(ax.getProperty()) + " = " + getLabel((StructureInstance) ax.getContainedValue()));
 		return l;
 	}
 
