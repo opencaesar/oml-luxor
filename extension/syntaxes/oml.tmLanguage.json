@@ -17,6 +17,11 @@
 			"end": "\""
 		},
 		{
+			"name": "constant.other.oml",
+			"begin": "<",
+			"end": ">"
+		},
+		{
 			"name": "string.quoted.single.oml",
 			"begin": "'",
 			"end": "'"
@@ -27,10 +32,13 @@
 			"end": "'''"
 		},
 		{
-			"name": "comment.line.oml"
+			"name": "comment.line.oml",
+			"match": "//.+$"
 		},
 		{
-			"name": "comment.block.oml"
+			"name": "comment.block.oml",
+			"begin": "/\\*",
+			"end": "\\*/"
 		}
 	]
 }
