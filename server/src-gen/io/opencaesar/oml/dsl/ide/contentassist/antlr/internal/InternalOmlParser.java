@@ -59646,21 +59646,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:19405:2: ( ( ruleRef ) )
             // InternalOml.g:19406:3: ( ruleRef )
             {
-             before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationCrossReference_1_0()); 
+             before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyCrossReference_1_0()); 
             // InternalOml.g:19407:3: ( ruleRef )
             // InternalOml.g:19408:4: ruleRef
             {
-             before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationRefParserRuleCall_1_0_1()); 
+             before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyRefParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleRef();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationRefParserRuleCall_1_0_1()); 
+             after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyRefParserRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationCrossReference_1_0()); 
+             after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyCrossReference_1_0()); 
 
             }
 

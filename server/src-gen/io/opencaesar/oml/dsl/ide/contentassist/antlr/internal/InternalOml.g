@@ -19403,13 +19403,13 @@ rule__PropertySelfRestrictionAxiom__PropertyAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationCrossReference_1_0()); }
+		{ before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyCrossReference_1_0()); }
 		(
-			{ before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationRefParserRuleCall_1_0_1()); }
+			{ before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyRefParserRuleCall_1_0_1()); }
 			ruleRef
-			{ after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationRefParserRuleCall_1_0_1()); }
+			{ after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyRefParserRuleCall_1_0_1()); }
 		)
-		{ after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertyRelationCrossReference_1_0()); }
+		{ after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getPropertySemanticPropertyCrossReference_1_0()); }
 	)
 ;
 finally {
