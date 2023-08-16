@@ -1553,10 +1553,10 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN_STR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22067:18: ( ( 'false' | 'true' ) )
-            // InternalOml.g:22067:20: ( 'false' | 'true' )
+            // InternalOml.g:20045:18: ( ( 'false' | 'true' ) )
+            // InternalOml.g:20045:20: ( 'false' | 'true' )
             {
-            // InternalOml.g:22067:20: ( 'false' | 'true' )
+            // InternalOml.g:20045:20: ( 'false' | 'true' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1574,7 +1574,7 @@ public class InternalOmlLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalOml.g:22067:21: 'false'
+                    // InternalOml.g:20045:21: 'false'
                     {
                     match("false"); 
 
@@ -1582,7 +1582,7 @@ public class InternalOmlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOml.g:22067:29: 'true'
+                    // InternalOml.g:20045:29: 'true'
                     {
                     match("true"); 
 
@@ -1608,10 +1608,10 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_UNSIGNED_INTEGER_STR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22069:27: ( ( RULE_DIGIT )+ )
-            // InternalOml.g:22069:29: ( RULE_DIGIT )+
+            // InternalOml.g:20047:27: ( ( RULE_DIGIT )+ )
+            // InternalOml.g:20047:29: ( RULE_DIGIT )+
             {
-            // InternalOml.g:22069:29: ( RULE_DIGIT )+
+            // InternalOml.g:20047:29: ( RULE_DIGIT )+
             int cnt2=0;
             loop2:
             do {
@@ -1625,7 +1625,7 @@ public class InternalOmlLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalOml.g:22069:29: RULE_DIGIT
+            	    // InternalOml.g:20047:29: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -1657,10 +1657,10 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_INTEGER_STR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22071:18: ( ( '+' | '-' )? ( RULE_DIGIT )+ )
-            // InternalOml.g:22071:20: ( '+' | '-' )? ( RULE_DIGIT )+
+            // InternalOml.g:20049:18: ( ( '+' | '-' )? ( RULE_DIGIT )+ )
+            // InternalOml.g:20049:20: ( '+' | '-' )? ( RULE_DIGIT )+
             {
-            // InternalOml.g:22071:20: ( '+' | '-' )?
+            // InternalOml.g:20049:20: ( '+' | '-' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1686,7 +1686,7 @@ public class InternalOmlLexer extends Lexer {
 
             }
 
-            // InternalOml.g:22071:31: ( RULE_DIGIT )+
+            // InternalOml.g:20049:31: ( RULE_DIGIT )+
             int cnt4=0;
             loop4:
             do {
@@ -1700,7 +1700,7 @@ public class InternalOmlLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalOml.g:22071:31: RULE_DIGIT
+            	    // InternalOml.g:20049:31: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -1732,10 +1732,10 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL_STR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22073:18: ( ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ ) )
-            // InternalOml.g:22073:20: ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ )
+            // InternalOml.g:20051:18: ( ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ ) )
+            // InternalOml.g:20051:20: ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ )
             {
-            // InternalOml.g:22073:20: ( '+' | '-' )?
+            // InternalOml.g:20051:20: ( '+' | '-' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1761,7 +1761,7 @@ public class InternalOmlLexer extends Lexer {
 
             }
 
-            // InternalOml.g:22073:31: ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ )
+            // InternalOml.g:20051:31: ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1779,9 +1779,9 @@ public class InternalOmlLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalOml.g:22073:32: ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )?
+                    // InternalOml.g:20051:32: ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )?
                     {
-                    // InternalOml.g:22073:32: ( RULE_DIGIT )+
+                    // InternalOml.g:20051:32: ( RULE_DIGIT )+
                     int cnt6=0;
                     loop6:
                     do {
@@ -1795,7 +1795,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalOml.g:22073:32: RULE_DIGIT
+                    	    // InternalOml.g:20051:32: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -1811,7 +1811,7 @@ public class InternalOmlLexer extends Lexer {
                         cnt6++;
                     } while (true);
 
-                    // InternalOml.g:22073:44: ( '.' ( RULE_DIGIT )* )?
+                    // InternalOml.g:20051:44: ( '.' ( RULE_DIGIT )* )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -1820,10 +1820,10 @@ public class InternalOmlLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // InternalOml.g:22073:45: '.' ( RULE_DIGIT )*
+                            // InternalOml.g:20051:45: '.' ( RULE_DIGIT )*
                             {
                             match('.'); 
-                            // InternalOml.g:22073:49: ( RULE_DIGIT )*
+                            // InternalOml.g:20051:49: ( RULE_DIGIT )*
                             loop7:
                             do {
                                 int alt7=2;
@@ -1836,7 +1836,7 @@ public class InternalOmlLexer extends Lexer {
 
                                 switch (alt7) {
                             	case 1 :
-                            	    // InternalOml.g:22073:49: RULE_DIGIT
+                            	    // InternalOml.g:20051:49: RULE_DIGIT
                             	    {
                             	    mRULE_DIGIT(); 
 
@@ -1858,10 +1858,10 @@ public class InternalOmlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOml.g:22073:63: '.' ( RULE_DIGIT )+
+                    // InternalOml.g:20051:63: '.' ( RULE_DIGIT )+
                     {
                     match('.'); 
-                    // InternalOml.g:22073:67: ( RULE_DIGIT )+
+                    // InternalOml.g:20051:67: ( RULE_DIGIT )+
                     int cnt9=0;
                     loop9:
                     do {
@@ -1875,7 +1875,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // InternalOml.g:22073:67: RULE_DIGIT
+                    	    // InternalOml.g:20051:67: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -1913,10 +1913,10 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE_STR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22075:17: ( ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ ) ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )? )
-            // InternalOml.g:22075:19: ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ ) ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )?
+            // InternalOml.g:20053:17: ( ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ ) ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )? )
+            // InternalOml.g:20053:19: ( '+' | '-' )? ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ ) ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )?
             {
-            // InternalOml.g:22075:19: ( '+' | '-' )?
+            // InternalOml.g:20053:19: ( '+' | '-' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1942,7 +1942,7 @@ public class InternalOmlLexer extends Lexer {
 
             }
 
-            // InternalOml.g:22075:30: ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ )
+            // InternalOml.g:20053:30: ( ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )? | '.' ( RULE_DIGIT )+ )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1960,9 +1960,9 @@ public class InternalOmlLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalOml.g:22075:31: ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )?
+                    // InternalOml.g:20053:31: ( RULE_DIGIT )+ ( '.' ( RULE_DIGIT )* )?
                     {
-                    // InternalOml.g:22075:31: ( RULE_DIGIT )+
+                    // InternalOml.g:20053:31: ( RULE_DIGIT )+
                     int cnt12=0;
                     loop12:
                     do {
@@ -1976,7 +1976,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // InternalOml.g:22075:31: RULE_DIGIT
+                    	    // InternalOml.g:20053:31: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -1992,7 +1992,7 @@ public class InternalOmlLexer extends Lexer {
                         cnt12++;
                     } while (true);
 
-                    // InternalOml.g:22075:43: ( '.' ( RULE_DIGIT )* )?
+                    // InternalOml.g:20053:43: ( '.' ( RULE_DIGIT )* )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2001,10 +2001,10 @@ public class InternalOmlLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalOml.g:22075:44: '.' ( RULE_DIGIT )*
+                            // InternalOml.g:20053:44: '.' ( RULE_DIGIT )*
                             {
                             match('.'); 
-                            // InternalOml.g:22075:48: ( RULE_DIGIT )*
+                            // InternalOml.g:20053:48: ( RULE_DIGIT )*
                             loop13:
                             do {
                                 int alt13=2;
@@ -2017,7 +2017,7 @@ public class InternalOmlLexer extends Lexer {
 
                                 switch (alt13) {
                             	case 1 :
-                            	    // InternalOml.g:22075:48: RULE_DIGIT
+                            	    // InternalOml.g:20053:48: RULE_DIGIT
                             	    {
                             	    mRULE_DIGIT(); 
 
@@ -2039,10 +2039,10 @@ public class InternalOmlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOml.g:22075:62: '.' ( RULE_DIGIT )+
+                    // InternalOml.g:20053:62: '.' ( RULE_DIGIT )+
                     {
                     match('.'); 
-                    // InternalOml.g:22075:66: ( RULE_DIGIT )+
+                    // InternalOml.g:20053:66: ( RULE_DIGIT )+
                     int cnt15=0;
                     loop15:
                     do {
@@ -2056,7 +2056,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // InternalOml.g:22075:66: RULE_DIGIT
+                    	    // InternalOml.g:20053:66: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -2078,7 +2078,7 @@ public class InternalOmlLexer extends Lexer {
 
             }
 
-            // InternalOml.g:22075:79: ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )?
+            // InternalOml.g:20053:79: ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2087,7 +2087,7 @@ public class InternalOmlLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalOml.g:22075:80: ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+
+                    // InternalOml.g:20053:80: ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2098,7 +2098,7 @@ public class InternalOmlLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalOml.g:22075:90: ( '+' | '-' )?
+                    // InternalOml.g:20053:90: ( '+' | '-' )?
                     int alt17=2;
                     int LA17_0 = input.LA(1);
 
@@ -2124,7 +2124,7 @@ public class InternalOmlLexer extends Lexer {
 
                     }
 
-                    // InternalOml.g:22075:101: ( RULE_DIGIT )+
+                    // InternalOml.g:20053:101: ( RULE_DIGIT )+
                     int cnt18=0;
                     loop18:
                     do {
@@ -2138,7 +2138,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // InternalOml.g:22075:101: RULE_DIGIT
+                    	    // InternalOml.g:20053:101: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -2176,10 +2176,10 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22077:13: ( ( '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"' | '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\'' | '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' | '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' ) )
-            // InternalOml.g:22077:15: ( '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"' | '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\'' | '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' | '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
+            // InternalOml.g:20055:13: ( ( '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"' | '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\'' | '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' | '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' ) )
+            // InternalOml.g:20055:15: ( '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"' | '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\'' | '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' | '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
             {
-            // InternalOml.g:22077:15: ( '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"' | '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\'' | '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' | '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
+            // InternalOml.g:20055:15: ( '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"' | '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\'' | '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' | '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"' )
             int alt24=4;
             int LA24_0 = input.LA(1);
 
@@ -2235,10 +2235,10 @@ public class InternalOmlLexer extends Lexer {
             }
             switch (alt24) {
                 case 1 :
-                    // InternalOml.g:22077:16: '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"'
+                    // InternalOml.g:20055:16: '\"' (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )* '\"'
                     {
                     match('\"'); 
-                    // InternalOml.g:22077:20: (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )*
+                    // InternalOml.g:20055:20: (~ ( ( '\"' | '\\\\' ) ) | '\\\\' . )*
                     loop20:
                     do {
                         int alt20=3;
@@ -2254,7 +2254,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt20) {
                     	case 1 :
-                    	    // InternalOml.g:22077:21: ~ ( ( '\"' | '\\\\' ) )
+                    	    // InternalOml.g:20055:21: ~ ( ( '\"' | '\\\\' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2269,7 +2269,7 @@ public class InternalOmlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalOml.g:22077:35: '\\\\' .
+                    	    // InternalOml.g:20055:35: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2287,10 +2287,10 @@ public class InternalOmlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOml.g:22077:48: '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\''
+                    // InternalOml.g:20055:48: '\\'' (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )* '\\''
                     {
                     match('\''); 
-                    // InternalOml.g:22077:53: (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )*
+                    // InternalOml.g:20055:53: (~ ( ( '\\'' | '\\\\' ) ) | '\\\\' . )*
                     loop21:
                     do {
                         int alt21=3;
@@ -2306,7 +2306,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt21) {
                     	case 1 :
-                    	    // InternalOml.g:22077:54: ~ ( ( '\\'' | '\\\\' ) )
+                    	    // InternalOml.g:20055:54: ~ ( ( '\\'' | '\\\\' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2321,7 +2321,7 @@ public class InternalOmlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalOml.g:22077:69: '\\\\' .
+                    	    // InternalOml.g:20055:69: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2339,11 +2339,11 @@ public class InternalOmlLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalOml.g:22077:83: '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\''
+                    // InternalOml.g:20055:83: '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\''
                     {
                     match("'''"); 
 
-                    // InternalOml.g:22077:92: ( options {greedy=false; } : . )*
+                    // InternalOml.g:20055:92: ( options {greedy=false; } : . )*
                     loop22:
                     do {
                         int alt22=2;
@@ -2377,7 +2377,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt22) {
                     	case 1 :
-                    	    // InternalOml.g:22077:120: .
+                    	    // InternalOml.g:20055:120: .
                     	    {
                     	    matchAny(); 
 
@@ -2395,11 +2395,11 @@ public class InternalOmlLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // InternalOml.g:22077:133: '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"'
+                    // InternalOml.g:20055:133: '\"\"\"' ( options {greedy=false; } : . )* '\"\"\"'
                     {
                     match("\"\"\""); 
 
-                    // InternalOml.g:22077:139: ( options {greedy=false; } : . )*
+                    // InternalOml.g:20055:139: ( options {greedy=false; } : . )*
                     loop23:
                     do {
                         int alt23=2;
@@ -2433,7 +2433,7 @@ public class InternalOmlLexer extends Lexer {
 
                         switch (alt23) {
                     	case 1 :
-                    	    // InternalOml.g:22077:167: .
+                    	    // InternalOml.g:20055:167: .
                     	    {
                     	    matchAny(); 
 
@@ -2469,11 +2469,11 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_NAMESPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22079:16: ( '<' (~ ( ( '>' | ' ' | '#' ) ) )* ( '#' | '/' ) '>' )
-            // InternalOml.g:22079:18: '<' (~ ( ( '>' | ' ' | '#' ) ) )* ( '#' | '/' ) '>'
+            // InternalOml.g:20057:16: ( '<' (~ ( ( '>' | ' ' | '#' ) ) )* ( '#' | '/' ) '>' )
+            // InternalOml.g:20057:18: '<' (~ ( ( '>' | ' ' | '#' ) ) )* ( '#' | '/' ) '>'
             {
             match('<'); 
-            // InternalOml.g:22079:22: (~ ( ( '>' | ' ' | '#' ) ) )*
+            // InternalOml.g:20057:22: (~ ( ( '>' | ' ' | '#' ) ) )*
             loop25:
             do {
                 int alt25=2;
@@ -2495,7 +2495,7 @@ public class InternalOmlLexer extends Lexer {
 
                 switch (alt25) {
             	case 1 :
-            	    // InternalOml.g:22079:22: ~ ( ( '>' | ' ' | '#' ) )
+            	    // InternalOml.g:20057:22: ~ ( ( '>' | ' ' | '#' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<='\"')||(input.LA(1)>='$' && input.LA(1)<='=')||(input.LA(1)>='?' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2541,11 +2541,11 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_IRI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22081:10: ( '<' (~ ( ( '>' | ' ' ) ) )* '>' )
-            // InternalOml.g:22081:12: '<' (~ ( ( '>' | ' ' ) ) )* '>'
+            // InternalOml.g:20059:10: ( '<' (~ ( ( '>' | ' ' ) ) )* '>' )
+            // InternalOml.g:20059:12: '<' (~ ( ( '>' | ' ' ) ) )* '>'
             {
             match('<'); 
-            // InternalOml.g:22081:16: (~ ( ( '>' | ' ' ) ) )*
+            // InternalOml.g:20059:16: (~ ( ( '>' | ' ' ) ) )*
             loop26:
             do {
                 int alt26=2;
@@ -2558,7 +2558,7 @@ public class InternalOmlLexer extends Lexer {
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalOml.g:22081:16: ~ ( ( '>' | ' ' ) )
+            	    // InternalOml.g:20059:16: ~ ( ( '>' | ' ' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<='=')||(input.LA(1)>='?' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2595,8 +2595,8 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22083:9: ( RULE_IDFRAG )
-            // InternalOml.g:22083:11: RULE_IDFRAG
+            // InternalOml.g:20061:9: ( RULE_IDFRAG )
+            // InternalOml.g:20061:11: RULE_IDFRAG
             {
             mRULE_IDFRAG(); 
 
@@ -2615,8 +2615,8 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_QNAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22085:12: ( RULE_IDFRAG ':' RULE_IDFRAG )
-            // InternalOml.g:22085:14: RULE_IDFRAG ':' RULE_IDFRAG
+            // InternalOml.g:20063:12: ( RULE_IDFRAG ':' RULE_IDFRAG )
+            // InternalOml.g:20063:14: RULE_IDFRAG ':' RULE_IDFRAG
             {
             mRULE_IDFRAG(); 
             match(':'); 
@@ -2637,12 +2637,12 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22087:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalOml.g:22087:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalOml.g:20065:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalOml.g:20065:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalOml.g:22087:24: ( options {greedy=false; } : . )*
+            // InternalOml.g:20065:24: ( options {greedy=false; } : . )*
             loop27:
             do {
                 int alt27=2;
@@ -2667,7 +2667,7 @@ public class InternalOmlLexer extends Lexer {
 
                 switch (alt27) {
             	case 1 :
-            	    // InternalOml.g:22087:52: .
+            	    // InternalOml.g:20065:52: .
             	    {
             	    matchAny(); 
 
@@ -2697,12 +2697,12 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22089:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalOml.g:22089:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalOml.g:20067:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalOml.g:20067:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalOml.g:22089:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalOml.g:20067:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop28:
             do {
                 int alt28=2;
@@ -2715,7 +2715,7 @@ public class InternalOmlLexer extends Lexer {
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalOml.g:22089:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalOml.g:20067:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2735,7 +2735,7 @@ public class InternalOmlLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalOml.g:22089:40: ( ( '\\r' )? '\\n' )?
+            // InternalOml.g:20067:40: ( ( '\\r' )? '\\n' )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -2744,9 +2744,9 @@ public class InternalOmlLexer extends Lexer {
             }
             switch (alt30) {
                 case 1 :
-                    // InternalOml.g:22089:41: ( '\\r' )? '\\n'
+                    // InternalOml.g:20067:41: ( '\\r' )? '\\n'
                     {
-                    // InternalOml.g:22089:41: ( '\\r' )?
+                    // InternalOml.g:20067:41: ( '\\r' )?
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
@@ -2755,7 +2755,7 @@ public class InternalOmlLexer extends Lexer {
                     }
                     switch (alt29) {
                         case 1 :
-                            // InternalOml.g:22089:41: '\\r'
+                            // InternalOml.g:20067:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2787,10 +2787,10 @@ public class InternalOmlLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOml.g:22091:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalOml.g:22091:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalOml.g:20069:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalOml.g:20069:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalOml.g:22091:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalOml.g:20069:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt31=0;
             loop31:
             do {
@@ -2842,10 +2842,10 @@ public class InternalOmlLexer extends Lexer {
     // $ANTLR start "RULE_IDFRAG"
     public final void mRULE_IDFRAG() throws RecognitionException {
         try {
-            // InternalOml.g:22093:22: ( ( '^' )? ( RULE_ALPHA | RULE_DIGIT | '_' ) ( RULE_ALPHA | RULE_DIGIT | '_' | '-' | '.' | '$' )* )
-            // InternalOml.g:22093:24: ( '^' )? ( RULE_ALPHA | RULE_DIGIT | '_' ) ( RULE_ALPHA | RULE_DIGIT | '_' | '-' | '.' | '$' )*
+            // InternalOml.g:20071:22: ( ( '^' )? ( RULE_ALPHA | RULE_DIGIT | '_' ) ( RULE_ALPHA | RULE_DIGIT | '_' | '-' | '.' | '$' )* )
+            // InternalOml.g:20071:24: ( '^' )? ( RULE_ALPHA | RULE_DIGIT | '_' ) ( RULE_ALPHA | RULE_DIGIT | '_' | '-' | '.' | '$' )*
             {
-            // InternalOml.g:22093:24: ( '^' )?
+            // InternalOml.g:20071:24: ( '^' )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -2854,7 +2854,7 @@ public class InternalOmlLexer extends Lexer {
             }
             switch (alt32) {
                 case 1 :
-                    // InternalOml.g:22093:24: '^'
+                    // InternalOml.g:20071:24: '^'
                     {
                     match('^'); 
 
@@ -2872,7 +2872,7 @@ public class InternalOmlLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalOml.g:22093:57: ( RULE_ALPHA | RULE_DIGIT | '_' | '-' | '.' | '$' )*
+            // InternalOml.g:20071:57: ( RULE_ALPHA | RULE_DIGIT | '_' | '-' | '.' | '$' )*
             loop33:
             do {
                 int alt33=2;
@@ -2917,8 +2917,8 @@ public class InternalOmlLexer extends Lexer {
     // $ANTLR start "RULE_ALPHA"
     public final void mRULE_ALPHA() throws RecognitionException {
         try {
-            // InternalOml.g:22095:21: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
-            // InternalOml.g:22095:23: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // InternalOml.g:20073:21: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
+            // InternalOml.g:20073:23: ( 'a' .. 'z' | 'A' .. 'Z' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -2941,8 +2941,8 @@ public class InternalOmlLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalOml.g:22097:21: ( '0' .. '9' )
-            // InternalOml.g:22097:23: '0' .. '9'
+            // InternalOml.g:20075:21: ( '0' .. '9' )
+            // InternalOml.g:20075:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
