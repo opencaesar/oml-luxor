@@ -5,7 +5,28 @@
 
 An extension to support [OML](https://opencaesar.github.io/oml) in VSCode-based IDEs.
 
-## Getting started
+## Install OML Luxor in VSCode
+
+Download the `oml-luxor-VERSION.vsix` file from the latest [release](https://github.com/opencaesar/oml-luxor/releases) to your hard disk.
+
+Open VSCode desktop IDE then click on the `Extensions` tab on the right. Drag and drop the vsix file from your hard disk to the tab to install the extension.
+
+Note: if a previous version of the OML Luxor extension was already installed, [uninstall](https://code.visualstudio.com/docs/editor/extension-marketplace#_uninstall-an-extension) it first.
+
+## Install OML Luxor in Gitpod.io
+
+Download the `oml-luxor-VERSION.vsix` file from the latest [release](https://github.com/opencaesar/oml-luxor/releases) to your hard disk.
+
+Launch your repo with [gitoid.io](https://www.gitpod.io/) then open the `Extension` tab on the right. Drag and drop the vsix file from your hard disk to the tab to install the extension.
+
+Note: Alternatively, you can install the latest published version from the [VSX registry](https://open-vsx.org/extension/openCAESAR/oml-luxor) by searching for "OML Luxor" in the extension tab's search box then click on it to install it.
+
+Note: if a previous version of the extension was already installed, [uninstall](https://code.visualstudio.com/docs/editor/extension-marketplace#_uninstall-an-extension) it first.
+
+> Follow the steps below only if you intend to build the OML Extension from source.
+ 
+## Prepare Build Environment
+If you like to build OML Luxor extension from source, make sure you have the right build environment first.
 
 Install [nvm](https://github.com/creationix/nvm#install-script).
 
@@ -48,22 +69,6 @@ This will create a file, `extension/oml-luxor-<version>.vsix`.
 ```shell
 ./clean.sh
 ```
-
-## Install in VSCode
-
-Open the Extensions area of the VSCode desktop IDE and drag and drop the vsix file to install it.
-
-Note: You can drop the vsix you built locally, or the one you downloaded from a published [release](https://github.com/opencaesar/oml-luxor/releases).
-
-Note: if a previous version of the extension was already installed, uninstall it first.
-
-## Install in Gitpod.io
-
-Launch your repo with [gitoid.io](https://www.gitpod.io/), then open the Extension area to drag and drop the vsix file to install it.
-
-Note: you can drop the visix you built locally, or you can install the latest published version from the [VSX registry](https://open-vsx.org/extension/openCAESAR/oml-luxor) by searching for "OML Luxor" in the extension tab's search box then click on it to install it.
-
-Note: if a previous version of the extension was already installed, uninstall it first.
 
 ## Debug
 
