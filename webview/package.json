@@ -1,7 +1,7 @@
 {
   "name": "webview",
   "displayName": "OML Webview",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Sprotty diagram support for OML",
   "author": "openCAESAR",
   "license": "Apache-2.0",
