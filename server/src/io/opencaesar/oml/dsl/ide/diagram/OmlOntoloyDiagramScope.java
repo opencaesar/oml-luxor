@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 
 import io.opencaesar.oml.Aspect;
 import io.opencaesar.oml.Assertion;
@@ -49,6 +50,7 @@ class OmlOntoloyDiagramScope {
 
 	private Mode mode;
 	private final Ontology ontology;
+	private final Set<Resource> scope;
 	private final DiagramVisitor visitor;
 
 	private final Set<Ontology> allImportedOntologies;
@@ -76,6 +78,7 @@ class OmlOntoloyDiagramScope {
 	public OmlOntoloyDiagramScope(final Ontology ontology) {
 		this.mode = Mode.Phase1;
 		this.ontology = ontology;
+		this.scope = OmlRead.getImportScope(ontology);
 		this.visitor = new DiagramVisitor();
 		this.allImportedOntologies = new HashSet<>();
 		this.allImportedElements = new HashSet<>();
@@ -179,7 +182,7 @@ class OmlOntoloyDiagramScope {
 		if (!structuredProperties.containsKey(cls)) {
 			structuredProperties.put(cls, new HashSet<>());
 		}
-		OmlSearch.findAllSuperTerms(cls, true).stream().map(t -> (Classifier) t).flatMap(c -> OmlSearch.findSemanticPropertiesWithDomain(c).stream()).filter(p -> allImportedElements.contains(p))
+		OmlSearch.findAllSuperTerms(cls, true, scope).stream().map(t -> (Classifier) t).flatMap(c -> OmlSearch.findSemanticPropertiesWithDomain(c, scope).stream()).filter(p -> allImportedElements.contains(p))
 				.forEach(p -> allSemanticProperties.add(p));
 	}
 
@@ -192,8 +195,8 @@ class OmlOntoloyDiagramScope {
 	}
 
 	private void phase2ScanAllClassifierProperties(final Classifier cls) {
-		OmlSearch.findAllSuperTerms(cls, true).stream().map(t -> (Classifier) t).forEach(parent -> {
-			OmlSearch.findSemanticPropertiesWithDomain(parent).forEach(p -> {
+		OmlSearch.findAllSuperTerms(cls, true, scope).stream().map(t -> (Classifier) t).forEach(parent -> {
+			OmlSearch.findSemanticPropertiesWithDomain(parent, scope).forEach(p -> {
 				if (allImportedElements.contains(p)) {
 					if (p instanceof ScalarProperty) {
 						ScalarProperty sp = (ScalarProperty) p;
@@ -216,17 +219,17 @@ class OmlOntoloyDiagramScope {
 	}
 
 	private void phase1ScanEntityAxioms(final Entity e, final Set<Element> others) {
-		OmlSearch.findKeyAxioms(e).forEach(ax -> {
+		OmlSearch.findKeyAxioms(e, scope).forEach(ax -> {
 			if (allImportedElements.contains(ax)) {
 				others.add(ax);
 			}
 		});
-		OmlSearch.findSpecializationAxiomsWithSubTerm(e).forEach(ax -> {
+		OmlSearch.findSpecializationAxiomsWithSubTerm(e, scope).forEach(ax -> {
 			if (allImportedElements.contains(ax)) {
 				others.add(ax);
 			}
 		});
-		OmlSearch.findPropertyRestrictionAxioms(e).forEach(ax -> {
+		OmlSearch.findPropertyRestrictionAxioms(e, scope).forEach(ax -> {
 			if (allImportedElements.contains(ax)) {
 				others.add(ax);
 			}
@@ -342,22 +345,22 @@ class OmlOntoloyDiagramScope {
 				phase1ScanEntityAxioms(e, others);
 				doSwitch(e.getSources().get(0));
 				doSwitch(e.getTargets().get(0));
-				OmlSearch.findSpecializationAxiomsWithSuperTerm(e).forEach(ax -> {
+				OmlSearch.findSpecializationAxiomsWithSuperTerm(e, scope).forEach(ax -> {
 					if (allImportedElements.contains(ax)) {
 						incident.add(ax);
 					}
 				});
-				OmlSearch.findPropertyRangeRestrictionAxiomsWithRange(e).forEach(ax -> {
+				OmlSearch.findPropertyRangeRestrictionAxiomsWithRange(e, scope).forEach(ax -> {
 					if (allImportedElements.contains(ax)) {
 						incident.add(ax);
 					}
 				});
-				OmlSearch.findSourceRelations(e).forEach(r -> {
+				OmlSearch.findSourceRelations(e, scope).forEach(r -> {
 					if (allImportedElements.contains(r)) {
 						incident.add(r);
 					}
 				});
-				OmlSearch.findTargetRelations(e).forEach(r -> {
+				OmlSearch.findTargetRelations(e, scope).forEach(r -> {
 					if (allImportedElements.contains(r)) {
 						incident.add(r);
 					}
@@ -404,12 +407,12 @@ class OmlOntoloyDiagramScope {
 		}
 
 		public void phase1ScanInstanceAssertions(final NamedInstance i, final Set<Element> others) {
-			OmlSearch.findPropertyValueAssertionsWithSubject(i).forEach(ax -> {
+			OmlSearch.findPropertyValueAssertionsWithSubject(i, scope).forEach(ax -> {
 				if (allImportedElements.contains(ax)) {
 					others.add(ax);
 				}
 			});
-			OmlSearch.findRelationInstancesWithSource(i).forEach(ri -> {
+			OmlSearch.findRelationInstancesWithSource(i, scope).forEach(ri -> {
 				if (allImportedElements.contains(ri)) {
 					others.add(ri);
 				}

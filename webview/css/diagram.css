@@ -35,7 +35,7 @@
 }
 
 .sprotty-edge .sprotty-label {
-    fill: var(--vscode-editorActiveLineNumber-foreground);
+    /* fill: var(--vscode-editorActiveLineNumber-foreground); */
 }
 
 .sprotty-edge {
