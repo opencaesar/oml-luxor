@@ -29,4 +29,5 @@ jobs:
       with:
         node-version: 14.x
         
-    - run: ./build.sh
+    - name: Build extension
+      run: ./build.sh
