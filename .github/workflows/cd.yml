@@ -35,3 +35,8 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: extension/oml-luxor\-*.vsix
+
+    - name: Deploy extension
+      run: npx ovsx publish extension/oml-luxor\-*.vsix -p ${OVSX_TOKEN}
+      env:
+        OVSX_TOKEN: ${{ secrets.OVSX_TOKEN }}
