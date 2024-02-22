@@ -31,7 +31,7 @@ jobs:
     - name: Build extension
       run: ./build.sh
     
-    - name: Publish executables
+    - name: Publish extension
       uses: softprops/action-gh-release@v1
       with:
         files: extension/oml-luxor\-*.vsix
