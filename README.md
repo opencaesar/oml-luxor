@@ -1,7 +1,7 @@
 # OML Luxor Extension
 
-[![Build Status](https://app.travis-ci.com/opencaesar/oml-luxor.svg?branch=master)](https://app.travis-ci.com/github/opencaesar/oml-luxor)
-[![Release](https://img.shields.io/github/v/release/opencaesar/oml-luxor?label=Download)](https://github.com/opencaesar/oml-luxor/releases/latest)
+[![Build Status](https://github.com/opencaesar//oml-luxor/actions/workflows/ci.yml/badge.svg)](https://github.com/opencaesar//oml-luxor/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/opencaesar/oml-luxor?label=Release)](https://github.com/opencaesar//oml-luxor/releases/latest)
 
 An extension to support [OML](https://opencaesar.github.io/oml) in VSCode-based IDEs.
 
