@@ -23,10 +23,10 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
 
-    - name: Use Node.js
+    - name: Use Node.js 14
       uses: actions/setup-node@v3
       with:
-        node-version: 18.x
+        node-version: 14.x
         
     - name: Build extension
       run: ./build.sh
@@ -35,6 +35,11 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: extension/oml-luxor\-*.vsix
+
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
 
     - name: Deploy extension
       run: npx ovsx publish extension/oml-luxor\-*.vsix -p ${OVSX_TOKEN}
