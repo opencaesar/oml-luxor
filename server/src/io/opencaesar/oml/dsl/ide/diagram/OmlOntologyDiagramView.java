@@ -16,6 +16,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import com.google.common.base.Objects;
 
 import io.opencaesar.oml.Annotation;
+import io.opencaesar.oml.AnonymousRelationInstance;
 import io.opencaesar.oml.Argument;
 import io.opencaesar.oml.Aspect;
 import io.opencaesar.oml.BinaryPredicate;
@@ -318,7 +319,7 @@ class OmlOntologyDiagramView {
 	public OmlLabel createStructuredValueLabel(final Entity e, final PropertyValueRestrictionAxiom ax) {
 		final String id = idCache.uniqueId(ax, getLocalName(e) + ".valueRestriction." + getLocalName(ax.getProperty()));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
-		l.setText(getLocalName(ax.getProperty()) + " = " + getLabel((StructureInstance) ax.getContainedValue()));
+		l.setText(getLocalName(ax.getProperty()) + " = " + getLabel(ax.getContainedValue()));
 		return l;
 	}
 
@@ -372,7 +373,8 @@ class OmlOntologyDiagramView {
 	public OmlLabel createLabel(final NamedInstance i, final PropertyValueAssertion ax) {
 		final String id = idCache.uniqueId(ax, getLocalName(i) + ".valueAssertion." + getLocalName(ax.getProperty()));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
-		l.setText(getLocalName(ax.getProperty()) + " = " + getLabel(ax.getValue()));
+		final String value = ax.getValue().stream().map(v -> getLabel(v)).collect(Collectors.joining(", "));
+		l.setText(getLocalName(ax.getProperty()) + " = " + value);
 		return l;
 	}
 
@@ -560,6 +562,8 @@ class OmlOntologyDiagramView {
 			return ((Literal)element).getLexicalValue();
 		else if (element instanceof StructureInstance)
 			return ((StructureInstance) element).getType().getName();
+		else if (element instanceof AnonymousRelationInstance)
+			return ((AnonymousRelationInstance) element).getType().getName();
 		else if (element instanceof NamedInstance)
 			return getLocalName((NamedInstance)element);
 		return "";

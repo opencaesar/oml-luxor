@@ -16,14 +16,14 @@
  */
 package io.opencaesar.oml.dsl.ide.diagram.model;
 
-import org.eclipse.sprotty.Layouting;
+import org.eclipse.sprotty.LayoutContainer;
 import org.eclipse.sprotty.SShapeElement;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.Pure;
 
 @Accessors
 @SuppressWarnings("all")
-public class OmlTag extends SShapeElement implements Layouting {
+public class OmlTag extends SShapeElement implements LayoutContainer {
 
 	private String layout;
 
