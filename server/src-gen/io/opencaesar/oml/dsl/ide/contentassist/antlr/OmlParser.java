@@ -374,10 +374,10 @@ public class OmlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBuiltInAccess().getOwnedAnnotationsAssignment_0(), "rule__BuiltIn__OwnedAnnotationsAssignment_0");
 			builder.put(grammarAccess.getBuiltInAccess().getNameAssignment_1_0_1(), "rule__BuiltIn__NameAssignment_1_0_1");
 			builder.put(grammarAccess.getBuiltInAccess().getRefAssignment_1_1_2(), "rule__BuiltIn__RefAssignment_1_1_2");
-			builder.put(grammarAccess.getStructureInstanceAccess().getTypeAssignment_0(), "rule__StructureInstance__TypeAssignment_0");
-			builder.put(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesAssignment_2(), "rule__StructureInstance__OwnedPropertyValuesAssignment_2");
+			builder.put(grammarAccess.getStructureInstanceAccess().getTypeAssignment_1(), "rule__StructureInstance__TypeAssignment_1");
+			builder.put(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesAssignment_3(), "rule__StructureInstance__OwnedPropertyValuesAssignment_3");
 			builder.put(grammarAccess.getAnonymousRelationInstanceAccess().getTargetAssignment_0(), "rule__AnonymousRelationInstance__TargetAssignment_0");
-			builder.put(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesAssignment_3(), "rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3");
+			builder.put(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesAssignment_2(), "rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2");
 			builder.put(grammarAccess.getConceptInstanceAccess().getOwnedAnnotationsAssignment_0(), "rule__ConceptInstance__OwnedAnnotationsAssignment_0");
 			builder.put(grammarAccess.getConceptInstanceAccess().getNameAssignment_1_0_1(), "rule__ConceptInstance__NameAssignment_1_0_1");
 			builder.put(grammarAccess.getConceptInstanceAccess().getRefAssignment_1_1_2(), "rule__ConceptInstance__RefAssignment_1_1_2");

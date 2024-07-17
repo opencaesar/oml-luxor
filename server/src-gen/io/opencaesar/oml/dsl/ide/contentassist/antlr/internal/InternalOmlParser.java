@@ -22,12 +22,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOmlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BOOLEAN_STR", "RULE_UNSIGNED_INTEGER_STR", "RULE_DECIMAL_STR", "RULE_DOUBLE_STR", "RULE_ID", "RULE_QNAME", "RULE_IRI", "RULE_INTEGER_STR", "RULE_NAMESPACE", "RULE_STRING", "RULE_NUMERIC", "RULE_IDFRAG", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ALPHA", "RULE_SPECIAL", "'extends'", "'uses'", "'includes'", "'all'", "'some'", "'exactly'", "'min'", "'max'", "'@'", "','", "'vocabulary'", "'as'", "'{'", "'}'", "'bundle'", "'description'", "'aspect'", "'ref'", "'['", "']'", "'concept'", "'relation'", "'entity'", "'from'", "'to'", "'functional'", "'structure'", "'<'", "'='", "'&'", "'scalar'", "'length'", "'minLength'", "'maxLength'", "'pattern'", "'language'", "'minInclusive'", "'minExclusive'", "'maxInclusive'", "'maxExclusive'", "'annotation'", "'property'", "'domain'", "'range'", "'structured'", "'forward'", "'reverse'", "'rule'", "'->'", "'builtin'", "'with'", "'instance'", "':'", "'restricts'", "'self'", "'key'", "'oneOf'", "'('", "')'", "'sameAs'", "'differentFrom'", "'builtIn'", "'^^'", "'$'", "'inverse'", "'symmetric'", "'asymmetric'", "'reflexive'", "'irreflexive'", "'transitive'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BOOLEAN_STR", "RULE_UNSIGNED_INTEGER_STR", "RULE_DECIMAL_STR", "RULE_DOUBLE_STR", "RULE_ID", "RULE_QNAME", "RULE_IRI", "RULE_INTEGER_STR", "RULE_NAMESPACE", "RULE_STRING", "RULE_NUMERIC", "RULE_IDFRAG", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ALPHA", "RULE_SPECIAL", "'extends'", "'uses'", "'includes'", "'all'", "'some'", "'exactly'", "'min'", "'max'", "'@'", "','", "'vocabulary'", "'as'", "'{'", "'}'", "'bundle'", "'description'", "'aspect'", "'ref'", "'['", "']'", "'concept'", "'relation'", "'entity'", "'from'", "'to'", "'functional'", "'structure'", "'<'", "'='", "'&'", "'scalar'", "'length'", "'minLength'", "'maxLength'", "'pattern'", "'language'", "'minInclusive'", "'minExclusive'", "'maxInclusive'", "'maxExclusive'", "'annotation'", "'property'", "'domain'", "'range'", "'structured'", "'forward'", "'reverse'", "'rule'", "'->'", "'builtin'", "':'", "'instance'", "'restricts'", "'self'", "'key'", "'oneOf'", "'('", "')'", "'sameAs'", "'differentFrom'", "'builtIn'", "'^^'", "'$'", "'inverse'", "'symmetric'", "'asymmetric'", "'reflexive'", "'irreflexive'", "'transitive'"
     };
     public static final int T__50=50;
     public static final int RULE_INTEGER_STR=11;
     public static final int RULE_QNAME=9;
-    public static final int T__90=90;
     public static final int T__59=59;
     public static final int T__55=55;
     public static final int RULE_DECIMAL_STR=6;
@@ -8862,68 +8861,20 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         try {
             // InternalOml.g:2794:1: ( ( ruleStructureInstance ) | ( ruleAnonymousRelationInstance ) )
             int alt28=2;
-            switch ( input.LA(1) ) {
-            case RULE_ID:
-                {
-                int LA28_1 = input.LA(2);
+            int LA28_0 = input.LA(1);
 
-                if ( (LA28_1==39) ) {
-                    alt28=1;
-                }
-                else if ( (LA28_1==71) ) {
-                    alt28=2;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 28, 1, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case RULE_QNAME:
-                {
-                int LA28_2 = input.LA(2);
-
-                if ( (LA28_2==39) ) {
-                    alt28=1;
-                }
-                else if ( (LA28_2==71) ) {
-                    alt28=2;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 28, 2, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case RULE_IRI:
-                {
-                int LA28_3 = input.LA(2);
-
-                if ( (LA28_3==39) ) {
-                    alt28=1;
-                }
-                else if ( (LA28_3==71) ) {
-                    alt28=2;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 28, 3, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            default:
+            if ( (LA28_0==71) ) {
+                alt28=1;
+            }
+            else if ( ((LA28_0>=RULE_ID && LA28_0<=RULE_IRI)) ) {
+                alt28=2;
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
-
             switch (alt28) {
                 case 1 :
                     // InternalOml.g:2795:2: ( ruleStructureInstance )
@@ -9437,32 +9388,19 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 alt34=1;
                 }
                 break;
-            case RULE_ID:
+            case 71:
                 {
-                int LA34_2 = input.LA(2);
-
-                if ( (LA34_2==39||LA34_2==71) ) {
-                    alt34=2;
-                }
-                else if ( (LA34_2==EOF||LA34_2==40||LA34_2==74) ) {
-                    alt34=3;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 34, 2, input);
-
-                    throw nvae;
-                }
+                alt34=2;
                 }
                 break;
-            case RULE_QNAME:
+            case RULE_ID:
                 {
                 int LA34_3 = input.LA(2);
 
-                if ( (LA34_3==39||LA34_3==71) ) {
+                if ( (LA34_3==39) ) {
                     alt34=2;
                 }
-                else if ( (LA34_3==EOF||LA34_3==40||LA34_3==74) ) {
+                else if ( (LA34_3==EOF||LA34_3==40||LA34_3==73) ) {
                     alt34=3;
                 }
                 else {
@@ -9473,19 +9411,37 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 }
                 }
                 break;
-            case RULE_IRI:
+            case RULE_QNAME:
                 {
                 int LA34_4 = input.LA(2);
 
-                if ( (LA34_4==39||LA34_4==71) ) {
-                    alt34=2;
-                }
-                else if ( (LA34_4==EOF||LA34_4==40||LA34_4==74) ) {
+                if ( (LA34_4==EOF||LA34_4==40||LA34_4==73) ) {
                     alt34=3;
+                }
+                else if ( (LA34_4==39) ) {
+                    alt34=2;
                 }
                 else {
                     NoViableAltException nvae =
                         new NoViableAltException("", 34, 4, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case RULE_IRI:
+                {
+                int LA34_5 = input.LA(2);
+
+                if ( (LA34_5==39) ) {
+                    alt34=2;
+                }
+                else if ( (LA34_5==EOF||LA34_5==40||LA34_5==73) ) {
+                    alt34=3;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 34, 5, input);
 
                     throw nvae;
                 }
@@ -9611,29 +9567,16 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 alt35=1;
                 }
                 break;
-            case RULE_ID:
+            case 71:
                 {
-                int LA35_2 = input.LA(2);
-
-                if ( (LA35_2==39||LA35_2==71) ) {
-                    alt35=2;
-                }
-                else if ( (LA35_2==EOF||(LA35_2>=RULE_ID && LA35_2<=RULE_IRI)||LA35_2==30||LA35_2==40) ) {
-                    alt35=3;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 35, 2, input);
-
-                    throw nvae;
-                }
+                alt35=2;
                 }
                 break;
-            case RULE_QNAME:
+            case RULE_ID:
                 {
                 int LA35_3 = input.LA(2);
 
-                if ( (LA35_3==39||LA35_3==71) ) {
+                if ( (LA35_3==39) ) {
                     alt35=2;
                 }
                 else if ( (LA35_3==EOF||(LA35_3>=RULE_ID && LA35_3<=RULE_IRI)||LA35_3==30||LA35_3==40) ) {
@@ -9647,19 +9590,37 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 }
                 }
                 break;
-            case RULE_IRI:
+            case RULE_QNAME:
                 {
                 int LA35_4 = input.LA(2);
 
-                if ( (LA35_4==39||LA35_4==71) ) {
-                    alt35=2;
-                }
-                else if ( (LA35_4==EOF||(LA35_4>=RULE_ID && LA35_4<=RULE_IRI)||LA35_4==30||LA35_4==40) ) {
+                if ( (LA35_4==EOF||(LA35_4>=RULE_ID && LA35_4<=RULE_IRI)||LA35_4==30||LA35_4==40) ) {
                     alt35=3;
+                }
+                else if ( (LA35_4==39) ) {
+                    alt35=2;
                 }
                 else {
                     NoViableAltException nvae =
                         new NoViableAltException("", 35, 4, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case RULE_IRI:
+                {
+                int LA35_5 = input.LA(2);
+
+                if ( (LA35_5==39) ) {
+                    alt35=2;
+                }
+                else if ( (LA35_5==EOF||(LA35_5>=RULE_ID && LA35_5<=RULE_IRI)||LA35_5==30||LA35_5==40) ) {
+                    alt35=3;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 35, 5, input);
 
                     throw nvae;
                 }
@@ -9933,12 +9894,12 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 alt38=1;
                 }
                 break;
-            case 80:
+            case 79:
                 {
                 alt38=2;
                 }
                 break;
-            case 81:
+            case 80:
                 {
                 alt38=3;
                 }
@@ -10323,10 +10284,10 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==83) ) {
+            if ( (LA41_0==82) ) {
                 alt41=1;
             }
-            else if ( (LA41_0==84) ) {
+            else if ( (LA41_0==83) ) {
                 alt41=2;
             }
             else {
@@ -15517,7 +15478,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 int alt63=2;
                 int LA63_0 = input.LA(1);
 
-                if ( (LA63_0==76) ) {
+                if ( (LA63_0==75) ) {
                     alt63=1;
                 }
 
@@ -16619,7 +16580,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             int alt68=2;
             int LA68_0 = input.LA(1);
 
-            if ( (LA68_0==77) ) {
+            if ( (LA68_0==76) ) {
                 alt68=1;
             }
             switch (alt68) {
@@ -16717,7 +16678,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 int alt69=2;
                 int LA69_0 = input.LA(1);
 
-                if ( (LA69_0==76) ) {
+                if ( (LA69_0==75) ) {
                     alt69=1;
                 }
 
@@ -18436,7 +18397,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 int alt78=2;
                 int LA78_0 = input.LA(1);
 
-                if ( (LA78_0==76) ) {
+                if ( (LA78_0==75) ) {
                     alt78=1;
                 }
 
@@ -21014,7 +20975,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 int alt86=2;
                 int LA86_0 = input.LA(1);
 
-                if ( (LA86_0==74) ) {
+                if ( (LA86_0==73) ) {
                     alt86=1;
                 }
 
@@ -22522,7 +22483,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                 int alt91=2;
                 int LA91_0 = input.LA(1);
 
-                if ( (LA91_0==74) ) {
+                if ( (LA91_0==73) ) {
                     alt91=1;
                 }
 
@@ -36620,7 +36581,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             int alt136=2;
             int LA136_0 = input.LA(1);
 
-            if ( ((LA136_0>=RULE_ID && LA136_0<=RULE_IRI)||(LA136_0>=80 && LA136_0<=82)) ) {
+            if ( ((LA136_0>=RULE_ID && LA136_0<=RULE_IRI)||(LA136_0>=79 && LA136_0<=81)) ) {
                 alt136=1;
             }
             switch (alt136) {
@@ -38064,7 +38025,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12073:1: ( rule__StructureInstance__Group__0__Impl rule__StructureInstance__Group__1 )
             // InternalOml.g:12074:2: rule__StructureInstance__Group__0__Impl rule__StructureInstance__Group__1
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_3);
             rule__StructureInstance__Group__0__Impl();
 
             state._fsp--;
@@ -38093,31 +38054,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructureInstance__Group__0__Impl"
-    // InternalOml.g:12081:1: rule__StructureInstance__Group__0__Impl : ( ( rule__StructureInstance__TypeAssignment_0 ) ) ;
+    // InternalOml.g:12081:1: rule__StructureInstance__Group__0__Impl : ( ':' ) ;
     public final void rule__StructureInstance__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12085:1: ( ( ( rule__StructureInstance__TypeAssignment_0 ) ) )
-            // InternalOml.g:12086:1: ( ( rule__StructureInstance__TypeAssignment_0 ) )
+            // InternalOml.g:12085:1: ( ( ':' ) )
+            // InternalOml.g:12086:1: ( ':' )
             {
-            // InternalOml.g:12086:1: ( ( rule__StructureInstance__TypeAssignment_0 ) )
-            // InternalOml.g:12087:2: ( rule__StructureInstance__TypeAssignment_0 )
+            // InternalOml.g:12086:1: ( ':' )
+            // InternalOml.g:12087:2: ':'
             {
-             before(grammarAccess.getStructureInstanceAccess().getTypeAssignment_0()); 
-            // InternalOml.g:12088:2: ( rule__StructureInstance__TypeAssignment_0 )
-            // InternalOml.g:12088:3: rule__StructureInstance__TypeAssignment_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__StructureInstance__TypeAssignment_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getStructureInstanceAccess().getTypeAssignment_0()); 
+             before(grammarAccess.getStructureInstanceAccess().getColonKeyword_0()); 
+            match(input,71,FOLLOW_2); 
+             after(grammarAccess.getStructureInstanceAccess().getColonKeyword_0()); 
 
             }
 
@@ -38149,7 +38100,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12100:1: ( rule__StructureInstance__Group__1__Impl rule__StructureInstance__Group__2 )
             // InternalOml.g:12101:2: rule__StructureInstance__Group__1__Impl rule__StructureInstance__Group__2
             {
-            pushFollow(FOLLOW_72);
+            pushFollow(FOLLOW_49);
             rule__StructureInstance__Group__1__Impl();
 
             state._fsp--;
@@ -38178,21 +38129,31 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructureInstance__Group__1__Impl"
-    // InternalOml.g:12108:1: rule__StructureInstance__Group__1__Impl : ( '[' ) ;
+    // InternalOml.g:12108:1: rule__StructureInstance__Group__1__Impl : ( ( rule__StructureInstance__TypeAssignment_1 ) ) ;
     public final void rule__StructureInstance__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12112:1: ( ( '[' ) )
-            // InternalOml.g:12113:1: ( '[' )
+            // InternalOml.g:12112:1: ( ( ( rule__StructureInstance__TypeAssignment_1 ) ) )
+            // InternalOml.g:12113:1: ( ( rule__StructureInstance__TypeAssignment_1 ) )
             {
-            // InternalOml.g:12113:1: ( '[' )
-            // InternalOml.g:12114:2: '['
+            // InternalOml.g:12113:1: ( ( rule__StructureInstance__TypeAssignment_1 ) )
+            // InternalOml.g:12114:2: ( rule__StructureInstance__TypeAssignment_1 )
             {
-             before(grammarAccess.getStructureInstanceAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getStructureInstanceAccess().getLeftSquareBracketKeyword_1()); 
+             before(grammarAccess.getStructureInstanceAccess().getTypeAssignment_1()); 
+            // InternalOml.g:12115:2: ( rule__StructureInstance__TypeAssignment_1 )
+            // InternalOml.g:12115:3: rule__StructureInstance__TypeAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__StructureInstance__TypeAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStructureInstanceAccess().getTypeAssignment_1()); 
 
             }
 
@@ -38253,49 +38214,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructureInstance__Group__2__Impl"
-    // InternalOml.g:12135:1: rule__StructureInstance__Group__2__Impl : ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_2 )* ) ;
+    // InternalOml.g:12135:1: rule__StructureInstance__Group__2__Impl : ( '[' ) ;
     public final void rule__StructureInstance__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12139:1: ( ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_2 )* ) )
-            // InternalOml.g:12140:1: ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_2 )* )
+            // InternalOml.g:12139:1: ( ( '[' ) )
+            // InternalOml.g:12140:1: ( '[' )
             {
-            // InternalOml.g:12140:1: ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_2 )* )
-            // InternalOml.g:12141:2: ( rule__StructureInstance__OwnedPropertyValuesAssignment_2 )*
+            // InternalOml.g:12140:1: ( '[' )
+            // InternalOml.g:12141:2: '['
             {
-             before(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesAssignment_2()); 
-            // InternalOml.g:12142:2: ( rule__StructureInstance__OwnedPropertyValuesAssignment_2 )*
-            loop140:
-            do {
-                int alt140=2;
-                int LA140_0 = input.LA(1);
-
-                if ( ((LA140_0>=RULE_ID && LA140_0<=RULE_IRI)) ) {
-                    alt140=1;
-                }
-
-
-                switch (alt140) {
-            	case 1 :
-            	    // InternalOml.g:12142:3: rule__StructureInstance__OwnedPropertyValuesAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_73);
-            	    rule__StructureInstance__OwnedPropertyValuesAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop140;
-                }
-            } while (true);
-
-             after(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesAssignment_2()); 
+             before(grammarAccess.getStructureInstanceAccess().getLeftSquareBracketKeyword_2()); 
+            match(input,39,FOLLOW_2); 
+             after(grammarAccess.getStructureInstanceAccess().getLeftSquareBracketKeyword_2()); 
 
             }
 
@@ -38318,17 +38251,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructureInstance__Group__3"
-    // InternalOml.g:12150:1: rule__StructureInstance__Group__3 : rule__StructureInstance__Group__3__Impl ;
+    // InternalOml.g:12150:1: rule__StructureInstance__Group__3 : rule__StructureInstance__Group__3__Impl rule__StructureInstance__Group__4 ;
     public final void rule__StructureInstance__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12154:1: ( rule__StructureInstance__Group__3__Impl )
-            // InternalOml.g:12155:2: rule__StructureInstance__Group__3__Impl
+            // InternalOml.g:12154:1: ( rule__StructureInstance__Group__3__Impl rule__StructureInstance__Group__4 )
+            // InternalOml.g:12155:2: rule__StructureInstance__Group__3__Impl rule__StructureInstance__Group__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_72);
             rule__StructureInstance__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__StructureInstance__Group__4();
 
             state._fsp--;
 
@@ -38351,21 +38289,49 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructureInstance__Group__3__Impl"
-    // InternalOml.g:12161:1: rule__StructureInstance__Group__3__Impl : ( ']' ) ;
+    // InternalOml.g:12162:1: rule__StructureInstance__Group__3__Impl : ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_3 )* ) ;
     public final void rule__StructureInstance__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12165:1: ( ( ']' ) )
-            // InternalOml.g:12166:1: ( ']' )
+            // InternalOml.g:12166:1: ( ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_3 )* ) )
+            // InternalOml.g:12167:1: ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_3 )* )
             {
-            // InternalOml.g:12166:1: ( ']' )
-            // InternalOml.g:12167:2: ']'
+            // InternalOml.g:12167:1: ( ( rule__StructureInstance__OwnedPropertyValuesAssignment_3 )* )
+            // InternalOml.g:12168:2: ( rule__StructureInstance__OwnedPropertyValuesAssignment_3 )*
             {
-             before(grammarAccess.getStructureInstanceAccess().getRightSquareBracketKeyword_3()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getStructureInstanceAccess().getRightSquareBracketKeyword_3()); 
+             before(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesAssignment_3()); 
+            // InternalOml.g:12169:2: ( rule__StructureInstance__OwnedPropertyValuesAssignment_3 )*
+            loop140:
+            do {
+                int alt140=2;
+                int LA140_0 = input.LA(1);
+
+                if ( ((LA140_0>=RULE_ID && LA140_0<=RULE_IRI)) ) {
+                    alt140=1;
+                }
+
+
+                switch (alt140) {
+            	case 1 :
+            	    // InternalOml.g:12169:3: rule__StructureInstance__OwnedPropertyValuesAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_73);
+            	    rule__StructureInstance__OwnedPropertyValuesAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop140;
+                }
+            } while (true);
+
+             after(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesAssignment_3()); 
 
             }
 
@@ -38387,17 +38353,87 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__StructureInstance__Group__3__Impl"
 
 
+    // $ANTLR start "rule__StructureInstance__Group__4"
+    // InternalOml.g:12177:1: rule__StructureInstance__Group__4 : rule__StructureInstance__Group__4__Impl ;
+    public final void rule__StructureInstance__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOml.g:12181:1: ( rule__StructureInstance__Group__4__Impl )
+            // InternalOml.g:12182:2: rule__StructureInstance__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__StructureInstance__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__StructureInstance__Group__4"
+
+
+    // $ANTLR start "rule__StructureInstance__Group__4__Impl"
+    // InternalOml.g:12188:1: rule__StructureInstance__Group__4__Impl : ( ']' ) ;
+    public final void rule__StructureInstance__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOml.g:12192:1: ( ( ']' ) )
+            // InternalOml.g:12193:1: ( ']' )
+            {
+            // InternalOml.g:12193:1: ( ']' )
+            // InternalOml.g:12194:2: ']'
+            {
+             before(grammarAccess.getStructureInstanceAccess().getRightSquareBracketKeyword_4()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getStructureInstanceAccess().getRightSquareBracketKeyword_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__StructureInstance__Group__4__Impl"
+
+
     // $ANTLR start "rule__AnonymousRelationInstance__Group__0"
-    // InternalOml.g:12177:1: rule__AnonymousRelationInstance__Group__0 : rule__AnonymousRelationInstance__Group__0__Impl rule__AnonymousRelationInstance__Group__1 ;
+    // InternalOml.g:12204:1: rule__AnonymousRelationInstance__Group__0 : rule__AnonymousRelationInstance__Group__0__Impl rule__AnonymousRelationInstance__Group__1 ;
     public final void rule__AnonymousRelationInstance__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12181:1: ( rule__AnonymousRelationInstance__Group__0__Impl rule__AnonymousRelationInstance__Group__1 )
-            // InternalOml.g:12182:2: rule__AnonymousRelationInstance__Group__0__Impl rule__AnonymousRelationInstance__Group__1
+            // InternalOml.g:12208:1: ( rule__AnonymousRelationInstance__Group__0__Impl rule__AnonymousRelationInstance__Group__1 )
+            // InternalOml.g:12209:2: rule__AnonymousRelationInstance__Group__0__Impl rule__AnonymousRelationInstance__Group__1
             {
-            pushFollow(FOLLOW_74);
+            pushFollow(FOLLOW_49);
             rule__AnonymousRelationInstance__Group__0__Impl();
 
             state._fsp--;
@@ -38426,21 +38462,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__Group__0__Impl"
-    // InternalOml.g:12189:1: rule__AnonymousRelationInstance__Group__0__Impl : ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) ) ;
+    // InternalOml.g:12216:1: rule__AnonymousRelationInstance__Group__0__Impl : ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) ) ;
     public final void rule__AnonymousRelationInstance__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12193:1: ( ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) ) )
-            // InternalOml.g:12194:1: ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) )
+            // InternalOml.g:12220:1: ( ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) ) )
+            // InternalOml.g:12221:1: ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) )
             {
-            // InternalOml.g:12194:1: ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) )
-            // InternalOml.g:12195:2: ( rule__AnonymousRelationInstance__TargetAssignment_0 )
+            // InternalOml.g:12221:1: ( ( rule__AnonymousRelationInstance__TargetAssignment_0 ) )
+            // InternalOml.g:12222:2: ( rule__AnonymousRelationInstance__TargetAssignment_0 )
             {
              before(grammarAccess.getAnonymousRelationInstanceAccess().getTargetAssignment_0()); 
-            // InternalOml.g:12196:2: ( rule__AnonymousRelationInstance__TargetAssignment_0 )
-            // InternalOml.g:12196:3: rule__AnonymousRelationInstance__TargetAssignment_0
+            // InternalOml.g:12223:2: ( rule__AnonymousRelationInstance__TargetAssignment_0 )
+            // InternalOml.g:12223:3: rule__AnonymousRelationInstance__TargetAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__AnonymousRelationInstance__TargetAssignment_0();
@@ -38473,16 +38509,16 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__Group__1"
-    // InternalOml.g:12204:1: rule__AnonymousRelationInstance__Group__1 : rule__AnonymousRelationInstance__Group__1__Impl rule__AnonymousRelationInstance__Group__2 ;
+    // InternalOml.g:12231:1: rule__AnonymousRelationInstance__Group__1 : rule__AnonymousRelationInstance__Group__1__Impl rule__AnonymousRelationInstance__Group__2 ;
     public final void rule__AnonymousRelationInstance__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12208:1: ( rule__AnonymousRelationInstance__Group__1__Impl rule__AnonymousRelationInstance__Group__2 )
-            // InternalOml.g:12209:2: rule__AnonymousRelationInstance__Group__1__Impl rule__AnonymousRelationInstance__Group__2
+            // InternalOml.g:12235:1: ( rule__AnonymousRelationInstance__Group__1__Impl rule__AnonymousRelationInstance__Group__2 )
+            // InternalOml.g:12236:2: rule__AnonymousRelationInstance__Group__1__Impl rule__AnonymousRelationInstance__Group__2
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_72);
             rule__AnonymousRelationInstance__Group__1__Impl();
 
             state._fsp--;
@@ -38511,21 +38547,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__Group__1__Impl"
-    // InternalOml.g:12216:1: rule__AnonymousRelationInstance__Group__1__Impl : ( 'with' ) ;
+    // InternalOml.g:12243:1: rule__AnonymousRelationInstance__Group__1__Impl : ( '[' ) ;
     public final void rule__AnonymousRelationInstance__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12220:1: ( ( 'with' ) )
-            // InternalOml.g:12221:1: ( 'with' )
+            // InternalOml.g:12247:1: ( ( '[' ) )
+            // InternalOml.g:12248:1: ( '[' )
             {
-            // InternalOml.g:12221:1: ( 'with' )
-            // InternalOml.g:12222:2: 'with'
+            // InternalOml.g:12248:1: ( '[' )
+            // InternalOml.g:12249:2: '['
             {
-             before(grammarAccess.getAnonymousRelationInstanceAccess().getWithKeyword_1()); 
-            match(input,71,FOLLOW_2); 
-             after(grammarAccess.getAnonymousRelationInstanceAccess().getWithKeyword_1()); 
+             before(grammarAccess.getAnonymousRelationInstanceAccess().getLeftSquareBracketKeyword_1()); 
+            match(input,39,FOLLOW_2); 
+             after(grammarAccess.getAnonymousRelationInstanceAccess().getLeftSquareBracketKeyword_1()); 
 
             }
 
@@ -38548,14 +38584,14 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__Group__2"
-    // InternalOml.g:12231:1: rule__AnonymousRelationInstance__Group__2 : rule__AnonymousRelationInstance__Group__2__Impl rule__AnonymousRelationInstance__Group__3 ;
+    // InternalOml.g:12258:1: rule__AnonymousRelationInstance__Group__2 : rule__AnonymousRelationInstance__Group__2__Impl rule__AnonymousRelationInstance__Group__3 ;
     public final void rule__AnonymousRelationInstance__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12235:1: ( rule__AnonymousRelationInstance__Group__2__Impl rule__AnonymousRelationInstance__Group__3 )
-            // InternalOml.g:12236:2: rule__AnonymousRelationInstance__Group__2__Impl rule__AnonymousRelationInstance__Group__3
+            // InternalOml.g:12262:1: ( rule__AnonymousRelationInstance__Group__2__Impl rule__AnonymousRelationInstance__Group__3 )
+            // InternalOml.g:12263:2: rule__AnonymousRelationInstance__Group__2__Impl rule__AnonymousRelationInstance__Group__3
             {
             pushFollow(FOLLOW_72);
             rule__AnonymousRelationInstance__Group__2__Impl();
@@ -38586,21 +38622,49 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__Group__2__Impl"
-    // InternalOml.g:12243:1: rule__AnonymousRelationInstance__Group__2__Impl : ( '[' ) ;
+    // InternalOml.g:12270:1: rule__AnonymousRelationInstance__Group__2__Impl : ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2 )* ) ;
     public final void rule__AnonymousRelationInstance__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12247:1: ( ( '[' ) )
-            // InternalOml.g:12248:1: ( '[' )
+            // InternalOml.g:12274:1: ( ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2 )* ) )
+            // InternalOml.g:12275:1: ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2 )* )
             {
-            // InternalOml.g:12248:1: ( '[' )
-            // InternalOml.g:12249:2: '['
+            // InternalOml.g:12275:1: ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2 )* )
+            // InternalOml.g:12276:2: ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2 )*
             {
-             before(grammarAccess.getAnonymousRelationInstanceAccess().getLeftSquareBracketKeyword_2()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getAnonymousRelationInstanceAccess().getLeftSquareBracketKeyword_2()); 
+             before(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesAssignment_2()); 
+            // InternalOml.g:12277:2: ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2 )*
+            loop141:
+            do {
+                int alt141=2;
+                int LA141_0 = input.LA(1);
+
+                if ( ((LA141_0>=RULE_ID && LA141_0<=RULE_IRI)) ) {
+                    alt141=1;
+                }
+
+
+                switch (alt141) {
+            	case 1 :
+            	    // InternalOml.g:12277:3: rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_73);
+            	    rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop141;
+                }
+            } while (true);
+
+             after(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesAssignment_2()); 
 
             }
 
@@ -38623,22 +38687,17 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__Group__3"
-    // InternalOml.g:12258:1: rule__AnonymousRelationInstance__Group__3 : rule__AnonymousRelationInstance__Group__3__Impl rule__AnonymousRelationInstance__Group__4 ;
+    // InternalOml.g:12285:1: rule__AnonymousRelationInstance__Group__3 : rule__AnonymousRelationInstance__Group__3__Impl ;
     public final void rule__AnonymousRelationInstance__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12262:1: ( rule__AnonymousRelationInstance__Group__3__Impl rule__AnonymousRelationInstance__Group__4 )
-            // InternalOml.g:12263:2: rule__AnonymousRelationInstance__Group__3__Impl rule__AnonymousRelationInstance__Group__4
+            // InternalOml.g:12289:1: ( rule__AnonymousRelationInstance__Group__3__Impl )
+            // InternalOml.g:12290:2: rule__AnonymousRelationInstance__Group__3__Impl
             {
-            pushFollow(FOLLOW_72);
-            rule__AnonymousRelationInstance__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__AnonymousRelationInstance__Group__4();
+            rule__AnonymousRelationInstance__Group__3__Impl();
 
             state._fsp--;
 
@@ -38661,49 +38720,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__Group__3__Impl"
-    // InternalOml.g:12270:1: rule__AnonymousRelationInstance__Group__3__Impl : ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3 )* ) ;
+    // InternalOml.g:12296:1: rule__AnonymousRelationInstance__Group__3__Impl : ( ']' ) ;
     public final void rule__AnonymousRelationInstance__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:12274:1: ( ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3 )* ) )
-            // InternalOml.g:12275:1: ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3 )* )
+            // InternalOml.g:12300:1: ( ( ']' ) )
+            // InternalOml.g:12301:1: ( ']' )
             {
-            // InternalOml.g:12275:1: ( ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3 )* )
-            // InternalOml.g:12276:2: ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3 )*
+            // InternalOml.g:12301:1: ( ']' )
+            // InternalOml.g:12302:2: ']'
             {
-             before(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesAssignment_3()); 
-            // InternalOml.g:12277:2: ( rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3 )*
-            loop141:
-            do {
-                int alt141=2;
-                int LA141_0 = input.LA(1);
-
-                if ( ((LA141_0>=RULE_ID && LA141_0<=RULE_IRI)) ) {
-                    alt141=1;
-                }
-
-
-                switch (alt141) {
-            	case 1 :
-            	    // InternalOml.g:12277:3: rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3
-            	    {
-            	    pushFollow(FOLLOW_73);
-            	    rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop141;
-                }
-            } while (true);
-
-             after(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesAssignment_3()); 
+             before(grammarAccess.getAnonymousRelationInstanceAccess().getRightSquareBracketKeyword_3()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getAnonymousRelationInstanceAccess().getRightSquareBracketKeyword_3()); 
 
             }
 
@@ -38725,76 +38756,6 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AnonymousRelationInstance__Group__3__Impl"
 
 
-    // $ANTLR start "rule__AnonymousRelationInstance__Group__4"
-    // InternalOml.g:12285:1: rule__AnonymousRelationInstance__Group__4 : rule__AnonymousRelationInstance__Group__4__Impl ;
-    public final void rule__AnonymousRelationInstance__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalOml.g:12289:1: ( rule__AnonymousRelationInstance__Group__4__Impl )
-            // InternalOml.g:12290:2: rule__AnonymousRelationInstance__Group__4__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__AnonymousRelationInstance__Group__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AnonymousRelationInstance__Group__4"
-
-
-    // $ANTLR start "rule__AnonymousRelationInstance__Group__4__Impl"
-    // InternalOml.g:12296:1: rule__AnonymousRelationInstance__Group__4__Impl : ( ']' ) ;
-    public final void rule__AnonymousRelationInstance__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalOml.g:12300:1: ( ( ']' ) )
-            // InternalOml.g:12301:1: ( ']' )
-            {
-            // InternalOml.g:12301:1: ( ']' )
-            // InternalOml.g:12302:2: ']'
-            {
-             before(grammarAccess.getAnonymousRelationInstanceAccess().getRightSquareBracketKeyword_4()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getAnonymousRelationInstanceAccess().getRightSquareBracketKeyword_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AnonymousRelationInstance__Group__4__Impl"
-
-
     // $ANTLR start "rule__ConceptInstance__Group__0"
     // InternalOml.g:12312:1: rule__ConceptInstance__Group__0 : rule__ConceptInstance__Group__0__Impl rule__ConceptInstance__Group__1 ;
     public final void rule__ConceptInstance__Group__0() throws RecognitionException {
@@ -38805,7 +38766,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12316:1: ( rule__ConceptInstance__Group__0__Impl rule__ConceptInstance__Group__1 )
             // InternalOml.g:12317:2: rule__ConceptInstance__Group__0__Impl rule__ConceptInstance__Group__1
             {
-            pushFollow(FOLLOW_75);
+            pushFollow(FOLLOW_74);
             rule__ConceptInstance__Group__0__Impl();
 
             state._fsp--;
@@ -38908,7 +38869,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12343:1: ( rule__ConceptInstance__Group__1__Impl rule__ConceptInstance__Group__2 )
             // InternalOml.g:12344:2: rule__ConceptInstance__Group__1__Impl rule__ConceptInstance__Group__2
             {
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_75);
             rule__ConceptInstance__Group__1__Impl();
 
             state._fsp--;
@@ -38993,7 +38954,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12370:1: ( rule__ConceptInstance__Group__2__Impl rule__ConceptInstance__Group__3 )
             // InternalOml.g:12371:2: rule__ConceptInstance__Group__2__Impl rule__ConceptInstance__Group__3
             {
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_75);
             rule__ConceptInstance__Group__2__Impl();
 
             state._fsp--;
@@ -39039,7 +39000,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             int alt143=2;
             int LA143_0 = input.LA(1);
 
-            if ( (LA143_0==73) ) {
+            if ( (LA143_0==71) ) {
                 alt143=1;
             }
             switch (alt143) {
@@ -39335,7 +39296,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12478:1: ( rule__ConceptInstance__Group_1_1__0__Impl rule__ConceptInstance__Group_1_1__1 )
             // InternalOml.g:12479:2: rule__ConceptInstance__Group_1_1__0__Impl rule__ConceptInstance__Group_1_1__1
             {
-            pushFollow(FOLLOW_77);
+            pushFollow(FOLLOW_76);
             rule__ConceptInstance__Group_1_1__0__Impl();
 
             state._fsp--;
@@ -39607,7 +39568,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12573:2: ':'
             {
              before(grammarAccess.getConceptInstanceAccess().getColonKeyword_2_0()); 
-            match(input,73,FOLLOW_2); 
+            match(input,71,FOLLOW_2); 
              after(grammarAccess.getConceptInstanceAccess().getColonKeyword_2_0()); 
 
             }
@@ -40226,7 +40187,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12775:1: ( rule__RelationInstance__Group__0__Impl rule__RelationInstance__Group__1 )
             // InternalOml.g:12776:2: rule__RelationInstance__Group__0__Impl rule__RelationInstance__Group__1
             {
-            pushFollow(FOLLOW_78);
+            pushFollow(FOLLOW_77);
             rule__RelationInstance__Group__0__Impl();
 
             state._fsp--;
@@ -40329,7 +40290,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12802:1: ( rule__RelationInstance__Group__1__Impl rule__RelationInstance__Group__2 )
             // InternalOml.g:12803:2: rule__RelationInstance__Group__1__Impl rule__RelationInstance__Group__2
             {
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_75);
             rule__RelationInstance__Group__1__Impl();
 
             state._fsp--;
@@ -40414,7 +40375,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12829:1: ( rule__RelationInstance__Group__2__Impl rule__RelationInstance__Group__3 )
             // InternalOml.g:12830:2: rule__RelationInstance__Group__2__Impl rule__RelationInstance__Group__3
             {
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_75);
             rule__RelationInstance__Group__2__Impl();
 
             state._fsp--;
@@ -40460,7 +40421,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             int alt148=2;
             int LA148_0 = input.LA(1);
 
-            if ( (LA148_0==73) ) {
+            if ( (LA148_0==71) ) {
                 alt148=1;
             }
             switch (alt148) {
@@ -40601,7 +40562,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12883:1: ( rule__RelationInstance__Group_1_0__0__Impl rule__RelationInstance__Group_1_0__1 )
             // InternalOml.g:12884:2: rule__RelationInstance__Group_1_0__0__Impl rule__RelationInstance__Group_1_0__1
             {
-            pushFollow(FOLLOW_77);
+            pushFollow(FOLLOW_76);
             rule__RelationInstance__Group_1_0__0__Impl();
 
             state._fsp--;
@@ -40906,7 +40867,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:12991:1: ( rule__RelationInstance__Group_1_1__1__Impl rule__RelationInstance__Group_1_1__2 )
             // InternalOml.g:12992:2: rule__RelationInstance__Group_1_1__1__Impl rule__RelationInstance__Group_1_1__2
             {
-            pushFollow(FOLLOW_77);
+            pushFollow(FOLLOW_76);
             rule__RelationInstance__Group_1_1__1__Impl();
 
             state._fsp--;
@@ -41178,7 +41139,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:13086:2: ':'
             {
              before(grammarAccess.getRelationInstanceAccess().getColonKeyword_2_0()); 
-            match(input,73,FOLLOW_2); 
+            match(input,71,FOLLOW_2); 
              after(grammarAccess.getRelationInstanceAccess().getColonKeyword_2_0()); 
 
             }
@@ -41549,7 +41510,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:13207:1: ( rule__RelationInstance__Group_3__0__Impl rule__RelationInstance__Group_3__1 )
             // InternalOml.g:13208:2: rule__RelationInstance__Group_3__0__Impl rule__RelationInstance__Group_3__1
             {
-            pushFollow(FOLLOW_79);
+            pushFollow(FOLLOW_78);
             rule__RelationInstance__Group_3__0__Impl();
 
             state._fsp--;
@@ -41624,7 +41585,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:13234:1: ( rule__RelationInstance__Group_3__1__Impl rule__RelationInstance__Group_3__2 )
             // InternalOml.g:13235:2: rule__RelationInstance__Group_3__1__Impl rule__RelationInstance__Group_3__2
             {
-            pushFollow(FOLLOW_79);
+            pushFollow(FOLLOW_78);
             rule__RelationInstance__Group_3__1__Impl();
 
             state._fsp--;
@@ -41720,7 +41681,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:13261:1: ( rule__RelationInstance__Group_3__2__Impl rule__RelationInstance__Group_3__3 )
             // InternalOml.g:13262:2: rule__RelationInstance__Group_3__2__Impl rule__RelationInstance__Group_3__3
             {
-            pushFollow(FOLLOW_79);
+            pushFollow(FOLLOW_78);
             rule__RelationInstance__Group_3__2__Impl();
 
             state._fsp--;
@@ -41816,7 +41777,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:13288:1: ( rule__RelationInstance__Group_3__3__Impl rule__RelationInstance__Group_3__4 )
             // InternalOml.g:13289:2: rule__RelationInstance__Group_3__3__Impl rule__RelationInstance__Group_3__4
             {
-            pushFollow(FOLLOW_79);
+            pushFollow(FOLLOW_78);
             rule__RelationInstance__Group_3__3__Impl();
 
             state._fsp--;
@@ -44063,7 +44024,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14017:1: ( rule__PropertyRangeRestrictionAxiom__Group__0__Impl rule__PropertyRangeRestrictionAxiom__Group__1 )
             // InternalOml.g:14018:2: rule__PropertyRangeRestrictionAxiom__Group__0__Impl rule__PropertyRangeRestrictionAxiom__Group__1
             {
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_79);
             rule__PropertyRangeRestrictionAxiom__Group__0__Impl();
 
             state._fsp--;
@@ -44105,7 +44066,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14031:2: 'restricts'
             {
              before(grammarAccess.getPropertyRangeRestrictionAxiomAccess().getRestrictsKeyword_0()); 
-            match(input,74,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getPropertyRangeRestrictionAxiomAccess().getRestrictsKeyword_0()); 
 
             }
@@ -44223,7 +44184,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14071:1: ( rule__PropertyRangeRestrictionAxiom__Group__2__Impl rule__PropertyRangeRestrictionAxiom__Group__3 )
             // InternalOml.g:14072:2: rule__PropertyRangeRestrictionAxiom__Group__2__Impl rule__PropertyRangeRestrictionAxiom__Group__3
             {
-            pushFollow(FOLLOW_81);
+            pushFollow(FOLLOW_80);
             rule__PropertyRangeRestrictionAxiom__Group__2__Impl();
 
             state._fsp--;
@@ -44505,7 +44466,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14166:2: 'restricts'
             {
              before(grammarAccess.getPropertyCardinalityRestrictionAxiomAccess().getRestrictsKeyword_0()); 
-            match(input,74,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getPropertyCardinalityRestrictionAxiomAccess().getRestrictsKeyword_0()); 
 
             }
@@ -44538,7 +44499,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14179:1: ( rule__PropertyCardinalityRestrictionAxiom__Group__1__Impl rule__PropertyCardinalityRestrictionAxiom__Group__2 )
             // InternalOml.g:14180:2: rule__PropertyCardinalityRestrictionAxiom__Group__1__Impl rule__PropertyCardinalityRestrictionAxiom__Group__2
             {
-            pushFollow(FOLLOW_81);
+            pushFollow(FOLLOW_80);
             rule__PropertyCardinalityRestrictionAxiom__Group__1__Impl();
 
             state._fsp--;
@@ -44623,7 +44584,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14206:1: ( rule__PropertyCardinalityRestrictionAxiom__Group__2__Impl rule__PropertyCardinalityRestrictionAxiom__Group__3 )
             // InternalOml.g:14207:2: rule__PropertyCardinalityRestrictionAxiom__Group__2__Impl rule__PropertyCardinalityRestrictionAxiom__Group__3
             {
-            pushFollow(FOLLOW_82);
+            pushFollow(FOLLOW_81);
             rule__PropertyCardinalityRestrictionAxiom__Group__2__Impl();
 
             state._fsp--;
@@ -45001,7 +44962,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14328:2: 'restricts'
             {
              before(grammarAccess.getPropertyValueRestrictionAxiomAccess().getRestrictsKeyword_0()); 
-            match(input,74,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getPropertyValueRestrictionAxiomAccess().getRestrictsKeyword_0()); 
 
             }
@@ -45034,7 +44995,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14341:1: ( rule__PropertyValueRestrictionAxiom__Group__1__Impl rule__PropertyValueRestrictionAxiom__Group__2 )
             // InternalOml.g:14342:2: rule__PropertyValueRestrictionAxiom__Group__1__Impl rule__PropertyValueRestrictionAxiom__Group__2
             {
-            pushFollow(FOLLOW_81);
+            pushFollow(FOLLOW_80);
             rule__PropertyValueRestrictionAxiom__Group__1__Impl();
 
             state._fsp--;
@@ -45119,7 +45080,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14368:1: ( rule__PropertyValueRestrictionAxiom__Group__2__Impl rule__PropertyValueRestrictionAxiom__Group__3 )
             // InternalOml.g:14369:2: rule__PropertyValueRestrictionAxiom__Group__2__Impl rule__PropertyValueRestrictionAxiom__Group__3
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_82);
             rule__PropertyValueRestrictionAxiom__Group__2__Impl();
 
             state._fsp--;
@@ -45316,7 +45277,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14436:2: 'restricts'
             {
              before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getRestrictsKeyword_0()); 
-            match(input,74,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getRestrictsKeyword_0()); 
 
             }
@@ -45349,7 +45310,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14449:1: ( rule__PropertySelfRestrictionAxiom__Group__1__Impl rule__PropertySelfRestrictionAxiom__Group__2 )
             // InternalOml.g:14450:2: rule__PropertySelfRestrictionAxiom__Group__1__Impl rule__PropertySelfRestrictionAxiom__Group__2
             {
-            pushFollow(FOLLOW_81);
+            pushFollow(FOLLOW_80);
             rule__PropertySelfRestrictionAxiom__Group__1__Impl();
 
             state._fsp--;
@@ -45546,7 +45507,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14516:2: 'self'
             {
              before(grammarAccess.getPropertySelfRestrictionAxiomAccess().getSelfKeyword_3()); 
-            match(input,75,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getPropertySelfRestrictionAxiomAccess().getSelfKeyword_3()); 
 
             }
@@ -45621,7 +45582,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14544:2: 'key'
             {
              before(grammarAccess.getKeyAxiomAccess().getKeyKeyword_0()); 
-            match(input,76,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getKeyAxiomAccess().getKeyKeyword_0()); 
 
             }
@@ -46034,7 +45995,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14679:2: 'oneOf'
             {
              before(grammarAccess.getInstanceEnumerationAxiomAccess().getOneOfKeyword_0()); 
-            match(input,77,FOLLOW_2); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getInstanceEnumerationAxiomAccess().getOneOfKeyword_0()); 
 
             }
@@ -46447,7 +46408,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14814:2: 'oneOf'
             {
              before(grammarAccess.getLiteralEnumerationAxiomAccess().getOneOfKeyword_0()); 
-            match(input,77,FOLLOW_2); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getLiteralEnumerationAxiomAccess().getOneOfKeyword_0()); 
 
             }
@@ -46818,7 +46779,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:14935:1: ( rule__PropertyValueAssertion__Group__0__Impl rule__PropertyValueAssertion__Group__1 )
             // InternalOml.g:14936:2: rule__PropertyValueAssertion__Group__0__Impl rule__PropertyValueAssertion__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_82);
             rule__PropertyValueAssertion__Group__0__Impl();
 
             state._fsp--;
@@ -47080,7 +47041,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15016:1: ( rule__PropertyValueAssertion__Group_2__0__Impl rule__PropertyValueAssertion__Group_2__1 )
             // InternalOml.g:15017:2: rule__PropertyValueAssertion__Group_2__0__Impl rule__PropertyValueAssertion__Group_2__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_82);
             rule__PropertyValueAssertion__Group_2__0__Impl();
 
             state._fsp--;
@@ -47356,7 +47317,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15111:2: '('
             {
              before(grammarAccess.getTypePredicateAccess().getLeftParenthesisKeyword_1()); 
-            match(input,78,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getTypePredicateAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -47511,7 +47472,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15164:2: ')'
             {
              before(grammarAccess.getTypePredicateAccess().getRightParenthesisKeyword_3()); 
-            match(input,79,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getTypePredicateAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -47671,7 +47632,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15219:2: '('
             {
              before(grammarAccess.getRelationEntityPredicateAccess().getLeftParenthesisKeyword_1()); 
-            match(input,78,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getRelationEntityPredicateAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -48146,7 +48107,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15380:2: ')'
             {
              before(grammarAccess.getRelationEntityPredicateAccess().getRightParenthesisKeyword_7()); 
-            match(input,79,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getRelationEntityPredicateAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -48306,7 +48267,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15435:2: '('
             {
              before(grammarAccess.getPropertyPredicateAccess().getLeftParenthesisKeyword_1()); 
-            match(input,78,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getPropertyPredicateAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -48621,7 +48582,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15542:2: ')'
             {
              before(grammarAccess.getPropertyPredicateAccess().getRightParenthesisKeyword_5()); 
-            match(input,79,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getPropertyPredicateAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -48696,7 +48657,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15570:2: 'sameAs'
             {
              before(grammarAccess.getSameAsPredicateAccess().getSameAsKeyword_0()); 
-            match(input,80,FOLLOW_2); 
+            match(input,79,FOLLOW_2); 
              after(grammarAccess.getSameAsPredicateAccess().getSameAsKeyword_0()); 
 
             }
@@ -48771,7 +48732,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15597:2: '('
             {
              before(grammarAccess.getSameAsPredicateAccess().getLeftParenthesisKeyword_1()); 
-            match(input,78,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getSameAsPredicateAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -49086,7 +49047,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15704:2: ')'
             {
              before(grammarAccess.getSameAsPredicateAccess().getRightParenthesisKeyword_5()); 
-            match(input,79,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getSameAsPredicateAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -49161,7 +49122,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15732:2: 'differentFrom'
             {
              before(grammarAccess.getDifferentFromPredicateAccess().getDifferentFromKeyword_0()); 
-            match(input,81,FOLLOW_2); 
+            match(input,80,FOLLOW_2); 
              after(grammarAccess.getDifferentFromPredicateAccess().getDifferentFromKeyword_0()); 
 
             }
@@ -49236,7 +49197,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15759:2: '('
             {
              before(grammarAccess.getDifferentFromPredicateAccess().getLeftParenthesisKeyword_1()); 
-            match(input,78,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getDifferentFromPredicateAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -49551,7 +49512,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15866:2: ')'
             {
              before(grammarAccess.getDifferentFromPredicateAccess().getRightParenthesisKeyword_5()); 
-            match(input,79,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getDifferentFromPredicateAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -49626,7 +49587,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15894:2: 'builtIn'
             {
              before(grammarAccess.getBuiltInPredicateAccess().getBuiltInKeyword_0()); 
-            match(input,82,FOLLOW_2); 
+            match(input,81,FOLLOW_2); 
              after(grammarAccess.getBuiltInPredicateAccess().getBuiltInKeyword_0()); 
 
             }
@@ -49701,7 +49662,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15921:2: '('
             {
              before(grammarAccess.getBuiltInPredicateAccess().getLeftParenthesisKeyword_1()); 
-            match(input,78,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getBuiltInPredicateAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -50119,7 +50080,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:16055:2: ')'
             {
              before(grammarAccess.getBuiltInPredicateAccess().getRightParenthesisKeyword_6()); 
-            match(input,79,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getBuiltInPredicateAccess().getRightParenthesisKeyword_6()); 
 
             }
@@ -50433,7 +50394,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             int alt165=2;
             int LA165_0 = input.LA(1);
 
-            if ( ((LA165_0>=83 && LA165_0<=84)) ) {
+            if ( ((LA165_0>=82 && LA165_0<=83)) ) {
                 alt165=1;
             }
             switch (alt165) {
@@ -50525,7 +50486,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:16191:2: '^^'
             {
              before(grammarAccess.getQuotedLiteralAccess().getCircumflexAccentCircumflexAccentKeyword_1_0_0()); 
-            match(input,83,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getQuotedLiteralAccess().getCircumflexAccentCircumflexAccentKeyword_1_0_0()); 
 
             }
@@ -50680,7 +50641,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:16245:2: '$'
             {
              before(grammarAccess.getQuotedLiteralAccess().getDollarSignKeyword_1_1_0()); 
-            match(input,84,FOLLOW_2); 
+            match(input,83,FOLLOW_2); 
              after(grammarAccess.getQuotedLiteralAccess().getDollarSignKeyword_1_1_0()); 
 
             }
@@ -50801,22 +50762,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA166_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt166=1;
             }
-            else if ( LA166_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA166_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt166=1;
             }
-            else if ( LA166_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA166_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt166=1;
             }
-            else if ( LA166_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA166_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt166=1;
             }
-            else if ( LA166_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA166_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt166=1;
             }
-            else if ( LA166_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA166_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt166=1;
             }
-            else if ( LA166_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA166_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt166=1;
             }
             switch (alt166) {
@@ -50871,22 +50832,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA167_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt167=1;
             }
-            else if ( LA167_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA167_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt167=2;
             }
-            else if ( LA167_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA167_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt167=3;
             }
-            else if ( LA167_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA167_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt167=4;
             }
-            else if ( LA167_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA167_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt167=5;
             }
-            else if ( LA167_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA167_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt167=6;
             }
-            else if ( LA167_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA167_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt167=7;
             }
             else {
@@ -51263,22 +51224,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA168_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt168=1;
             }
-            else if ( LA168_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA168_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt168=1;
             }
-            else if ( LA168_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA168_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt168=1;
             }
-            else if ( LA168_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA168_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt168=1;
             }
-            else if ( LA168_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA168_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt168=1;
             }
-            else if ( LA168_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA168_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt168=1;
             }
-            else if ( LA168_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA168_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt168=1;
             }
             switch (alt168) {
@@ -51336,22 +51297,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA169_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt169=1;
             }
-            else if ( LA169_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA169_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt169=1;
             }
-            else if ( LA169_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA169_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt169=1;
             }
-            else if ( LA169_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA169_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt169=1;
             }
-            else if ( LA169_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA169_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt169=1;
             }
-            else if ( LA169_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA169_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt169=1;
             }
-            else if ( LA169_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA169_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt169=1;
             }
             switch (alt169) {
@@ -51409,22 +51370,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA170_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt170=1;
             }
-            else if ( LA170_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA170_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt170=1;
             }
-            else if ( LA170_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA170_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt170=1;
             }
-            else if ( LA170_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA170_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt170=1;
             }
-            else if ( LA170_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA170_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt170=1;
             }
-            else if ( LA170_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA170_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt170=1;
             }
-            else if ( LA170_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA170_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt170=1;
             }
             switch (alt170) {
@@ -51482,22 +51443,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA171_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt171=1;
             }
-            else if ( LA171_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA171_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt171=1;
             }
-            else if ( LA171_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA171_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt171=1;
             }
-            else if ( LA171_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA171_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt171=1;
             }
-            else if ( LA171_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA171_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt171=1;
             }
-            else if ( LA171_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA171_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt171=1;
             }
-            else if ( LA171_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA171_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt171=1;
             }
             switch (alt171) {
@@ -51555,22 +51516,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA172_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt172=1;
             }
-            else if ( LA172_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA172_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt172=1;
             }
-            else if ( LA172_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA172_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt172=1;
             }
-            else if ( LA172_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA172_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt172=1;
             }
-            else if ( LA172_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA172_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt172=1;
             }
-            else if ( LA172_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA172_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt172=1;
             }
-            else if ( LA172_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA172_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt172=1;
             }
             switch (alt172) {
@@ -51628,22 +51589,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA173_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 0) ) {
                 alt173=1;
             }
-            else if ( LA173_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
+            else if ( LA173_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 1) ) {
                 alt173=1;
             }
-            else if ( LA173_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
+            else if ( LA173_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 2) ) {
                 alt173=1;
             }
-            else if ( LA173_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
+            else if ( LA173_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 3) ) {
                 alt173=1;
             }
-            else if ( LA173_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
+            else if ( LA173_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 4) ) {
                 alt173=1;
             }
-            else if ( LA173_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
+            else if ( LA173_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 5) ) {
                 alt173=1;
             }
-            else if ( LA173_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
+            else if ( LA173_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEntityAccess().getUnorderedGroup_2_5(), 6) ) {
                 alt173=1;
             }
             switch (alt173) {
@@ -52671,22 +52632,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA184_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt184=1;
             }
-            else if ( LA184_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA184_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt184=1;
             }
-            else if ( LA184_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA184_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt184=1;
             }
-            else if ( LA184_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA184_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt184=1;
             }
-            else if ( LA184_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA184_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt184=1;
             }
-            else if ( LA184_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA184_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt184=1;
             }
-            else if ( LA184_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA184_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt184=1;
             }
             switch (alt184) {
@@ -52741,22 +52702,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA185_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt185=1;
             }
-            else if ( LA185_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA185_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt185=2;
             }
-            else if ( LA185_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA185_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt185=3;
             }
-            else if ( LA185_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA185_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt185=4;
             }
-            else if ( LA185_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA185_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt185=5;
             }
-            else if ( LA185_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA185_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt185=6;
             }
-            else if ( LA185_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA185_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt185=7;
             }
             else {
@@ -53133,22 +53094,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA186_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt186=1;
             }
-            else if ( LA186_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA186_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt186=1;
             }
-            else if ( LA186_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA186_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt186=1;
             }
-            else if ( LA186_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA186_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt186=1;
             }
-            else if ( LA186_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA186_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt186=1;
             }
-            else if ( LA186_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA186_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt186=1;
             }
-            else if ( LA186_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA186_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt186=1;
             }
             switch (alt186) {
@@ -53206,22 +53167,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA187_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt187=1;
             }
-            else if ( LA187_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA187_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt187=1;
             }
-            else if ( LA187_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA187_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt187=1;
             }
-            else if ( LA187_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA187_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt187=1;
             }
-            else if ( LA187_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA187_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt187=1;
             }
-            else if ( LA187_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA187_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt187=1;
             }
-            else if ( LA187_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA187_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt187=1;
             }
             switch (alt187) {
@@ -53279,22 +53240,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA188_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt188=1;
             }
-            else if ( LA188_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA188_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt188=1;
             }
-            else if ( LA188_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA188_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt188=1;
             }
-            else if ( LA188_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA188_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt188=1;
             }
-            else if ( LA188_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA188_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt188=1;
             }
-            else if ( LA188_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA188_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt188=1;
             }
-            else if ( LA188_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA188_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt188=1;
             }
             switch (alt188) {
@@ -53352,22 +53313,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA189_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt189=1;
             }
-            else if ( LA189_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA189_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt189=1;
             }
-            else if ( LA189_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA189_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt189=1;
             }
-            else if ( LA189_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA189_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt189=1;
             }
-            else if ( LA189_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA189_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt189=1;
             }
-            else if ( LA189_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA189_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt189=1;
             }
-            else if ( LA189_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA189_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt189=1;
             }
             switch (alt189) {
@@ -53425,22 +53386,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA190_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt190=1;
             }
-            else if ( LA190_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA190_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt190=1;
             }
-            else if ( LA190_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA190_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt190=1;
             }
-            else if ( LA190_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA190_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt190=1;
             }
-            else if ( LA190_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA190_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt190=1;
             }
-            else if ( LA190_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA190_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt190=1;
             }
-            else if ( LA190_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA190_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt190=1;
             }
             switch (alt190) {
@@ -53498,22 +53459,22 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             if ( LA191_0 == 46 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 0) ) {
                 alt191=1;
             }
-            else if ( LA191_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
+            else if ( LA191_0 == 84 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 1) ) {
                 alt191=1;
             }
-            else if ( LA191_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
+            else if ( LA191_0 == 85 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 2) ) {
                 alt191=1;
             }
-            else if ( LA191_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
+            else if ( LA191_0 == 86 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 3) ) {
                 alt191=1;
             }
-            else if ( LA191_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
+            else if ( LA191_0 == 87 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 4) ) {
                 alt191=1;
             }
-            else if ( LA191_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
+            else if ( LA191_0 == 88 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 5) ) {
                 alt191=1;
             }
-            else if ( LA191_0 == 90 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
+            else if ( LA191_0 == 89 && getUnorderedGroupHelper().canSelect(grammarAccess.getUnreifiedRelationAccess().getUnorderedGroup_2_4(), 6) ) {
                 alt191=1;
             }
             switch (alt191) {
@@ -55296,7 +55257,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:17637:4: 'inverse'
             {
              before(grammarAccess.getRelationEntityAccess().getInverseFunctionalInverseKeyword_2_5_1_0_0()); 
-            match(input,85,FOLLOW_2); 
+            match(input,84,FOLLOW_2); 
              after(grammarAccess.getRelationEntityAccess().getInverseFunctionalInverseKeyword_2_5_1_0_0()); 
 
             }
@@ -55341,7 +55302,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:17656:4: 'symmetric'
             {
              before(grammarAccess.getRelationEntityAccess().getSymmetricSymmetricKeyword_2_5_2_0()); 
-            match(input,86,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getRelationEntityAccess().getSymmetricSymmetricKeyword_2_5_2_0()); 
 
             }
@@ -55386,7 +55347,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:17675:4: 'asymmetric'
             {
              before(grammarAccess.getRelationEntityAccess().getAsymmetricAsymmetricKeyword_2_5_3_0()); 
-            match(input,87,FOLLOW_2); 
+            match(input,86,FOLLOW_2); 
              after(grammarAccess.getRelationEntityAccess().getAsymmetricAsymmetricKeyword_2_5_3_0()); 
 
             }
@@ -55431,7 +55392,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:17694:4: 'reflexive'
             {
              before(grammarAccess.getRelationEntityAccess().getReflexiveReflexiveKeyword_2_5_4_0()); 
-            match(input,88,FOLLOW_2); 
+            match(input,87,FOLLOW_2); 
              after(grammarAccess.getRelationEntityAccess().getReflexiveReflexiveKeyword_2_5_4_0()); 
 
             }
@@ -55476,7 +55437,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:17713:4: 'irreflexive'
             {
              before(grammarAccess.getRelationEntityAccess().getIrreflexiveIrreflexiveKeyword_2_5_5_0()); 
-            match(input,89,FOLLOW_2); 
+            match(input,88,FOLLOW_2); 
              after(grammarAccess.getRelationEntityAccess().getIrreflexiveIrreflexiveKeyword_2_5_5_0()); 
 
             }
@@ -55521,7 +55482,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:17732:4: 'transitive'
             {
              before(grammarAccess.getRelationEntityAccess().getTransitiveTransitiveKeyword_2_5_6_0()); 
-            match(input,90,FOLLOW_2); 
+            match(input,89,FOLLOW_2); 
              after(grammarAccess.getRelationEntityAccess().getTransitiveTransitiveKeyword_2_5_6_0()); 
 
             }
@@ -58428,7 +58389,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18845:4: 'inverse'
             {
              before(grammarAccess.getUnreifiedRelationAccess().getInverseFunctionalInverseKeyword_2_4_1_0_0()); 
-            match(input,85,FOLLOW_2); 
+            match(input,84,FOLLOW_2); 
              after(grammarAccess.getUnreifiedRelationAccess().getInverseFunctionalInverseKeyword_2_4_1_0_0()); 
 
             }
@@ -58473,7 +58434,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18864:4: 'symmetric'
             {
              before(grammarAccess.getUnreifiedRelationAccess().getSymmetricSymmetricKeyword_2_4_2_0()); 
-            match(input,86,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getUnreifiedRelationAccess().getSymmetricSymmetricKeyword_2_4_2_0()); 
 
             }
@@ -58518,7 +58479,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18883:4: 'asymmetric'
             {
              before(grammarAccess.getUnreifiedRelationAccess().getAsymmetricAsymmetricKeyword_2_4_3_0()); 
-            match(input,87,FOLLOW_2); 
+            match(input,86,FOLLOW_2); 
              after(grammarAccess.getUnreifiedRelationAccess().getAsymmetricAsymmetricKeyword_2_4_3_0()); 
 
             }
@@ -58563,7 +58524,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18902:4: 'reflexive'
             {
              before(grammarAccess.getUnreifiedRelationAccess().getReflexiveReflexiveKeyword_2_4_4_0()); 
-            match(input,88,FOLLOW_2); 
+            match(input,87,FOLLOW_2); 
              after(grammarAccess.getUnreifiedRelationAccess().getReflexiveReflexiveKeyword_2_4_4_0()); 
 
             }
@@ -58608,7 +58569,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18921:4: 'irreflexive'
             {
              before(grammarAccess.getUnreifiedRelationAccess().getIrreflexiveIrreflexiveKeyword_2_4_5_0()); 
-            match(input,89,FOLLOW_2); 
+            match(input,88,FOLLOW_2); 
              after(grammarAccess.getUnreifiedRelationAccess().getIrreflexiveIrreflexiveKeyword_2_4_5_0()); 
 
             }
@@ -58653,7 +58614,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18940:4: 'transitive'
             {
              before(grammarAccess.getUnreifiedRelationAccess().getTransitiveTransitiveKeyword_2_4_6_0()); 
-            match(input,90,FOLLOW_2); 
+            match(input,89,FOLLOW_2); 
              after(grammarAccess.getUnreifiedRelationAccess().getTransitiveTransitiveKeyword_2_4_6_0()); 
 
             }
@@ -59311,9 +59272,9 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BuiltIn__RefAssignment_1_1_2"
 
 
-    // $ANTLR start "rule__StructureInstance__TypeAssignment_0"
-    // InternalOml.g:19188:1: rule__StructureInstance__TypeAssignment_0 : ( ( ruleRef ) ) ;
-    public final void rule__StructureInstance__TypeAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__StructureInstance__TypeAssignment_1"
+    // InternalOml.g:19188:1: rule__StructureInstance__TypeAssignment_1 : ( ( ruleRef ) ) ;
+    public final void rule__StructureInstance__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59324,21 +59285,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:19193:2: ( ( ruleRef ) )
             // InternalOml.g:19194:3: ( ruleRef )
             {
-             before(grammarAccess.getStructureInstanceAccess().getTypeStructureCrossReference_0_0()); 
+             before(grammarAccess.getStructureInstanceAccess().getTypeStructureCrossReference_1_0()); 
             // InternalOml.g:19195:3: ( ruleRef )
             // InternalOml.g:19196:4: ruleRef
             {
-             before(grammarAccess.getStructureInstanceAccess().getTypeStructureRefParserRuleCall_0_0_1()); 
+             before(grammarAccess.getStructureInstanceAccess().getTypeStructureRefParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleRef();
 
             state._fsp--;
 
-             after(grammarAccess.getStructureInstanceAccess().getTypeStructureRefParserRuleCall_0_0_1()); 
+             after(grammarAccess.getStructureInstanceAccess().getTypeStructureRefParserRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getStructureInstanceAccess().getTypeStructureCrossReference_0_0()); 
+             after(grammarAccess.getStructureInstanceAccess().getTypeStructureCrossReference_1_0()); 
 
             }
 
@@ -59357,12 +59318,12 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StructureInstance__TypeAssignment_0"
+    // $ANTLR end "rule__StructureInstance__TypeAssignment_1"
 
 
-    // $ANTLR start "rule__StructureInstance__OwnedPropertyValuesAssignment_2"
-    // InternalOml.g:19207:1: rule__StructureInstance__OwnedPropertyValuesAssignment_2 : ( rulePropertyValueAssertion ) ;
-    public final void rule__StructureInstance__OwnedPropertyValuesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__StructureInstance__OwnedPropertyValuesAssignment_3"
+    // InternalOml.g:19207:1: rule__StructureInstance__OwnedPropertyValuesAssignment_3 : ( rulePropertyValueAssertion ) ;
+    public final void rule__StructureInstance__OwnedPropertyValuesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59373,13 +59334,13 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:19212:2: ( rulePropertyValueAssertion )
             // InternalOml.g:19213:3: rulePropertyValueAssertion
             {
-             before(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_2_0()); 
+             before(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             rulePropertyValueAssertion();
 
             state._fsp--;
 
-             after(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_2_0()); 
+             after(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_3_0()); 
 
             }
 
@@ -59398,7 +59359,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StructureInstance__OwnedPropertyValuesAssignment_2"
+    // $ANTLR end "rule__StructureInstance__OwnedPropertyValuesAssignment_3"
 
 
     // $ANTLR start "rule__AnonymousRelationInstance__TargetAssignment_0"
@@ -59450,9 +59411,9 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AnonymousRelationInstance__TargetAssignment_0"
 
 
-    // $ANTLR start "rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3"
-    // InternalOml.g:19241:1: rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3 : ( rulePropertyValueAssertion ) ;
-    public final void rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2"
+    // InternalOml.g:19241:1: rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2 : ( rulePropertyValueAssertion ) ;
+    public final void rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59463,13 +59424,13 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:19246:2: ( rulePropertyValueAssertion )
             // InternalOml.g:19247:3: rulePropertyValueAssertion
             {
-             before(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_3_0()); 
+             before(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             rulePropertyValueAssertion();
 
             state._fsp--;
 
-             after(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_3_0()); 
+             after(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesPropertyValueAssertionParserRuleCall_2_0()); 
 
             }
 
@@ -59488,7 +59449,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_3"
+    // $ANTLR end "rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2"
 
 
     // $ANTLR start "rule__ConceptInstance__OwnedAnnotationsAssignment_0"
@@ -62818,7 +62779,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     protected DFA183 dfa183 = new DFA183(this);
     static final String dfa_1s = "\46\uffff";
     static final String dfa_2s = "\1\35\1\10\2\uffff\3\4\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_3s = "\1\44\1\12\2\uffff\10\44\1\124\3\44\1\15\1\12\1\10\5\44\1\124\7\44\1\12\1\10\4\44";
+    static final String dfa_3s = "\1\44\1\12\2\uffff\10\44\1\123\3\44\1\15\1\12\1\10\5\44\1\123\7\44\1\12\1\10\4\44";
     static final String dfa_4s = "\2\uffff\1\1\1\2\42\uffff";
     static final String dfa_5s = "\46\uffff}>";
     static final String[] dfa_6s = {
@@ -62834,7 +62795,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
-            "\1\1\1\20\1\2\4\uffff\1\3\56\uffff\1\21\1\22",
+            "\1\1\1\20\1\2\4\uffff\1\3\55\uffff\1\21\1\22",
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
@@ -62846,7 +62807,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
-            "\1\1\1\20\1\2\4\uffff\1\3\56\uffff\1\40\1\41",
+            "\1\1\1\20\1\2\4\uffff\1\3\55\uffff\1\40\1\41",
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
             "\1\1\1\20\1\2\4\uffff\1\3",
@@ -62888,7 +62849,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     }
     static final String dfa_7s = "\47\uffff";
     static final String dfa_8s = "\1\35\1\10\1\14\3\4\2\uffff\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_9s = "\1\37\1\12\1\43\3\37\2\uffff\5\37\1\124\3\37\1\15\1\12\1\10\5\37\1\124\7\37\1\12\1\10\4\37";
+    static final String dfa_9s = "\1\37\1\12\1\43\3\37\2\uffff\5\37\1\123\3\37\1\15\1\12\1\10\5\37\1\123\7\37\1\12\1\10\4\37";
     static final String dfa_10s = "\6\uffff\1\2\1\1\37\uffff";
     static final String dfa_11s = "\47\uffff}>";
     static final String[] dfa_12s = {
@@ -62905,7 +62866,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
-            "\1\1\1\21\1\2\63\uffff\1\22\1\23",
+            "\1\1\1\21\1\2\62\uffff\1\22\1\23",
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
@@ -62917,7 +62878,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
-            "\1\1\1\21\1\2\63\uffff\1\41\1\42",
+            "\1\1\1\21\1\2\62\uffff\1\41\1\42",
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
             "\1\1\1\21\1\2",
@@ -62957,7 +62918,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             return "2223:1: rule__VocabularyBox__Alternatives : ( ( ruleVocabulary ) | ( ruleVocabularyBundle ) );";
         }
     }
-    static final String dfa_13s = "\1\44\1\12\1\43\3\44\2\uffff\5\44\1\124\3\44\1\15\1\12\1\10\5\44\1\124\7\44\1\12\1\10\4\44";
+    static final String dfa_13s = "\1\44\1\12\1\43\3\44\2\uffff\5\44\1\123\3\44\1\15\1\12\1\10\5\44\1\123\7\44\1\12\1\10\4\44";
     static final String[] dfa_14s = {
             "\1\1\6\uffff\1\2",
             "\1\3\1\4\1\5",
@@ -62972,7 +62933,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
-            "\1\1\1\21\5\uffff\1\2\56\uffff\1\22\1\23",
+            "\1\1\1\21\5\uffff\1\2\55\uffff\1\22\1\23",
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
@@ -62984,7 +62945,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
-            "\1\1\1\21\5\uffff\1\2\56\uffff\1\41\1\42",
+            "\1\1\1\21\5\uffff\1\2\55\uffff\1\41\1\42",
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
             "\1\1\1\21\5\uffff\1\2",
@@ -63021,7 +62982,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     }
     static final String dfa_15s = "\56\uffff";
     static final String dfa_16s = "\1\35\1\10\1\uffff\1\45\2\10\2\uffff\3\4\2\10\2\uffff\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_17s = "\1\101\1\12\1\uffff\1\101\1\53\1\76\2\uffff\3\101\1\76\1\53\2\uffff\5\101\1\124\3\101\1\15\1\12\1\10\5\101\1\124\7\101\1\12\1\10\4\101";
+    static final String dfa_17s = "\1\101\1\12\1\uffff\1\101\1\53\1\76\2\uffff\3\101\1\76\1\53\2\uffff\5\101\1\123\3\101\1\15\1\12\1\10\5\101\1\123\7\101\1\12\1\10\4\101";
     static final String dfa_18s = "\2\uffff\1\1\3\uffff\1\2\1\4\5\uffff\1\5\1\3\37\uffff";
     static final String dfa_19s = "\56\uffff}>";
     static final String[] dfa_20s = {
@@ -63045,7 +63006,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
-            "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7\21\uffff\1\31\1\32",
+            "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7\20\uffff\1\31\1\32",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
@@ -63057,7 +63018,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
-            "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7\21\uffff\1\50\1\51",
+            "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7\20\uffff\1\50\1\51",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
             "\1\1\1\30\6\uffff\1\2\1\3\2\uffff\1\2\1\4\4\uffff\1\2\3\uffff\1\5\11\uffff\1\6\3\uffff\1\7",
@@ -63098,7 +63059,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_21s = "\1\35\1\10\1\uffff\1\45\1\uffff\3\4\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_22s = "\1\63\1\12\1\uffff\1\63\1\uffff\10\63\1\124\3\63\1\15\1\12\1\10\5\63\1\124\7\63\1\12\1\10\4\63";
+    static final String dfa_22s = "\1\63\1\12\1\uffff\1\63\1\uffff\10\63\1\123\3\63\1\15\1\12\1\10\5\63\1\123\7\63\1\12\1\10\4\63";
     static final String dfa_23s = "\2\uffff\1\1\1\uffff\1\2\42\uffff";
     static final String[] dfa_24s = {
             "\1\1\7\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
@@ -63114,7 +63075,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
-            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4\37\uffff\1\22\1\23",
+            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4\36\uffff\1\22\1\23",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
@@ -63126,7 +63087,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
-            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4\37\uffff\1\41\1\42",
+            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4\36\uffff\1\41\1\42",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\2\3\uffff\1\4",
@@ -63163,7 +63124,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             return "2394:1: rule__Type__Alternatives : ( ( ruleClassifier ) | ( ruleScalar ) );";
         }
     }
-    static final String dfa_25s = "\1\57\1\12\1\uffff\1\57\1\uffff\10\57\1\124\3\57\1\15\1\12\1\10\5\57\1\124\7\57\1\12\1\10\4\57";
+    static final String dfa_25s = "\1\57\1\12\1\uffff\1\57\1\uffff\10\57\1\123\3\57\1\15\1\12\1\10\5\57\1\123\7\57\1\12\1\10\4\57";
     static final String[] dfa_26s = {
             "\1\1\7\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\5\1\6\1\7",
@@ -63178,7 +63139,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
-            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4\43\uffff\1\22\1\23",
+            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4\42\uffff\1\22\1\23",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
@@ -63190,7 +63151,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
-            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4\43\uffff\1\41\1\42",
+            "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4\42\uffff\1\41\1\42",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
             "\1\1\1\21\6\uffff\1\2\1\3\2\uffff\2\2\4\uffff\1\4",
@@ -63227,7 +63188,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     }
     static final String dfa_27s = "\50\uffff";
     static final String dfa_28s = "\1\35\1\10\1\uffff\1\45\2\uffff\3\4\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_29s = "\1\52\1\12\1\uffff\1\52\2\uffff\10\52\1\124\3\52\1\15\1\12\1\10\5\52\1\124\7\52\1\12\1\10\4\52";
+    static final String dfa_29s = "\1\52\1\12\1\uffff\1\52\2\uffff\10\52\1\123\3\52\1\15\1\12\1\10\5\52\1\123\7\52\1\12\1\10\4\52";
     static final String dfa_30s = "\2\uffff\1\1\1\uffff\1\2\1\3\42\uffff";
     static final String dfa_31s = "\50\uffff}>";
     static final String[] dfa_32s = {
@@ -63245,7 +63206,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
-            "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5\50\uffff\1\23\1\24",
+            "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5\47\uffff\1\23\1\24",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
@@ -63257,7 +63218,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
-            "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5\50\uffff\1\42\1\43",
+            "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5\47\uffff\1\42\1\43",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
             "\1\1\1\22\6\uffff\1\2\1\3\2\uffff\1\4\1\5",
@@ -63373,7 +63334,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_41s = "\1\35\1\10\1\uffff\1\52\2\uffff\3\4\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_42s = "\1\103\1\12\1\uffff\1\101\2\uffff\10\103\1\124\3\103\1\15\1\12\1\10\5\103\1\124\7\103\1\12\1\10\4\103";
+    static final String dfa_42s = "\1\103\1\12\1\uffff\1\101\2\uffff\10\103\1\123\3\103\1\15\1\12\1\10\5\103\1\123\7\103\1\12\1\10\4\103";
     static final String[] dfa_43s = {
             "\1\1\10\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\6\1\7\1\10",
@@ -63389,7 +63350,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
-            "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5\17\uffff\1\23\1\24",
+            "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5\16\uffff\1\23\1\24",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
@@ -63401,7 +63362,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
-            "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5\17\uffff\1\42\1\43",
+            "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5\16\uffff\1\42\1\43",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
             "\1\1\1\22\7\uffff\1\3\3\uffff\1\5\10\uffff\1\2\15\uffff\1\4\2\5",
@@ -63438,7 +63399,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_44s = "\1\35\1\10\3\uffff\3\4\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_45s = "\1\103\1\12\3\uffff\10\103\1\124\3\103\1\15\1\12\1\10\5\103\1\124\7\103\1\12\1\10\4\103";
+    static final String dfa_45s = "\1\103\1\12\3\uffff\10\103\1\123\3\103\1\15\1\12\1\10\5\103\1\123\7\103\1\12\1\10\4\103";
     static final String dfa_46s = "\2\uffff\1\1\1\2\1\3\42\uffff";
     static final String[] dfa_47s = {
             "\1\1\10\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
@@ -63454,7 +63415,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
-            "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3\17\uffff\1\22\1\23",
+            "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3\16\uffff\1\22\1\23",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
@@ -63466,7 +63427,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
-            "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3\17\uffff\1\41\1\42",
+            "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3\16\uffff\1\41\1\42",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
             "\1\1\1\21\7\uffff\1\4\3\uffff\1\4\27\uffff\1\2\1\3",
@@ -63504,7 +63465,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_48s = "\1\35\1\10\1\uffff\1\52\1\uffff\3\4\11\35\1\4\2\10\15\35\2\10\4\35";
-    static final String dfa_49s = "\1\110\1\12\1\uffff\1\110\1\uffff\10\110\1\124\3\110\1\15\1\12\1\10\5\110\1\124\7\110\1\12\1\10\4\110";
+    static final String dfa_49s = "\1\110\1\12\1\uffff\1\110\1\uffff\10\110\1\123\3\110\1\15\1\12\1\10\5\110\1\123\7\110\1\12\1\10\4\110";
     static final String[] dfa_50s = {
             "\1\1\10\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\5\1\6\1\7",
@@ -63519,7 +63480,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
-            "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2\12\uffff\1\22\1\23",
+            "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2\11\uffff\1\22\1\23",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
@@ -63531,7 +63492,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
-            "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2\12\uffff\1\41\1\42",
+            "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2\11\uffff\1\41\1\42",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
             "\1\1\1\21\7\uffff\1\3\3\uffff\1\4\35\uffff\1\2",
@@ -63567,7 +63528,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             return "2811:1: rule__NamedInstance__Alternatives : ( ( ruleConceptInstance ) | ( ruleRelationInstance ) );";
         }
     }
-    static final String dfa_51s = "\1\106\1\12\1\uffff\1\106\2\uffff\10\106\1\124\3\106\1\15\1\12\1\10\5\106\1\124\7\106\1\12\1\10\4\106";
+    static final String dfa_51s = "\1\106\1\12\1\uffff\1\106\2\uffff\10\106\1\123\3\106\1\15\1\12\1\10\5\106\1\123\7\106\1\12\1\10\4\106";
     static final String[] dfa_52s = {
             "\1\1\7\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\6\1\7\1\10",
@@ -63583,7 +63544,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
-            "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4\14\uffff\1\23\1\24",
+            "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4\13\uffff\1\23\1\24",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
@@ -63595,7 +63556,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
-            "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4\14\uffff\1\42\1\43",
+            "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4\13\uffff\1\42\1\43",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
             "\1\1\1\22\6\uffff\1\5\1\3\2\uffff\2\5\4\uffff\1\5\3\uffff\1\5\11\uffff\1\5\3\uffff\1\5\2\uffff\1\2\1\uffff\1\4",
@@ -63630,8 +63591,8 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             return "2874:1: rule__VocabularyStatement__Alternatives : ( ( ruleRule ) | ( ruleBuiltIn ) | ( ruleSpecializableTerm ) );";
         }
     }
-    static final String dfa_53s = "\1\112\1\10\3\55\1\uffff\1\4\3\uffff";
-    static final String dfa_54s = "\1\112\1\31\3\55\1\uffff\1\113\3\uffff";
+    static final String dfa_53s = "\1\111\1\10\3\55\1\uffff\1\4\3\uffff";
+    static final String dfa_54s = "\1\111\1\31\3\55\1\uffff\1\112\3\uffff";
     static final String dfa_55s = "\5\uffff\1\2\1\uffff\1\1\1\3\1\4";
     static final String[] dfa_56s = {
             "\1\1",
@@ -63640,7 +63601,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\6",
             "\1\6",
             "",
-            "\10\11\1\uffff\1\11\14\uffff\3\10\56\uffff\1\7",
+            "\10\11\1\uffff\1\11\14\uffff\3\10\52\uffff\1\11\2\uffff\1\7",
             "",
             "",
             ""
@@ -63667,49 +63628,49 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             return "2901:1: rule__PropertyRestrictionAxiom__Alternatives : ( ( rulePropertySelfRestrictionAxiom ) | ( rulePropertyRangeRestrictionAxiom ) | ( rulePropertyCardinalityRestrictionAxiom ) | ( rulePropertyValueRestrictionAxiom ) );";
         }
     }
-    static final String dfa_57s = "\1\10\3\116\2\uffff\1\4\11\36\1\4\1\uffff\2\10\15\36\2\10\4\36";
-    static final String dfa_58s = "\1\122\3\116\2\uffff\1\15\6\117\1\124\2\117\1\15\1\uffff\1\12\1\10\6\117\1\124\6\117\1\12\1\10\4\117";
+    static final String dfa_57s = "\1\10\3\115\2\uffff\1\4\11\36\1\4\1\uffff\2\10\15\36\2\10\4\36";
+    static final String dfa_58s = "\1\121\3\115\2\uffff\1\15\6\116\1\123\2\116\1\15\1\uffff\1\12\1\10\6\116\1\123\6\116\1\12\1\10\4\116";
     static final String dfa_59s = "\4\uffff\1\2\1\3\13\uffff\1\1\25\uffff";
     static final String[] dfa_60s = {
-            "\1\1\1\2\1\3\105\uffff\2\4\1\5",
+            "\1\1\1\2\1\3\104\uffff\2\4\1\5",
             "\1\6",
             "\1\6",
             "\1\6",
             "",
             "",
             "\1\14\1\10\1\12\1\13\1\7\1\16\1\17\1\11\1\uffff\1\15",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21\3\uffff\1\22\1\23",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21\3\uffff\1\22\1\23",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
             "\1\31\1\25\1\27\1\30\1\24\1\33\1\34\1\26\1\uffff\1\32",
             "",
             "\1\35\1\36\1\37",
             "\1\40",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4\3\uffff\1\41\1\42",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
-            "\1\20\60\uffff\1\21",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4\3\uffff\1\41\1\42",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
+            "\1\20\57\uffff\1\21",
             "\1\43\1\44\1\45",
             "\1\46",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4",
-            "\1\21\60\uffff\1\4"
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4",
+            "\1\21\57\uffff\1\4"
     };
     static final char[] dfa_57 = DFA.unpackEncodedStringToUnsignedChars(dfa_57s);
     static final char[] dfa_58 = DFA.unpackEncodedStringToUnsignedChars(dfa_58s);
@@ -63734,8 +63695,8 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_61s = "\26\uffff";
-    static final String dfa_62s = "\1\10\3\116\1\4\11\36\2\uffff\2\10\4\36";
-    static final String dfa_63s = "\1\12\3\116\1\15\6\117\1\124\2\117\2\uffff\1\12\1\10\4\117";
+    static final String dfa_62s = "\1\10\3\115\1\4\11\36\2\uffff\2\10\4\36";
+    static final String dfa_63s = "\1\12\3\115\1\15\6\116\1\123\2\116\2\uffff\1\12\1\10\4\116";
     static final String dfa_64s = "\16\uffff\1\1\1\2\6\uffff";
     static final String dfa_65s = "\26\uffff}>";
     static final String[] dfa_66s = {
@@ -63744,23 +63705,23 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\4",
             "\1\4",
             "\1\12\1\6\1\10\1\11\1\5\1\14\1\15\1\7\1\uffff\1\13",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16\3\uffff\1\20\1\21",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16\3\uffff\1\20\1\21",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
             "",
             "",
             "\1\22\1\23\1\24",
             "\1\25",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16",
-            "\1\17\60\uffff\1\16"
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16",
+            "\1\17\57\uffff\1\16"
     };
 
     static final short[] dfa_61 = DFA.unpackEncodedString(dfa_61s);
@@ -63787,9 +63748,9 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             return "3015:1: rule__UnaryPredicate__Alternatives : ( ( ruleTypePredicate ) | ( ruleRelationEntityPredicate ) );";
         }
     }
-    static final String dfa_67s = "\1\132\1\12\2\uffff\10\103\1\124\3\103\1\15\1\12\1\10\5\103\1\124\7\103\1\12\1\10\4\103";
+    static final String dfa_67s = "\1\131\1\12\2\uffff\10\103\1\123\3\103\1\15\1\12\1\10\5\103\1\123\7\103\1\12\1\10\4\103";
     static final String[] dfa_68s = {
-            "\1\1\12\uffff\1\3\5\uffff\1\3\23\uffff\1\2\1\3\10\uffff\1\3\10\uffff\6\3",
+            "\1\1\12\uffff\1\3\5\uffff\1\3\23\uffff\1\2\1\3\7\uffff\1\3\10\uffff\6\3",
             "\1\4\1\5\1\6",
             "",
             "",
@@ -63801,7 +63762,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
-            "\1\1\1\20\43\uffff\1\2\1\3\17\uffff\1\21\1\22",
+            "\1\1\1\20\43\uffff\1\2\1\3\16\uffff\1\21\1\22",
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
@@ -63813,7 +63774,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
-            "\1\1\1\20\43\uffff\1\2\1\3\17\uffff\1\40\1\41",
+            "\1\1\1\20\43\uffff\1\2\1\3\16\uffff\1\40\1\41",
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
             "\1\1\1\20\43\uffff\1\2\1\3",
@@ -64510,27 +64471,27 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000006020000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0003008000000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000010000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000010000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000024020000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000010000000000L,0x0000000000003000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000010000000000L,0x0000000000001800L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000066020000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000700020000000L,0x0000000007E0000CL});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000700020000000L,0x0000000003F0000CL});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000866020000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0003000000000000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000008000000700L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000010000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000010000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000200L});
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0004000000000000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0008866020000000L});
     public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
     public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x1FF0000000000000L});
@@ -64547,31 +64508,31 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000020000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000020000000L,0x0000000000000008L});
     public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x2008866020000000L,0x0000000000000052L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000700020000000L,0x0000000007E00008L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000700020000000L,0x0000000003F00008L});
     public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000004020000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000010000000700L,0x0000000000070000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000010000000700L,0x0000000000038000L});
     public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0004000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000700L,0x0000000000070000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000700L,0x0000000000038000L});
     public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000004020000000L,0x0000000000000040L});
     public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
     public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000010000000700L});
     public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000702L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000004020000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000044020000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000310000000700L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x000000001C000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000040000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000400000000002L,0x0000000007E00000L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000004020000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000044020000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000310000000700L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x000000001C000000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000002FF0L,0x0000000000000080L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000040000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000400000000002L,0x0000000003F00000L});
     public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x1FF0000000000002L});
 
 }
