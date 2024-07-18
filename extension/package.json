@@ -2,7 +2,7 @@
     "name": "oml-luxor",
     "displayName": "OML Luxor",
     "description": "VSCode extension for OML",
-    "version": "2.7.1",
+    "version": "2.7.2",
     "publisher": "openCAESAR",
     "license": "Apache-2.0",
     "repository": {
