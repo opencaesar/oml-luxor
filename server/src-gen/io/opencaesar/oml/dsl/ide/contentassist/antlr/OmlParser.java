@@ -196,6 +196,7 @@ public class OmlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBuiltInAccess().getGroup_1_0(), "rule__BuiltIn__Group_1_0__0");
 			builder.put(grammarAccess.getBuiltInAccess().getGroup_1_1(), "rule__BuiltIn__Group_1_1__0");
 			builder.put(grammarAccess.getStructureInstanceAccess().getGroup(), "rule__StructureInstance__Group__0");
+			builder.put(grammarAccess.getStructureInstanceAccess().getGroup_1(), "rule__StructureInstance__Group_1__0");
 			builder.put(grammarAccess.getAnonymousRelationInstanceAccess().getGroup(), "rule__AnonymousRelationInstance__Group__0");
 			builder.put(grammarAccess.getConceptInstanceAccess().getGroup(), "rule__ConceptInstance__Group__0");
 			builder.put(grammarAccess.getConceptInstanceAccess().getGroup_1_0(), "rule__ConceptInstance__Group_1_0__0");
@@ -374,7 +375,7 @@ public class OmlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBuiltInAccess().getOwnedAnnotationsAssignment_0(), "rule__BuiltIn__OwnedAnnotationsAssignment_0");
 			builder.put(grammarAccess.getBuiltInAccess().getNameAssignment_1_0_1(), "rule__BuiltIn__NameAssignment_1_0_1");
 			builder.put(grammarAccess.getBuiltInAccess().getRefAssignment_1_1_2(), "rule__BuiltIn__RefAssignment_1_1_2");
-			builder.put(grammarAccess.getStructureInstanceAccess().getTypeAssignment_1(), "rule__StructureInstance__TypeAssignment_1");
+			builder.put(grammarAccess.getStructureInstanceAccess().getTypeAssignment_1_1(), "rule__StructureInstance__TypeAssignment_1_1");
 			builder.put(grammarAccess.getStructureInstanceAccess().getOwnedPropertyValuesAssignment_3(), "rule__StructureInstance__OwnedPropertyValuesAssignment_3");
 			builder.put(grammarAccess.getAnonymousRelationInstanceAccess().getTargetAssignment_0(), "rule__AnonymousRelationInstance__TargetAssignment_0");
 			builder.put(grammarAccess.getAnonymousRelationInstanceAccess().getOwnedPropertyValuesAssignment_2(), "rule__AnonymousRelationInstance__OwnedPropertyValuesAssignment_2");

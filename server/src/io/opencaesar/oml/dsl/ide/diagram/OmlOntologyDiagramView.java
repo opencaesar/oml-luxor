@@ -561,9 +561,9 @@ class OmlOntologyDiagramView {
 		if (element instanceof Literal)
 			return ((Literal)element).getLexicalValue();
 		else if (element instanceof StructureInstance)
-			return ((StructureInstance) element).getType().getName();
+			return ((StructureInstance) element).getStructure().getName();
 		else if (element instanceof AnonymousRelationInstance)
-			return ((AnonymousRelationInstance) element).getType().getName();
+			return ((AnonymousRelationInstance) element).getRelationEntity().getName();
 		else if (element instanceof NamedInstance)
 			return getLocalName((NamedInstance)element);
 		return "";
