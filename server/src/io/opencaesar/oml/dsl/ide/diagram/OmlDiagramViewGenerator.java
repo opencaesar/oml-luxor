@@ -19,7 +19,6 @@ import com.google.inject.Inject;
 
 import io.opencaesar.oml.Aspect;
 import io.opencaesar.oml.Axiom;
-import io.opencaesar.oml.Classifier;
 import io.opencaesar.oml.Concept;
 import io.opencaesar.oml.ConceptInstance;
 import io.opencaesar.oml.Element;
@@ -40,8 +39,6 @@ import io.opencaesar.oml.Scalar;
 import io.opencaesar.oml.ScalarProperty;
 import io.opencaesar.oml.SemanticProperty;
 import io.opencaesar.oml.SpecializationAxiom;
-import io.opencaesar.oml.Structure;
-import io.opencaesar.oml.StructuredProperty;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlCompartment;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlEdge;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlGraph;
@@ -163,7 +160,7 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 
 		frame.getChildren().add(node);
 		traceAndMark(node, aspect, context);
-		addClassifierFeatures(aspect, node);
+		addEntityFeatures(aspect, node);
 		return node;
 	}
 
@@ -180,7 +177,7 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 
 		frame.getChildren().add(node);
 		traceAndMark(node, concept, context);
-		addClassifierFeatures(concept, node);
+		addEntityFeatures(concept, node);
 		return node;
 	}
 
@@ -208,7 +205,7 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 				final OmlNode node = view.createSourceNode(entity, ts);
 				frame.getChildren().add(node);
 				traceAndMark(node, entity, context);
-				addClassifierFeatures(entity, node);
+				addEntityFeatures(entity, node);
 				return node;
 			}
 		} else if (entity == t) {
@@ -217,18 +214,18 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 				final OmlNode node = view.createTargetNode(entity, ss);
 				frame.getChildren().add(node);
 				traceAndMark(node, entity, context);
-				addClassifierFeatures(entity, node);
+				addEntityFeatures(entity, node);
 				return node;
 			}
 		} else {
 			final SModelElement ss = doSwitch(s);
 			final SModelElement ts = doSwitch(t);
 			if (null != ss && null != ts) {
-				if (scope.classifierHasPropertiesOrEdges(entity) || !keys.isEmpty()) {
+				if (scope.entityHasPropertiesOrEdges(entity) || !keys.isEmpty()) {
 					final OmlNode node = view.createNode(entity, ss, ts);
 					frame.getChildren().add(node);
 					traceAndMark(node, entity, context);
-					addClassifierFeatures(entity, node);
+					addEntityFeatures(entity, node);
 					return node;
 				} else {
 					final OmlEdge edge = view.createEdge(entity, ss, ts);
@@ -240,22 +237,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 		}
 
 		return null;
-	}
-
-	@Override
-	public SModelElement caseStructure(final Structure structure) {
-		if (!isFrameExpanded())
-			return null;
-
-		final SModelElement s = semantic2diagram.get(structure);
-		if (null != s)
-			return s;
-
-		final OmlNode node = view.createNode(structure);
-		frame.getChildren().add(node);
-		traceAndMark(node, structure, context);
-		addClassifierFeatures(structure, node);
-		return node;
 	}
 
 	@Override
@@ -342,8 +323,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 			SemanticProperty p = axiom.getProperty();
 			if (p instanceof ScalarProperty)
 				showScalarRangeAxiomInternal(e, axiom);
-			else if (p instanceof StructuredProperty)
-				showStructuredRangeAxiomInternal(e, axiom);
 			if (p instanceof Relation)
 				showRelationRangeAxiomInternal(e, axiom);
 		} else if (ax instanceof PropertyCardinalityRestrictionAxiom) {
@@ -351,8 +330,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 			SemanticProperty p = axiom.getProperty();
 			if (p instanceof ScalarProperty)
 				showScalarCardinalityAxiomInternal(e, axiom);
-			if (p instanceof StructuredProperty)
-				showStructuredCardinalityAxiomInternal(e, axiom);
 			if (p instanceof Relation)
 				showRelationCardinalityAxiomInternal(e, axiom);
 		} else if (ax instanceof PropertyValueRestrictionAxiom) {
@@ -360,8 +337,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 			SemanticProperty p = axiom.getProperty();
 			if (p instanceof ScalarProperty)
 				showScalarValueAxiomInternal(e, axiom);
-			if (p instanceof StructuredProperty)
-				showStructuredValueAxiomInternal(e, axiom);
 			if (p instanceof Relation)
 				showRelationValueAxiomInternal(e, axiom);
 		} else {
@@ -409,20 +384,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 		traceAndMark(label, ax, context);
 	}
 
-	private void showStructuredRangeAxiomInternal(final Entity e, final PropertyRangeRestrictionAxiom ax) {
-		final SModelElement source = semantic2diagram.get(e);
-		if (null == source)
-			throw new IllegalArgumentException("no entity node for showAxiom(StructuredPropertyRangeRestrictionAxiom) " + e.getAbbreviatedIri());
-		OmlCompartment compartment = view.getAxiomCompartment(source);
-		if (null == compartment) {
-			compartment = view.createAxiomCompartment(e);
-			source.getChildren().add(compartment);
-		}
-		final OmlLabel label = view.createStructuredRangeLabel(e, ax);
-		compartment.getChildren().add(label);
-		traceAndMark(label, ax, context);
-	}
-
 	private void showRelationRangeAxiomInternal(final Entity e, final PropertyRangeRestrictionAxiom ax) {
 		final SModelElement source = semantic2diagram.get(e);
 		if (null == source)
@@ -445,20 +406,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 			source.getChildren().add(compartment);
 		}
 		final OmlLabel label = view.createScalarCardinalityLabel(e, ax);
-		compartment.getChildren().add(label);
-		traceAndMark(label, ax, context);
-	}
-
-	private void showStructuredCardinalityAxiomInternal(final Entity e, final PropertyCardinalityRestrictionAxiom ax) {
-		final SModelElement source = semantic2diagram.get(e);
-		if (null == source)
-			throw new IllegalArgumentException("no entity node for showAxiom(StructuredPropertyCardinalityRestrictionAxiom) " + e.getAbbreviatedIri());
-		OmlCompartment compartment = view.getAxiomCompartment(source);
-		if (null == compartment) {
-			compartment = view.createAxiomCompartment(e);
-			source.getChildren().add(compartment);
-		}
-		final OmlLabel label = view.createStructuredCardinalityLabel(e, ax);
 		compartment.getChildren().add(label);
 		traceAndMark(label, ax, context);
 	}
@@ -489,20 +436,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 		traceAndMark(label, ax, context);
 	}
 
-	private void showStructuredValueAxiomInternal(final Entity e, final PropertyValueRestrictionAxiom ax) {
-		final SModelElement source = semantic2diagram.get(e);
-		if (null == source)
-			throw new IllegalArgumentException("no entity node for showAxiom(StructuredPropertyValueRestrictionAxiom) " + e.getAbbreviatedIri());
-		OmlCompartment compartment = view.getAxiomCompartment(source);
-		if (null == compartment) {
-			compartment = view.createAxiomCompartment(e);
-			source.getChildren().add(compartment);
-		}
-		final OmlLabel label = view.createStructuredValueLabel(e, ax);
-		compartment.getChildren().add(label);
-		traceAndMark(label, ax, context);
-	}
-
 	private void showRelationValueAxiomInternal(final Entity e, final PropertyValueRestrictionAxiom ax) {
 		final SModelElement source = semantic2diagram.get(e);
 		if (null == source)
@@ -522,7 +455,7 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 		return (null == b) || b.booleanValue();
 	}
 
-	private void addClassifierFeatures(final Classifier cls, final OmlNode node) {
+	private void addEntityFeatures(final Entity cls, final OmlNode node) {
 		scope.scalarProperties.get(cls).stream().sorted((p1, p2) -> p1.getName().compareTo(p2.getName())).forEach(f -> {
 			if (null == semantic2diagram.get(f)) {
 				OmlCompartment compartment = view.getPropertyCompartment(node);
@@ -533,15 +466,6 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 				final OmlLabel label = view.createLabel(cls, f);
 				compartment.getChildren().add(label);
 				traceAndMark(label, f, context);
-			}
-		});
-		scope.structuredProperties.get(cls).stream().sorted((p1, p2) -> p1.getName().compareTo(p2.getName())).forEach(f -> {
-			if (null == semantic2diagram.get(f)) {
-				final SModelElement source = doSwitch(cls);
-				final SModelElement target = doSwitch(f.getRanges().get(0));
-				final OmlEdge edge = view.createEdge(cls, f, source, target);
-				frame.getChildren().add(edge);
-				traceAndMark(edge, f, context);
 			}
 		});
 	}

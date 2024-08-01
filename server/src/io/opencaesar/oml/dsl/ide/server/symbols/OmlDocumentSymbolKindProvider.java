@@ -16,29 +16,21 @@
  */
 package io.opencaesar.oml.dsl.ide.server.symbols;
 
-import static io.opencaesar.oml.OmlPackage.Literals.PROPERTY;
 import static io.opencaesar.oml.OmlPackage.Literals.ASPECT;
 import static io.opencaesar.oml.OmlPackage.Literals.CONCEPT;
 import static io.opencaesar.oml.OmlPackage.Literals.NAMED_INSTANCE;
-import static io.opencaesar.oml.OmlPackage.Literals.SCALAR;
-import static io.opencaesar.oml.OmlPackage.Literals.FORWARD_RELATION;
 import static io.opencaesar.oml.OmlPackage.Literals.ONTOLOGY;
+import static io.opencaesar.oml.OmlPackage.Literals.PROPERTY;
 import static io.opencaesar.oml.OmlPackage.Literals.RELATION_ENTITY;
-import static io.opencaesar.oml.OmlPackage.Literals.RELATION_INSTANCE;
-import static io.opencaesar.oml.OmlPackage.Literals.REVERSE_RELATION;
 import static io.opencaesar.oml.OmlPackage.Literals.RULE;
-import static io.opencaesar.oml.OmlPackage.Literals.SCALAR_PROPERTY;
-import static io.opencaesar.oml.OmlPackage.Literals.STRUCTURE;
-import static io.opencaesar.oml.OmlPackage.Literals.STRUCTURED_PROPERTY;
+import static io.opencaesar.oml.OmlPackage.Literals.SCALAR;
 import static org.eclipse.lsp4j.SymbolKind.Class;
-import static org.eclipse.lsp4j.SymbolKind.Enum;
+import static org.eclipse.lsp4j.SymbolKind.Field;
+import static org.eclipse.lsp4j.SymbolKind.Function;
 import static org.eclipse.lsp4j.SymbolKind.Interface;
 import static org.eclipse.lsp4j.SymbolKind.Object;
 import static org.eclipse.lsp4j.SymbolKind.Package;
-import static org.eclipse.lsp4j.SymbolKind.Field;
 import static org.eclipse.lsp4j.SymbolKind.String;
-import static org.eclipse.lsp4j.SymbolKind.Struct;
-import static org.eclipse.lsp4j.SymbolKind.Function;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.lsp4j.SymbolKind;
@@ -59,9 +51,6 @@ public class OmlDocumentSymbolKindProvider extends DocumentSymbolMapper.Document
 			return Class;
 		if (RELATION_ENTITY.isSuperTypeOf(clazz))
 			return Class;
-		
-		if (STRUCTURE.isSuperTypeOf(clazz))
-			return Struct;
 		
 		if (SCALAR.isSuperTypeOf(clazz))
 			return String;

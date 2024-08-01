@@ -16,11 +16,11 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import com.google.common.base.Objects;
 
 import io.opencaesar.oml.Annotation;
+import io.opencaesar.oml.AnonymousConceptInstance;
 import io.opencaesar.oml.AnonymousRelationInstance;
 import io.opencaesar.oml.Argument;
 import io.opencaesar.oml.Aspect;
 import io.opencaesar.oml.BinaryPredicate;
-import io.opencaesar.oml.Classifier;
 import io.opencaesar.oml.Concept;
 import io.opencaesar.oml.ConceptInstance;
 import io.opencaesar.oml.DifferentFromPredicate;
@@ -46,9 +46,6 @@ import io.opencaesar.oml.SameAsPredicate;
 import io.opencaesar.oml.Scalar;
 import io.opencaesar.oml.ScalarProperty;
 import io.opencaesar.oml.SpecializationAxiom;
-import io.opencaesar.oml.Structure;
-import io.opencaesar.oml.StructureInstance;
-import io.opencaesar.oml.StructuredProperty;
 import io.opencaesar.oml.UnaryPredicate;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlButton;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlCompartment;
@@ -150,11 +147,6 @@ class OmlOntologyDiagramView {
 		return n;
 	}
 
-	public OmlNode createNode(final Structure structure) {
-		final OmlNode n = createMemberNode(structure, "S");
-		return n;
-	}
-
 	public OmlNode createNode(final Scalar scalar) {
 		final OmlNode n = createMemberNode(scalar, "SC");
 		return n;
@@ -200,8 +192,8 @@ class OmlOntologyDiagramView {
 		return (OmlCompartment) element.getChildren().stream().filter(it -> it.getId().endsWith(".axiom.compartment")).findFirst().orElse(null);
 	}
 
-	public OmlCompartment createAxiomCompartment(final Classifier classifier) {
-		final String id = idCache.getId(classifier) + ".axiom.compartment";
+	public OmlCompartment createAxiomCompartment(final Entity entity) {
+		final String id = idCache.getId(entity) + ".axiom.compartment";
 		return newCompartment(id, OmlDiagramModule.SCompartment_SCompartmentView);
 	}
 
@@ -209,8 +201,8 @@ class OmlOntologyDiagramView {
 		return (OmlCompartment) element.getChildren().stream().filter(it -> it.getId().endsWith(".property.compartment")).findFirst().orElse(null);
 	}
 
-	public OmlCompartment createPropertyCompartment(final Classifier classifier) {
-		final String id = idCache.getId(classifier) + ".property.compartment";
+	public OmlCompartment createPropertyCompartment(final Entity entity) {
+		final String id = idCache.getId(entity) + ".property.compartment";
 		return newCompartment(id, OmlDiagramModule.SCompartment_SCompartmentView);
 	}
 
@@ -239,8 +231,8 @@ class OmlOntologyDiagramView {
 
 	// LABELS
 
-	public OmlLabel createLabel(final Classifier cls, final ScalarProperty property) {
-		final String id = idCache.uniqueId(property, getLocalName(cls) + ".scalar." + getLocalName(property));
+	public OmlLabel createLabel(final Entity entity, final ScalarProperty property) {
+		final String id = idCache.uniqueId(property, getLocalName(entity) + ".scalar." + getLocalName(property));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
 		l.setText(property.getName() + ": " + property.getRanges().get(0).getName());
 		return l;
@@ -445,15 +437,6 @@ class OmlOntologyDiagramView {
 		return e;
 	}
 
-	public OmlEdge createEdge(final Classifier cls, final StructuredProperty property, final SModelElement from, final SModelElement to) {
-		final String id = idCache.uniqueId(property, getLocalName(cls) + ".structured-property." + getLocalName(property));
-		final OmlLabel l = newLeafSElement(OmlLabel.class, id + ".label", OmlDiagramModule.SLabel_SLabelView_text);
-		l.setText(property.getName());
-		final OmlEdge e = newEdge(from, to, id, OmlDiagramModule.OmlEdge_RestrictsArrowEdgeView);
-		e.getChildren().add(l);
-		return e;
-	}
-
 	public OmlEdge createEdge(final RelationInstance ri, final SModelElement from, final SModelElement to) {
 		final String id = idCache.uniqueId(ri, getLocalName(ri));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id + ".forward.label", OmlDiagramModule.SLabel_RelationshipLabelView);
@@ -560,8 +543,8 @@ class OmlOntologyDiagramView {
 	private String getLabel(final Element element) {
 		if (element instanceof Literal)
 			return ((Literal)element).getLexicalValue();
-		else if (element instanceof StructureInstance)
-			return ((StructureInstance) element).getStructure().getName();
+		else if (element instanceof AnonymousConceptInstance)
+			return ((AnonymousConceptInstance) element).getEntity().getName();
 		else if (element instanceof AnonymousRelationInstance)
 			return ((AnonymousRelationInstance) element).getRelationEntity().getName();
 		else if (element instanceof NamedInstance)
