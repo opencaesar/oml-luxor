@@ -6386,13 +6386,13 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnnotationValue__Alternatives"
-    // InternalOml.g:2127:1: rule__AnnotationValue__Alternatives : ( ( ( rule__AnnotationValue__LiteralValueAssignment_0 ) ) | ( ( rule__AnnotationValue__ReferencedValueAssignment_1 ) ) );
+    // InternalOml.g:2127:1: rule__AnnotationValue__Alternatives : ( ( ( rule__AnnotationValue__LiteralValuesAssignment_0 ) ) | ( ( rule__AnnotationValue__ReferencedValuesAssignment_1 ) ) );
     public final void rule__AnnotationValue__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:2131:1: ( ( ( rule__AnnotationValue__LiteralValueAssignment_0 ) ) | ( ( rule__AnnotationValue__ReferencedValueAssignment_1 ) ) )
+            // InternalOml.g:2131:1: ( ( ( rule__AnnotationValue__LiteralValuesAssignment_0 ) ) | ( ( rule__AnnotationValue__ReferencedValuesAssignment_1 ) ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -6410,24 +6410,24 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalOml.g:2132:2: ( ( rule__AnnotationValue__LiteralValueAssignment_0 ) )
+                    // InternalOml.g:2132:2: ( ( rule__AnnotationValue__LiteralValuesAssignment_0 ) )
                     {
-                    // InternalOml.g:2132:2: ( ( rule__AnnotationValue__LiteralValueAssignment_0 ) )
-                    // InternalOml.g:2133:3: ( rule__AnnotationValue__LiteralValueAssignment_0 )
+                    // InternalOml.g:2132:2: ( ( rule__AnnotationValue__LiteralValuesAssignment_0 ) )
+                    // InternalOml.g:2133:3: ( rule__AnnotationValue__LiteralValuesAssignment_0 )
                     {
-                     before(grammarAccess.getAnnotationValueAccess().getLiteralValueAssignment_0()); 
-                    // InternalOml.g:2134:3: ( rule__AnnotationValue__LiteralValueAssignment_0 )
-                    // InternalOml.g:2134:4: rule__AnnotationValue__LiteralValueAssignment_0
+                     before(grammarAccess.getAnnotationValueAccess().getLiteralValuesAssignment_0()); 
+                    // InternalOml.g:2134:3: ( rule__AnnotationValue__LiteralValuesAssignment_0 )
+                    // InternalOml.g:2134:4: rule__AnnotationValue__LiteralValuesAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AnnotationValue__LiteralValueAssignment_0();
+                    rule__AnnotationValue__LiteralValuesAssignment_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAnnotationValueAccess().getLiteralValueAssignment_0()); 
+                     after(grammarAccess.getAnnotationValueAccess().getLiteralValuesAssignment_0()); 
 
                     }
 
@@ -6435,24 +6435,24 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalOml.g:2138:2: ( ( rule__AnnotationValue__ReferencedValueAssignment_1 ) )
+                    // InternalOml.g:2138:2: ( ( rule__AnnotationValue__ReferencedValuesAssignment_1 ) )
                     {
-                    // InternalOml.g:2138:2: ( ( rule__AnnotationValue__ReferencedValueAssignment_1 ) )
-                    // InternalOml.g:2139:3: ( rule__AnnotationValue__ReferencedValueAssignment_1 )
+                    // InternalOml.g:2138:2: ( ( rule__AnnotationValue__ReferencedValuesAssignment_1 ) )
+                    // InternalOml.g:2139:3: ( rule__AnnotationValue__ReferencedValuesAssignment_1 )
                     {
-                     before(grammarAccess.getAnnotationValueAccess().getReferencedValueAssignment_1()); 
-                    // InternalOml.g:2140:3: ( rule__AnnotationValue__ReferencedValueAssignment_1 )
-                    // InternalOml.g:2140:4: rule__AnnotationValue__ReferencedValueAssignment_1
+                     before(grammarAccess.getAnnotationValueAccess().getReferencedValuesAssignment_1()); 
+                    // InternalOml.g:2140:3: ( rule__AnnotationValue__ReferencedValuesAssignment_1 )
+                    // InternalOml.g:2140:4: rule__AnnotationValue__ReferencedValuesAssignment_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AnnotationValue__ReferencedValueAssignment_1();
+                    rule__AnnotationValue__ReferencedValuesAssignment_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAnnotationValueAccess().getReferencedValueAssignment_1()); 
+                     after(grammarAccess.getAnnotationValueAccess().getReferencedValuesAssignment_1()); 
 
                     }
 
@@ -9030,13 +9030,13 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PropertyValue__Alternatives"
-    // InternalOml.g:2811:1: rule__PropertyValue__Alternatives : ( ( ( rule__PropertyValue__LiteralValueAssignment_0 ) ) | ( ( rule__PropertyValue__ContainedValueAssignment_1 ) ) | ( ( rule__PropertyValue__ReferencedValueAssignment_2 ) ) );
+    // InternalOml.g:2811:1: rule__PropertyValue__Alternatives : ( ( ( rule__PropertyValue__LiteralValuesAssignment_0 ) ) | ( ( rule__PropertyValue__ContainedValuesAssignment_1 ) ) | ( ( rule__PropertyValue__ReferencedValuesAssignment_2 ) ) );
     public final void rule__PropertyValue__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOml.g:2815:1: ( ( ( rule__PropertyValue__LiteralValueAssignment_0 ) ) | ( ( rule__PropertyValue__ContainedValueAssignment_1 ) ) | ( ( rule__PropertyValue__ReferencedValueAssignment_2 ) ) )
+            // InternalOml.g:2815:1: ( ( ( rule__PropertyValue__LiteralValuesAssignment_0 ) ) | ( ( rule__PropertyValue__ContainedValuesAssignment_1 ) ) | ( ( rule__PropertyValue__ReferencedValuesAssignment_2 ) ) )
             int alt32=3;
             switch ( input.LA(1) ) {
             case RULE_BOOLEAN_STR:
@@ -9118,24 +9118,24 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
 
             switch (alt32) {
                 case 1 :
-                    // InternalOml.g:2816:2: ( ( rule__PropertyValue__LiteralValueAssignment_0 ) )
+                    // InternalOml.g:2816:2: ( ( rule__PropertyValue__LiteralValuesAssignment_0 ) )
                     {
-                    // InternalOml.g:2816:2: ( ( rule__PropertyValue__LiteralValueAssignment_0 ) )
-                    // InternalOml.g:2817:3: ( rule__PropertyValue__LiteralValueAssignment_0 )
+                    // InternalOml.g:2816:2: ( ( rule__PropertyValue__LiteralValuesAssignment_0 ) )
+                    // InternalOml.g:2817:3: ( rule__PropertyValue__LiteralValuesAssignment_0 )
                     {
-                     before(grammarAccess.getPropertyValueAccess().getLiteralValueAssignment_0()); 
-                    // InternalOml.g:2818:3: ( rule__PropertyValue__LiteralValueAssignment_0 )
-                    // InternalOml.g:2818:4: rule__PropertyValue__LiteralValueAssignment_0
+                     before(grammarAccess.getPropertyValueAccess().getLiteralValuesAssignment_0()); 
+                    // InternalOml.g:2818:3: ( rule__PropertyValue__LiteralValuesAssignment_0 )
+                    // InternalOml.g:2818:4: rule__PropertyValue__LiteralValuesAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__PropertyValue__LiteralValueAssignment_0();
+                    rule__PropertyValue__LiteralValuesAssignment_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPropertyValueAccess().getLiteralValueAssignment_0()); 
+                     after(grammarAccess.getPropertyValueAccess().getLiteralValuesAssignment_0()); 
 
                     }
 
@@ -9143,24 +9143,24 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalOml.g:2822:2: ( ( rule__PropertyValue__ContainedValueAssignment_1 ) )
+                    // InternalOml.g:2822:2: ( ( rule__PropertyValue__ContainedValuesAssignment_1 ) )
                     {
-                    // InternalOml.g:2822:2: ( ( rule__PropertyValue__ContainedValueAssignment_1 ) )
-                    // InternalOml.g:2823:3: ( rule__PropertyValue__ContainedValueAssignment_1 )
+                    // InternalOml.g:2822:2: ( ( rule__PropertyValue__ContainedValuesAssignment_1 ) )
+                    // InternalOml.g:2823:3: ( rule__PropertyValue__ContainedValuesAssignment_1 )
                     {
-                     before(grammarAccess.getPropertyValueAccess().getContainedValueAssignment_1()); 
-                    // InternalOml.g:2824:3: ( rule__PropertyValue__ContainedValueAssignment_1 )
-                    // InternalOml.g:2824:4: rule__PropertyValue__ContainedValueAssignment_1
+                     before(grammarAccess.getPropertyValueAccess().getContainedValuesAssignment_1()); 
+                    // InternalOml.g:2824:3: ( rule__PropertyValue__ContainedValuesAssignment_1 )
+                    // InternalOml.g:2824:4: rule__PropertyValue__ContainedValuesAssignment_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__PropertyValue__ContainedValueAssignment_1();
+                    rule__PropertyValue__ContainedValuesAssignment_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPropertyValueAccess().getContainedValueAssignment_1()); 
+                     after(grammarAccess.getPropertyValueAccess().getContainedValuesAssignment_1()); 
 
                     }
 
@@ -9168,24 +9168,24 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalOml.g:2828:2: ( ( rule__PropertyValue__ReferencedValueAssignment_2 ) )
+                    // InternalOml.g:2828:2: ( ( rule__PropertyValue__ReferencedValuesAssignment_2 ) )
                     {
-                    // InternalOml.g:2828:2: ( ( rule__PropertyValue__ReferencedValueAssignment_2 ) )
-                    // InternalOml.g:2829:3: ( rule__PropertyValue__ReferencedValueAssignment_2 )
+                    // InternalOml.g:2828:2: ( ( rule__PropertyValue__ReferencedValuesAssignment_2 ) )
+                    // InternalOml.g:2829:3: ( rule__PropertyValue__ReferencedValuesAssignment_2 )
                     {
-                     before(grammarAccess.getPropertyValueAccess().getReferencedValueAssignment_2()); 
-                    // InternalOml.g:2830:3: ( rule__PropertyValue__ReferencedValueAssignment_2 )
-                    // InternalOml.g:2830:4: rule__PropertyValue__ReferencedValueAssignment_2
+                     before(grammarAccess.getPropertyValueAccess().getReferencedValuesAssignment_2()); 
+                    // InternalOml.g:2830:3: ( rule__PropertyValue__ReferencedValuesAssignment_2 )
+                    // InternalOml.g:2830:4: rule__PropertyValue__ReferencedValuesAssignment_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__PropertyValue__ReferencedValueAssignment_2();
+                    rule__PropertyValue__ReferencedValuesAssignment_2();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPropertyValueAccess().getReferencedValueAssignment_2()); 
+                     after(grammarAccess.getPropertyValueAccess().getReferencedValuesAssignment_2()); 
 
                     }
 
@@ -50216,9 +50216,9 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Annotation__PropertyAssignment_2"
 
 
-    // $ANTLR start "rule__AnnotationValue__LiteralValueAssignment_0"
-    // InternalOml.g:15940:1: rule__AnnotationValue__LiteralValueAssignment_0 : ( ruleLiteral ) ;
-    public final void rule__AnnotationValue__LiteralValueAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__AnnotationValue__LiteralValuesAssignment_0"
+    // InternalOml.g:15940:1: rule__AnnotationValue__LiteralValuesAssignment_0 : ( ruleLiteral ) ;
+    public final void rule__AnnotationValue__LiteralValuesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -50229,13 +50229,13 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15945:2: ( ruleLiteral )
             // InternalOml.g:15946:3: ruleLiteral
             {
-             before(grammarAccess.getAnnotationValueAccess().getLiteralValueLiteralParserRuleCall_0_0()); 
+             before(grammarAccess.getAnnotationValueAccess().getLiteralValuesLiteralParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
             ruleLiteral();
 
             state._fsp--;
 
-             after(grammarAccess.getAnnotationValueAccess().getLiteralValueLiteralParserRuleCall_0_0()); 
+             after(grammarAccess.getAnnotationValueAccess().getLiteralValuesLiteralParserRuleCall_0_0()); 
 
             }
 
@@ -50254,12 +50254,12 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationValue__LiteralValueAssignment_0"
+    // $ANTLR end "rule__AnnotationValue__LiteralValuesAssignment_0"
 
 
-    // $ANTLR start "rule__AnnotationValue__ReferencedValueAssignment_1"
-    // InternalOml.g:15955:1: rule__AnnotationValue__ReferencedValueAssignment_1 : ( ( ruleRef ) ) ;
-    public final void rule__AnnotationValue__ReferencedValueAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__AnnotationValue__ReferencedValuesAssignment_1"
+    // InternalOml.g:15955:1: rule__AnnotationValue__ReferencedValuesAssignment_1 : ( ( ruleRef ) ) ;
+    public final void rule__AnnotationValue__ReferencedValuesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -50270,21 +50270,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:15960:2: ( ( ruleRef ) )
             // InternalOml.g:15961:3: ( ruleRef )
             {
-             before(grammarAccess.getAnnotationValueAccess().getReferencedValueMemberCrossReference_1_0()); 
+             before(grammarAccess.getAnnotationValueAccess().getReferencedValuesMemberCrossReference_1_0()); 
             // InternalOml.g:15962:3: ( ruleRef )
             // InternalOml.g:15963:4: ruleRef
             {
-             before(grammarAccess.getAnnotationValueAccess().getReferencedValueMemberRefParserRuleCall_1_0_1()); 
+             before(grammarAccess.getAnnotationValueAccess().getReferencedValuesMemberRefParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleRef();
 
             state._fsp--;
 
-             after(grammarAccess.getAnnotationValueAccess().getReferencedValueMemberRefParserRuleCall_1_0_1()); 
+             after(grammarAccess.getAnnotationValueAccess().getReferencedValuesMemberRefParserRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getAnnotationValueAccess().getReferencedValueMemberCrossReference_1_0()); 
+             after(grammarAccess.getAnnotationValueAccess().getReferencedValuesMemberCrossReference_1_0()); 
 
             }
 
@@ -50303,7 +50303,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationValue__ReferencedValueAssignment_1"
+    // $ANTLR end "rule__AnnotationValue__ReferencedValuesAssignment_1"
 
 
     // $ANTLR start "rule__Vocabulary__OwnedAnnotationsAssignment_0"
@@ -57644,9 +57644,9 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PropertyValueAssertion__PropertyAssignment_0"
 
 
-    // $ANTLR start "rule__PropertyValue__LiteralValueAssignment_0"
-    // InternalOml.g:18784:1: rule__PropertyValue__LiteralValueAssignment_0 : ( ruleLiteral ) ;
-    public final void rule__PropertyValue__LiteralValueAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__PropertyValue__LiteralValuesAssignment_0"
+    // InternalOml.g:18784:1: rule__PropertyValue__LiteralValuesAssignment_0 : ( ruleLiteral ) ;
+    public final void rule__PropertyValue__LiteralValuesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -57657,13 +57657,13 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18789:2: ( ruleLiteral )
             // InternalOml.g:18790:3: ruleLiteral
             {
-             before(grammarAccess.getPropertyValueAccess().getLiteralValueLiteralParserRuleCall_0_0()); 
+             before(grammarAccess.getPropertyValueAccess().getLiteralValuesLiteralParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
             ruleLiteral();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueAccess().getLiteralValueLiteralParserRuleCall_0_0()); 
+             after(grammarAccess.getPropertyValueAccess().getLiteralValuesLiteralParserRuleCall_0_0()); 
 
             }
 
@@ -57682,12 +57682,12 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PropertyValue__LiteralValueAssignment_0"
+    // $ANTLR end "rule__PropertyValue__LiteralValuesAssignment_0"
 
 
-    // $ANTLR start "rule__PropertyValue__ContainedValueAssignment_1"
-    // InternalOml.g:18799:1: rule__PropertyValue__ContainedValueAssignment_1 : ( ruleAnonymousInstance ) ;
-    public final void rule__PropertyValue__ContainedValueAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__PropertyValue__ContainedValuesAssignment_1"
+    // InternalOml.g:18799:1: rule__PropertyValue__ContainedValuesAssignment_1 : ( ruleAnonymousInstance ) ;
+    public final void rule__PropertyValue__ContainedValuesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -57698,13 +57698,13 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18804:2: ( ruleAnonymousInstance )
             // InternalOml.g:18805:3: ruleAnonymousInstance
             {
-             before(grammarAccess.getPropertyValueAccess().getContainedValueAnonymousInstanceParserRuleCall_1_0()); 
+             before(grammarAccess.getPropertyValueAccess().getContainedValuesAnonymousInstanceParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleAnonymousInstance();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueAccess().getContainedValueAnonymousInstanceParserRuleCall_1_0()); 
+             after(grammarAccess.getPropertyValueAccess().getContainedValuesAnonymousInstanceParserRuleCall_1_0()); 
 
             }
 
@@ -57723,12 +57723,12 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PropertyValue__ContainedValueAssignment_1"
+    // $ANTLR end "rule__PropertyValue__ContainedValuesAssignment_1"
 
 
-    // $ANTLR start "rule__PropertyValue__ReferencedValueAssignment_2"
-    // InternalOml.g:18814:1: rule__PropertyValue__ReferencedValueAssignment_2 : ( ( ruleRef ) ) ;
-    public final void rule__PropertyValue__ReferencedValueAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__PropertyValue__ReferencedValuesAssignment_2"
+    // InternalOml.g:18814:1: rule__PropertyValue__ReferencedValuesAssignment_2 : ( ( ruleRef ) ) ;
+    public final void rule__PropertyValue__ReferencedValuesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -57739,21 +57739,21 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
             // InternalOml.g:18819:2: ( ( ruleRef ) )
             // InternalOml.g:18820:3: ( ruleRef )
             {
-             before(grammarAccess.getPropertyValueAccess().getReferencedValueNamedInstanceCrossReference_2_0()); 
+             before(grammarAccess.getPropertyValueAccess().getReferencedValuesNamedInstanceCrossReference_2_0()); 
             // InternalOml.g:18821:3: ( ruleRef )
             // InternalOml.g:18822:4: ruleRef
             {
-             before(grammarAccess.getPropertyValueAccess().getReferencedValueNamedInstanceRefParserRuleCall_2_0_1()); 
+             before(grammarAccess.getPropertyValueAccess().getReferencedValuesNamedInstanceRefParserRuleCall_2_0_1()); 
             pushFollow(FOLLOW_2);
             ruleRef();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyValueAccess().getReferencedValueNamedInstanceRefParserRuleCall_2_0_1()); 
+             after(grammarAccess.getPropertyValueAccess().getReferencedValuesNamedInstanceRefParserRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getPropertyValueAccess().getReferencedValueNamedInstanceCrossReference_2_0()); 
+             after(grammarAccess.getPropertyValueAccess().getReferencedValuesNamedInstanceCrossReference_2_0()); 
 
             }
 
@@ -57772,7 +57772,7 @@ public class InternalOmlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PropertyValue__ReferencedValueAssignment_2"
+    // $ANTLR end "rule__PropertyValue__ReferencedValuesAssignment_2"
 
 
     // $ANTLR start "rule__TypePredicate__TypeAssignment_0"

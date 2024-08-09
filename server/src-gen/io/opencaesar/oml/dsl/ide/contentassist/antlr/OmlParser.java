@@ -229,8 +229,8 @@ public class OmlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQuotedLiteralAccess().getGroup_1_0(), "rule__QuotedLiteral__Group_1_0__0");
 			builder.put(grammarAccess.getQuotedLiteralAccess().getGroup_1_1(), "rule__QuotedLiteral__Group_1_1__0");
 			builder.put(grammarAccess.getAnnotationAccess().getPropertyAssignment_2(), "rule__Annotation__PropertyAssignment_2");
-			builder.put(grammarAccess.getAnnotationValueAccess().getLiteralValueAssignment_0(), "rule__AnnotationValue__LiteralValueAssignment_0");
-			builder.put(grammarAccess.getAnnotationValueAccess().getReferencedValueAssignment_1(), "rule__AnnotationValue__ReferencedValueAssignment_1");
+			builder.put(grammarAccess.getAnnotationValueAccess().getLiteralValuesAssignment_0(), "rule__AnnotationValue__LiteralValuesAssignment_0");
+			builder.put(grammarAccess.getAnnotationValueAccess().getReferencedValuesAssignment_1(), "rule__AnnotationValue__ReferencedValuesAssignment_1");
 			builder.put(grammarAccess.getVocabularyAccess().getOwnedAnnotationsAssignment_0(), "rule__Vocabulary__OwnedAnnotationsAssignment_0");
 			builder.put(grammarAccess.getVocabularyAccess().getNamespaceAssignment_2(), "rule__Vocabulary__NamespaceAssignment_2");
 			builder.put(grammarAccess.getVocabularyAccess().getPrefixAssignment_4(), "rule__Vocabulary__PrefixAssignment_4");
@@ -401,9 +401,9 @@ public class OmlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConceptTypeAssertionAccess().getTypeAssignment(), "rule__ConceptTypeAssertion__TypeAssignment");
 			builder.put(grammarAccess.getRelationTypeAssertionAccess().getTypeAssignment(), "rule__RelationTypeAssertion__TypeAssignment");
 			builder.put(grammarAccess.getPropertyValueAssertionAccess().getPropertyAssignment_0(), "rule__PropertyValueAssertion__PropertyAssignment_0");
-			builder.put(grammarAccess.getPropertyValueAccess().getLiteralValueAssignment_0(), "rule__PropertyValue__LiteralValueAssignment_0");
-			builder.put(grammarAccess.getPropertyValueAccess().getContainedValueAssignment_1(), "rule__PropertyValue__ContainedValueAssignment_1");
-			builder.put(grammarAccess.getPropertyValueAccess().getReferencedValueAssignment_2(), "rule__PropertyValue__ReferencedValueAssignment_2");
+			builder.put(grammarAccess.getPropertyValueAccess().getLiteralValuesAssignment_0(), "rule__PropertyValue__LiteralValuesAssignment_0");
+			builder.put(grammarAccess.getPropertyValueAccess().getContainedValuesAssignment_1(), "rule__PropertyValue__ContainedValuesAssignment_1");
+			builder.put(grammarAccess.getPropertyValueAccess().getReferencedValuesAssignment_2(), "rule__PropertyValue__ReferencedValuesAssignment_2");
 			builder.put(grammarAccess.getTypePredicateAccess().getTypeAssignment_0(), "rule__TypePredicate__TypeAssignment_0");
 			builder.put(grammarAccess.getTypePredicateAccess().getArgumentAssignment_2(), "rule__TypePredicate__ArgumentAssignment_2");
 			builder.put(grammarAccess.getRelationEntityPredicateAccess().getTypeAssignment_0(), "rule__RelationEntityPredicate__TypeAssignment_0");

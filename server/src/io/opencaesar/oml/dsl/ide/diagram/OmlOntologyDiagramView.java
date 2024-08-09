@@ -365,7 +365,7 @@ class OmlOntologyDiagramView {
 	public OmlLabel createLabel(final NamedInstance i, final PropertyValueAssertion ax) {
 		final String id = idCache.uniqueId(ax, getLocalName(i) + ".valueAssertion." + getLocalName(ax.getProperty()));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
-		final String value = ax.getValue().stream().map(v -> getLabel(v)).collect(Collectors.joining(", "));
+		final String value = ax.getValues().stream().map(v -> getLabel(v)).collect(Collectors.joining(", "));
 		l.setText(getLocalName(ax.getProperty()) + " = " + value);
 		return l;
 	}
