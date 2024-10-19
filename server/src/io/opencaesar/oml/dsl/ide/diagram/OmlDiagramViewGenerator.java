@@ -24,6 +24,7 @@ import io.opencaesar.oml.ConceptInstance;
 import io.opencaesar.oml.Element;
 import io.opencaesar.oml.Entity;
 import io.opencaesar.oml.Import;
+import io.opencaesar.oml.Instance;
 import io.opencaesar.oml.KeyAxiom;
 import io.opencaesar.oml.NamedInstance;
 import io.opencaesar.oml.Ontology;
@@ -39,6 +40,7 @@ import io.opencaesar.oml.Scalar;
 import io.opencaesar.oml.ScalarProperty;
 import io.opencaesar.oml.SemanticProperty;
 import io.opencaesar.oml.SpecializationAxiom;
+import io.opencaesar.oml.UnreifiedRelation;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlCompartment;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlEdge;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlGraph;
@@ -240,6 +242,34 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 	}
 
 	@Override
+	public SModelElement caseUnreifiedRelation(final UnreifiedRelation relation) {
+		if (!isFrameExpanded())
+			return null;
+
+		final SModelElement es = semantic2diagram.get(relation);
+		if (null != es)
+			return es;
+
+		// TEMPORARY
+		if (relation.getSources().size() != 1 || relation.getTargets().size() != 1)
+			return null;
+		
+		final Entity s = relation.getSources().get(0);
+		final Entity t = relation.getTargets().get(0);
+
+		final SModelElement ss = doSwitch(s);
+		final SModelElement ts = doSwitch(t);
+		if (null != ss && null != ts) {
+			final OmlEdge edge = view.createEdge(relation, ss, ts);
+			frame.getChildren().add(edge);
+			traceAndMark(edge, relation, context);
+			return edge;
+		}
+
+		return null;
+	}
+
+	@Override
 	public SModelElement caseScalar(final Scalar scalar) {
 		if (!isFrameExpanded())
 			return null;
@@ -310,6 +340,32 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 		return null;
 	}
 
+	@Override
+	public SModelElement casePropertyValueAssertion(final PropertyValueAssertion a) {
+		if (!isFrameExpanded())
+			return null;
+
+		final SModelElement s = semantic2diagram.get(a);
+		if (null != s)
+			return s;
+
+		OmlEdge edge = null;
+		if (a.getSubject() != null && !a.getObject().isEmpty()) {
+			final SModelElement source = doSwitch(a.getSubject());
+			for (Element t : a.getObject()) {
+				if (t instanceof Instance) {
+					final SModelElement target = doSwitch((Instance)t);
+					if (null != source && null != target) {
+						edge = view.createEdge(a, source, target);
+						frame.getChildren().add(edge);
+						//traceAndMark(edge, a, context);
+					}
+				}
+			}
+		}
+		return edge;
+	}
+
 	private void showAxiom(final Entity e, final Axiom ax) {
 		if (!isFrameExpanded())
 			return;
@@ -346,14 +402,12 @@ class OmlDiagramViewGenerator extends OmlSwitch<SModelElement> implements IDiagr
 
 	private void showAxiomInternal(final Entity e, final SpecializationAxiom ax) {
 		final SModelElement specializingNode = semantic2diagram.get(e);
-		if (null == specializingNode)
-			throw new IllegalArgumentException("no entity node for showAxiom(SpecializationAxiom): " + e.getAbbreviatedIri());
 		final SModelElement specializedNode = semantic2diagram.get(ax.getSuperTerm());
-		if (null == specializedNode)
-			throw new IllegalArgumentException("no entity node for showAxiom(SpecializationAxiom): " + ax.getSuperTerm().getAbbreviatedIri());
-		final OmlEdge edge = view.createEdge(ax, specializingNode, specializedNode);
-		frame.getChildren().add(edge);
-		traceAndMark(edge, ax, context);
+		if (null != specializingNode && null != specializedNode) {
+			final OmlEdge edge = view.createEdge(ax, specializingNode, specializedNode);
+			frame.getChildren().add(edge);
+			traceAndMark(edge, ax, context);
+		}
 	}
 
 	private void showAxiomInternal(final Entity e, final KeyAxiom ax) {

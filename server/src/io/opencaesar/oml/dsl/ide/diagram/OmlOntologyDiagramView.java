@@ -47,6 +47,7 @@ import io.opencaesar.oml.Scalar;
 import io.opencaesar.oml.ScalarProperty;
 import io.opencaesar.oml.SpecializationAxiom;
 import io.opencaesar.oml.UnaryPredicate;
+import io.opencaesar.oml.UnreifiedRelation;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlButton;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlCompartment;
 import io.opencaesar.oml.dsl.ide.diagram.model.OmlEdge;
@@ -252,13 +253,6 @@ class OmlOntologyDiagramView {
 		return l;
 	}
 
-	public OmlLabel createStructuredRangeLabel(final Entity e, final PropertyRangeRestrictionAxiom ax) {
-		final String id = idCache.uniqueId(ax, getLocalName(e) + ".rangeRestriction." + getLocalName(ax.getProperty()));
-		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
-		l.setText(getLocalName(ax.getProperty()) + " ⊂ " + getLocalName(ax.getRange()));
-		return l;
-	}
-
 	public OmlLabel createScalarCardinalityLabel(final Entity e, final PropertyCardinalityRestrictionAxiom ax) {
 		final String id = idCache.uniqueId(ax, getLocalName(e) + ".cardinalityRestriction" + getLocalName(ax.getProperty()));
 		String notation;
@@ -280,38 +274,10 @@ class OmlOntologyDiagramView {
 		return l;
 	}
 
-	public OmlLabel createStructuredCardinalityLabel(final Entity e, final PropertyCardinalityRestrictionAxiom ax) {
-		final String id = idCache.uniqueId(ax, getLocalName(e) + ".cardinalityRestriction" + getLocalName(ax.getProperty()));
-		String notation;
-		switch (ax.getKind()) {
-		case EXACTLY:
-			notation = " = ";
-			break;
-		case MIN:
-			notation = " ≥ ";
-			break;
-		case MAX:
-			notation = " ≤ ";
-			break;
-		default:
-			throw new IllegalArgumentException("Unknown StructuredPropertyCardinalityRestrictionAxiom kind: " + ax.getKind());
-		}
-		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
-		l.setText("⎸" + getLocalName(ax.getProperty()) + "⎹" + notation + ax.getCardinality());
-		return l;
-	}
-
 	public OmlLabel createScalarValueLabel(final Entity e, final PropertyValueRestrictionAxiom ax) {
 		final String id = idCache.uniqueId(ax, getLocalName(e) + ".valueRestriction." + getLocalName(ax.getProperty()));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
 		l.setText(getLocalName(ax.getProperty()) + " = " + ax.getLiteralValue().getLexicalValue());
-		return l;
-	}
-
-	public OmlLabel createStructuredValueLabel(final Entity e, final PropertyValueRestrictionAxiom ax) {
-		final String id = idCache.uniqueId(ax, getLocalName(e) + ".valueRestriction." + getLocalName(ax.getProperty()));
-		final OmlLabel l = newLeafSElement(OmlLabel.class, id, OmlDiagramModule.SLabel_SLabelView_text);
-		l.setText(getLocalName(ax.getProperty()) + " = " + getLabel(ax.getContainedValue()));
 		return l;
 	}
 
@@ -395,6 +361,15 @@ class OmlOntologyDiagramView {
 		return e;
 	}
 
+	public OmlEdge createEdge(final UnreifiedRelation relation, final SModelElement from, final SModelElement to) {
+		final String id = idCache.uniqueId(relation, getLocalName(relation));
+		final OmlLabel l = newLeafSElement(OmlLabel.class, id + ".forward.label", OmlDiagramModule.SLabel_RelationshipLabelView);
+		l.setText(getLocalName(relation));
+		final OmlEdge e = newEdge(from, to, id, OmlDiagramModule.OmlEdge_RelationshipArrowEdgeView);
+		e.setChildren(CollectionLiterals.newArrayList(l));
+		return e;
+	}
+
 	public OmlEdge createEdge(final PropertyCardinalityRestrictionAxiom axiom, final SModelElement from, final SModelElement to) {
 		final String id = idCache.uniqueId(axiom, from.getId() + ".restrictsCardinality." + getLocalName(axiom.getProperty()));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id + ".label", OmlDiagramModule.SLabel_RestrictsLabelView);
@@ -441,6 +416,15 @@ class OmlOntologyDiagramView {
 		final String id = idCache.uniqueId(ri, getLocalName(ri));
 		final OmlLabel l = newLeafSElement(OmlLabel.class, id + ".forward.label", OmlDiagramModule.SLabel_RelationshipLabelView);
 		l.setText(getLocalName(ri));
+		final OmlEdge e = newEdge(from, to, id, OmlDiagramModule.OmlEdge_RelationshipArrowEdgeView);
+		e.setChildren(CollectionLiterals.newArrayList(l));
+		return e;
+	}
+
+	public OmlEdge createEdge(final PropertyValueAssertion a, final SModelElement from, final SModelElement to) {
+		final String id = idCache.uniqueId(from.getId()+"_"+getLocalName(a.getProperty())+"_"+to.getId());
+		final OmlLabel l = newLeafSElement(OmlLabel.class, id + ".forward.label", OmlDiagramModule.SLabel_RelationshipLabelView);
+		l.setText(getLocalName(a.getProperty()));
 		final OmlEdge e = newEdge(from, to, id, OmlDiagramModule.OmlEdge_RelationshipArrowEdgeView);
 		e.setChildren(CollectionLiterals.newArrayList(l));
 		return e;

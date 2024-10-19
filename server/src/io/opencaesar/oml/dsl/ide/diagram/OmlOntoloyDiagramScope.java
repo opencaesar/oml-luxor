@@ -18,11 +18,14 @@ import io.opencaesar.oml.Concept;
 import io.opencaesar.oml.ConceptInstance;
 import io.opencaesar.oml.Element;
 import io.opencaesar.oml.Entity;
+import io.opencaesar.oml.Instance;
 import io.opencaesar.oml.KeyAxiom;
+import io.opencaesar.oml.Member;
 import io.opencaesar.oml.NamedInstance;
 import io.opencaesar.oml.Ontology;
 import io.opencaesar.oml.PropertyCardinalityRestrictionAxiom;
 import io.opencaesar.oml.PropertyRangeRestrictionAxiom;
+import io.opencaesar.oml.PropertyValueAssertion;
 import io.opencaesar.oml.PropertyValueRestrictionAxiom;
 import io.opencaesar.oml.Relation;
 import io.opencaesar.oml.RelationEntity;
@@ -32,6 +35,7 @@ import io.opencaesar.oml.ScalarProperty;
 import io.opencaesar.oml.SemanticProperty;
 import io.opencaesar.oml.SpecializationAxiom;
 import io.opencaesar.oml.Type;
+import io.opencaesar.oml.UnreifiedRelation;
 import io.opencaesar.oml.util.OmlRead;
 import io.opencaesar.oml.util.OmlSearch;
 import io.opencaesar.oml.util.OmlSwitch;
@@ -56,9 +60,11 @@ class OmlOntoloyDiagramScope {
 	private final Map<Aspect, Set<Element>> aspects;
 	private final Map<Concept, Set<Element>> concepts;
 	private final Map<RelationEntity, Set<Element>> relationEntities;
-	private final Map<RelationEntity, Set<Element>> relationIncidentElements;
+	private final Map<Relation, Set<Element>> relations;
 	private final Map<Scalar, Set<Element>> scalars;
-	private final Set<SemanticProperty> allSemanticProperties;
+	private final Map<Member, Set<Element>> memberIncidentElements;
+	private final Set<ScalarProperty> allScalarProperties;
+	private final Set<PropertyValueAssertion> allPropertyValueAssertions;
 
 	final Map<Entity, Set<ScalarProperty>> scalarProperties;
 	final Map<Entity, Set<Axiom>> entityAxioms;
@@ -80,10 +86,12 @@ class OmlOntoloyDiagramScope {
 		this.aspects = new HashMap<>();
 		this.concepts = new HashMap<>();
 		this.relationEntities = new HashMap<>();
-		this.relationIncidentElements = new HashMap<>();
+		this.relations = new HashMap<>();
+		this.memberIncidentElements = new HashMap<>();
 		this.scalars = new HashMap<>();
 		this.scalarProperties = new HashMap<>();
-		this.allSemanticProperties = new HashSet<>();
+		this.allScalarProperties = new HashSet<>();
+		this.allPropertyValueAssertions = new HashSet<>();
 		this.entityAxioms = new HashMap<>();
 		this.instanceAssertions = new HashMap<>();
 		this.anonymousConceptAssertions = new HashMap<>();
@@ -99,12 +107,16 @@ class OmlOntoloyDiagramScope {
 			return relationEntities.containsKey((RelationEntity) e);
 		} else if (e instanceof Scalar) {
 			return scalars.containsKey((Scalar) e);
-		} else if (e instanceof SemanticProperty) {
-			return allSemanticProperties.contains((SemanticProperty) e);
+		} else if (e instanceof Relation) {
+			return relations.containsKey((Relation) e);
+		} else if (e instanceof ScalarProperty) {
+			return allScalarProperties.contains((ScalarProperty) e);
 		} else if (e instanceof NamedInstance) {
 			return instanceAssertions.containsKey((NamedInstance) e);
 		} else if (e instanceof AnonymousConceptInstance) {
 			return anonymousConceptAssertions.containsKey((AnonymousConceptInstance) e);
+		} else if (e instanceof PropertyValueAssertion) {
+			return allPropertyValueAssertions.contains((PropertyValueAssertion) e);
 		} else if (e instanceof SpecializationAxiom) {
 			SpecializationAxiom ax = (SpecializationAxiom) e;
 			return includes(ax.getSuperTerm()) && includes(ax.getOwningTerm());
@@ -116,7 +128,7 @@ class OmlOntoloyDiagramScope {
 		final boolean hasPropertiesOrEdges = !scalarProperties.get(entity).isEmpty() || !entityAxioms.get(entity).isEmpty();
 		if (entity instanceof RelationEntity) {
 			final RelationEntity re = (RelationEntity) entity;
-			return hasPropertiesOrEdges || !relationIncidentElements.get(re).isEmpty();
+			return hasPropertiesOrEdges || !memberIncidentElements.get(re).isEmpty();
 		} else
 			return hasPropertiesOrEdges;
 	}
@@ -153,8 +165,10 @@ class OmlOntoloyDiagramScope {
 		s.addAll(concepts.keySet());
 		s.addAll(scalars.keySet());
 		s.addAll(relationEntities.keySet());
+		s.addAll(relations.keySet());
 		s.addAll(instanceAssertions.keySet());
 		s.addAll(anonymousConceptAssertions.keySet());
+		s.addAll(allPropertyValueAssertions);
 		return s;
 	}
 
@@ -169,8 +183,13 @@ class OmlOntoloyDiagramScope {
 		if (!scalarProperties.containsKey(entity)) {
 			scalarProperties.put(entity, new HashSet<>());
 		}
-		OmlSearch.findAllSuperTerms(entity, true, scope).stream().map(t -> (Entity) t).flatMap(c -> OmlSearch.findSemanticPropertiesWithDomain(c, scope).stream()).filter(p -> allImportedElements.contains(p))
-				.forEach(p -> allSemanticProperties.add(p));
+		
+		OmlSearch.findAllSuperTerms(entity, true, scope).stream()
+			.filter(t -> t instanceof Entity)
+			.map(t -> (Entity) t)
+			.flatMap(c -> OmlSearch.findScalarPropertiesWithDomain(c, scope).stream())
+				.filter(p -> allImportedElements.contains(p))
+				.forEach(p -> allScalarProperties.add(p));
 	}
 
 	private void phase2AddEntityScalarProperty(final Entity entity, final ScalarProperty p) {
@@ -178,8 +197,8 @@ class OmlOntoloyDiagramScope {
 	}
 
 	private void phase2ScanAllEntityProperties(final Entity entity) {
-		OmlSearch.findAllSuperTerms(entity, true, scope).stream().map(t -> (Entity) t).forEach(parent -> {
-			OmlSearch.findSemanticPropertiesWithDomain(parent, scope).forEach(p -> {
+		OmlSearch.findAllSuperTerms(entity, true, scope).stream().filter(t -> t instanceof Entity).map(t -> (Entity) t).forEach(parent -> {
+			OmlSearch.findScalarPropertiesWithDomain(parent, scope).forEach(p -> {
 				if (allImportedElements.contains(p)) {
 					if (p instanceof ScalarProperty) {
 						ScalarProperty sp = (ScalarProperty) p;
@@ -313,11 +332,11 @@ class OmlOntoloyDiagramScope {
 				if (!relationEntities.containsKey(e)) {
 					relationEntities.put(e, new HashSet<>());
 				}
-				if (!relationIncidentElements.containsKey(e)) {
-					relationIncidentElements.put(e, new HashSet<>());
+				if (!memberIncidentElements.containsKey(e)) {
+					memberIncidentElements.put(e, new HashSet<>());
 				}
 				Set<Element> others = relationEntities.get(e);
-				Set<Element> incident = relationIncidentElements.get(e);
+				Set<Element> incident = memberIncidentElements.get(e);
 				phase1ScanEntityAxioms(e, others);
 				doSwitch(e.getSources().get(0));
 				doSwitch(e.getTargets().get(0));
@@ -351,6 +370,32 @@ class OmlOntoloyDiagramScope {
 			return OmlOntoloyDiagramScope.this;
 		}
 
+		public OmlOntoloyDiagramScope caseUnreifiedRelation(UnreifiedRelation ur) {
+			Relation e = (Relation) ur.resolve();
+			switch (mode) {
+			case Phase1:
+				if (!relations.containsKey(e)) {
+					relations.put(e, new HashSet<>());
+				}
+				if (!memberIncidentElements.containsKey(e)) {
+					memberIncidentElements.put(e, new HashSet<>());
+				}
+				Set<Element> incident = memberIncidentElements.get(e);
+				doSwitch(e.getDomains().get(0));
+				doSwitch(e.getRanges().get(0));
+				OmlSearch.findSpecializationAxiomsWithSuperTerm(e, scope).forEach(ax -> {
+					if (allImportedElements.contains(ax)) {
+						incident.add(ax);
+					}
+				});
+				secondPhase.add(e);
+				break;
+			case Phase2:
+				break;
+			}
+			return OmlOntoloyDiagramScope.this;
+		}
+
 		public OmlOntoloyDiagramScope caseScalar(Scalar s) {
 			s = (Scalar) s.resolve();
 			switch (mode) {
@@ -368,7 +413,11 @@ class OmlOntoloyDiagramScope {
 		public void phase1ScanInstanceAssertions(final NamedInstance i, final Set<Element> others) {
 			OmlSearch.findPropertyValueAssertionsWithSubject(i, scope).forEach(ax -> {
 				if (allImportedElements.contains(ax)) {
-					others.add(ax);
+					if (ax.getValue() instanceof Instance) {
+						allPropertyValueAssertions.add(ax);
+					} else {
+						others.add(ax);
+					}
 				}
 			});
 			OmlSearch.findRelationInstancesWithSource(i, scope).forEach(ri -> {
@@ -422,6 +471,5 @@ class OmlOntoloyDiagramScope {
 			}
 			return OmlOntoloyDiagramScope.this;
 		}
-
 	}
 }
