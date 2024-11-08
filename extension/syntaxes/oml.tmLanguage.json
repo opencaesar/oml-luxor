@@ -4,12 +4,14 @@
 	"fileTypes": ["oml"],
 	"patterns": [
 		{
-			"name": "keyword.other.oml",
-			"match": "(?:^|\\W)(?<!\\^|:|@)(all|annotation|as|aspect|asymmetric|builtIn|builtin|bundle|concept|description|differentFrom|domain|entity|exactly|extends|forward|from|functional|includes|instance|inverse|irreflexive|key|language|length|max|maxExclusive|maxInclusive|maxLength|min|minExclusive|minInclusive|minLength|oneOf|pattern|property|range|ref|reflexive|relation|restricts|reverse|rule|sameAs|scalar|self|some|symmetric|to|transitive|uses|vocabulary)\\b"
+			"name": "string.quoted.triple.oml",
+			"begin": "'''",
+			"end": "'''"
 		},
 		{
-			"name": "keyword.other.oml",
-			"match": "$|&|,|->|<\\W|=|@|\\^"
+			"name": "string.quoted.triple.oml",
+			"begin": "\"\"\"",
+			"end": "\"\"\""
 		},
 		{
 			"name": "string.quoted.double.oml",
@@ -17,19 +19,9 @@
 			"end": "\""
 		},
 		{
-			"name": "constant.other.oml",
-			"begin": "<",
-			"end": ">"
-		},
-		{
 			"name": "string.quoted.single.oml",
 			"begin": "'",
 			"end": "'"
-		},
-		{
-			"name": "string.quoted.triple.oml",
-			"begin": "'''",
-			"end": "'''"
 		},
 		{
 			"name": "comment.line.oml",
@@ -39,6 +31,19 @@
 			"name": "comment.block.oml",
 			"begin": "/\\*",
 			"end": "\\*/"
+		},
+		{
+			"name": "keyword.other.oml",
+			"match": "$|&|,|->|<\\W|=|@|\\^"
+		},
+		{
+			"name": "keyword.other.oml",
+			"match": "(?:^|\\W)(?<!\\^|:|@)(all|annotation|as|aspect|asymmetric|builtIn|builtin|bundle|concept|description|differentFrom|domain|entity|exactly|extends|forward|from|functional|includes|instance|inverse|irreflexive|key|language|length|max|maxExclusive|maxInclusive|maxLength|min|minExclusive|minInclusive|minLength|oneOf|pattern|property|range|ref|reflexive|relation|restricts|reverse|rule|sameAs|scalar|self|some|symmetric|to|transitive|uses|vocabulary)\\b"
+		},
+		{
+			"name": "constant.other.oml",
+			"begin": "<",
+			"end": ">"
 		}
 	]
 }
